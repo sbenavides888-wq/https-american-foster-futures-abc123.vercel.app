@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | American Foster Futures</title>
+  <meta name="description" content="Support our national campaign. Make a one-time or monthly gift to help foster youth access education, housing, and transition support nationwide.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .nav-link:hover { color: #1E88E5; }
+    .nav-active { color: #1E88E5; font-weight: 600; }
+    .footer-link:hover { color: #4FC3F7; }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .amount-btn { transition: all .1s ease; }
+    .amount-btn.active { background-color: #0F2C59; color: white; border-color: #0F2C59; }
+    .donation-card { transition: box-shadow .2s ease, transform .2s ease; }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex gap-x-4 text-xs sm:text-sm">
+        <span>Irving, TX</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
+      </div>
+      <div class="flex gap-x-3 text-xs">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between h-16 items-center">
+        <a href="index.html" class="flex gap-x-3 items-center">
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <!-- Modern accent: rising path symbolizing futures and growth -->
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div>
+            <div class="font-semibold text-[#0F2C59] text-xl tracking-tighter">American Foster Futures</div>
+            <div class="text-[10px] -mt-1 font-medium text-slate-500">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="programs.html" class="nav-link flex items-center gap-x-1">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="programs.html" class="block px-4 py-2 text-sm hover:bg-slate-100">All Programs &amp; Services</a>
+              <a href="national-housing-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Housing Campaign</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="college-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">College Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="financial-aid.html" class="nav-link flex items-center gap-x-1">Financial Aid <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="financial-aid.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Financial Aid</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Waiver</a>
+            </div>
+          </div>
+          <a href="national-campaign.html" class="nav-link">National Campaign</a>
+          <a href="get-involved.html" class="nav-link">Get Involved</a>
+          <a href="donate.html" class="nav-link nav-active">Donate</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="donate.html" class="px-6 py-2.5 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl">Donate</a>
+        </div>
+
+        <button id="mobile-btn" class="md:hidden p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t px-6 py-4 text-sm">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="board-of-directors.html" class="block py-2 pl-4 text-sm">— Board of Directors</a>
+      <a href="history.html" class="block py-2 pl-4 text-sm">— Our History</a>
+      <a href="values.html" class="block py-2 pl-4 text-sm">— Our Values</a>
+      <a href="financials.html" class="block py-2 pl-4 text-sm">— Financials</a>
+      <a href="programs.html" class="block py-2">Programs</a>
+      <a href="texas-aging-out-checklist.html" class="block py-2 pl-4 text-sm">— Texas Aging Out Checklist</a>
+      <a href="financial-aid.html" class="block py-2">Financial Aid</a>
+      <a href="texas-tuition-waiver.html" class="block py-2 pl-4 text-sm">— Texas Waiver</a>
+      <a href="national-campaign.html" class="block py-2">National Campaign</a>
+      <a href="get-involved.html" class="block py-2">Get Involved</a>
+      <a href="donate.html" class="block py-2 font-semibold">Donate</a>
+      <a href="donate.html" class="mt-2 block py-2.5 bg-[#0F2C59] text-white text-center rounded-2xl font-semibold">Donate Now</a>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-6 pt-10 pb-16">
+    <div class="text-center max-w-md mx-auto">
+      <div class="inline-flex items-center px-3 py-1 bg-emerald-100 text-emerald-700 text-xs tracking-widest font-medium rounded-full">100% goes to the mission</div>
+      <h1 class="heading-serif text-5xl font-semibold tracking-tighter mt-3 text-[#0F2C59]">Invest in foster youth futures.</h1>
+      <p class="text-slate-600 mt-3">Your gift helps us expand tuition waivers across the country and deliver housing, education, and transition support nationwide.</p>
+    </div>
+
+    <div class="mt-10 max-w-xl mx-auto">
+      <!-- Donation form -->
+      <div class="bg-white border rounded-3xl p-7 md:p-9 shadow-sm donation-card">
+        <div class="flex items-center justify-between mb-5">
+          <div class="font-semibold text-lg">Make a donation</div>
+          <div class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded">Secure</div>
+        </div>
+
+        <!-- Frequency -->
+        <div class="mb-5">
+          <div class="flex border rounded-2xl p-1 bg-slate-50 text-sm">
+            <button onclick="setFrequency(this, 'onetime')" id="freq-onetime" class="flex-1 py-2 font-medium rounded-[14px] amount-btn active">One-time</button>
+            <button onclick="setFrequency(this, 'monthly')" id="freq-monthly" class="flex-1 py-2 font-medium rounded-[14px] amount-btn">Monthly</button>
+          </div>
+        </div>
+
+        <!-- Amounts -->
+        <div class="grid grid-cols-4 gap-2 mb-4" id="amount-grid">
+          <button onclick="selectAmount(this, 25)" class="amount-btn border py-3 text-sm rounded-2xl font-medium active">$25</button>
+          <button onclick="selectAmount(this, 50)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$50</button>
+          <button onclick="selectAmount(this, 100)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$100</button>
+          <button onclick="selectAmount(this, 250)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$250</button>
+        </div>
+
+        <div class="mb-5">
+          <label class="text-xs font-medium text-slate-600 block mb-1.5">Other amount</label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+            <input id="custom-amount" type="number" placeholder="Enter amount" class="pl-7 form-input w-full border rounded-2xl py-3 text-sm" oninput="selectCustomAmount(this)">
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-500 mb-2 font-medium">What your gift supports:</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 text-xs gap-2 mb-6">
+          <div class="bg-slate-50 px-3 py-2 rounded-xl">• Tuition waiver advocacy</div>
+          <div class="bg-slate-50 px-3 py-2 rounded-xl">• National housing campaign</div>
+          <div class="bg-slate-50 px-3 py-2 rounded-xl">• Youth transition support</div>
+        </div>
+
+        <form id="donate-form" onsubmit="handleDonate(event)">
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <input required class="border rounded-2xl px-4 py-3 text-sm" placeholder="Full name">
+            <input required type="email" class="border rounded-2xl px-4 py-3 text-sm" placeholder="Email address">
+          </div>
+          <input class="border w-full rounded-2xl px-4 py-3 text-sm mb-4" placeholder="Card number (demo)" value="4242 4242 4242 4242">
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <input class="border rounded-2xl px-4 py-3 text-sm" placeholder="MM / YY" value="03 / 28">
+            <input class="border rounded-2xl px-4 py-3 text-sm" placeholder="CVC" value="123">
+          </div>
+
+          <button type="submit" id="donate-submit-btn"
+                  class="w-full py-[15px] rounded-2xl bg-[#0F2C59] hover:bg-[#1a3a6e] text-white font-semibold flex items-center justify-center gap-x-2">
+            <i class="fa-solid fa-lock mr-1"></i>
+            <span id="donate-btn-text">Donate $50</span>
+          </button>
+
+          <p class="text-center text-xs text-slate-500 mt-4">This is a demo form. In production we will integrate Stripe, PayPal, or a nonprofit donation platform.</p>
+        </form>
+      </div>
+
+      <div class="text-center mt-6">
+        <div class="text-xs text-slate-500">Prefer to donate by check, stock, or donor-advised fund?</div>
+        <a href="get-involved.html" class="text-xs text-[#0F2C59] underline">Contact us for instructions</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80">
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-7 grid md:grid-cols-12 gap-y-6 text-sm">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-x-3 mb-3">
+          <svg width="36" height="36" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div class="font-semibold text-white">American Foster Futures</div>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-2">Navigate</div>
+        <div class="space-y-[2px] text-sm">
+          <a href="index.html" class="footer-link block">Home</a>
+          <a href="about.html" class="footer-link block">About</a>
+          <a href="programs.html" class="footer-link block">Programs</a>
+          <a href="get-involved.html" class="footer-link block">Get Involved</a>
+          <a href="donate.html" class="footer-link block">Donate</a>
+        </div>
+      </div>
+      <div class="md:col-span-4 text-sm">307 White Oaks Dr., Irving, TX 75060<br><a href="mailto:info@americanfosterfutures.org" class="hover:text-white">info@americanfosterfutures.org</a></div>
+    </div>
+    <div class="border-t border-white/10 text-xs py-4 text-center text-sky-100/60">© <span id="year"></span> American Foster Futures — Thank you for supporting foster youth.</div>
+  </footer>
+
+  <script>
+    let currentAmount = 50;
+    let frequency = 'onetime';
+
+    function setFrequency(el, freq) {
+      document.querySelectorAll('[id^="freq-"]').forEach(b => b.classList.remove('active', 'bg-white'));
+      el.classList.add('active');
+      frequency = freq;
+      updateDonateButton();
+    }
+
+    function selectAmount(el, amt) {
+      document.querySelectorAll('#amount-grid button').forEach(b => b.classList.remove('active', 'bg-[#0F2C59]', 'text-white'));
+      el.classList.add('active', 'bg-[#0F2C59]', 'text-white');
+      currentAmount = amt;
+      document.getElementById('custom-amount').value = '';
+      updateDonateButton();
+    }
+
+    function selectCustomAmount(input) {
+      if (!input.value) return;
+      currentAmount = parseInt(input.value) || 0;
+      document.querySelectorAll('#amount-grid button').forEach(b => b.classList.remove('active', 'bg-[#0F2C59]', 'text-white'));
+      updateDonateButton();
+    }
+
+    function updateDonateButton() {
+      const btnText = document.getElementById('donate-btn-text');
+      const label = frequency === 'monthly' ? `Donate $${currentAmount} monthly` : `Donate $${currentAmount}`;
+      btnText.textContent = label;
+    }
+
+    function handleDonate(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = document.getElementById('donate-submit-btn');
+      const orig = btn.innerHTML;
+      
+      btn.disabled = true;
+      btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fa-solid fa-spinner fa-spin"></i> Processing...</span>`;
+      
+      setTimeout(() => {
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <i class="fa-solid fa-check-circle text-emerald-500 text-5xl"></i>
+            <div class="font-semibold text-lg mt-4">Thank you!</div>
+            <p class="text-sm text-slate-600 mt-1">Your ${frequency === 'monthly' ? 'monthly ' : ''}gift of <strong>$${currentAmount}</strong> has been received.</p>
+            <div class="text-xs text-slate-500 mt-4">A receipt has been sent to your email (demo).</div>
+            <a href="index.html" class="inline-block mt-6 px-6 py-2 bg-white border text-sm font-medium rounded-2xl">Return to homepage</a>
+          </div>
+        `;
+      }, 1350);
+    }
+
+    function initDonate() {
+      // Default amount selected
+      const defaultBtn = document.querySelector('#amount-grid button:nth-child(2)');
+      if (defaultBtn) {
+        defaultBtn.classList.add('active', 'bg-[#0F2C59]', 'text-white');
+      }
+      document.getElementById('freq-onetime').classList.add('active');
+      updateDonateButton();
+    }
+
+    // Mobile menu
+    const mbtn = document.getElementById('mobile-btn');
+    const mmenu = document.getElementById('mobile-menu');
+    if (mbtn) mbtn.onclick = () => mmenu.classList.toggle('hidden');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    initDonate();
+  </script>
+</body>
+</html>

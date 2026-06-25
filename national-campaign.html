@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Campaign | American Foster Futures</title>
+  <meta name="description" content="American Foster Futures national campaign to expand tuition waivers like Texas to every state. Focus areas: states without comprehensive foster youth education benefits.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .nav-link:hover { color: #1E88E5; }
+    .nav-active { color: #1E88E5; font-weight: 600; }
+    .footer-link:hover { color: #4FC3F7; }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .state-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .state-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+    .map-container { background: linear-gradient(135deg, #f1f5f9 0%, #e0e7ff 100%); }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex gap-x-4 text-xs sm:text-sm">
+        <span>Irving, TX</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
+      </div>
+      <div class="flex gap-x-3 text-xs">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="h-16 flex justify-between items-center">
+        <a href="index.html" class="flex gap-x-3 items-center">
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <!-- Modern accent: rising path symbolizing futures and growth -->
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div>
+            <div class="font-semibold text-[#0F2C59] text-xl tracking-tighter">American Foster Futures</div>
+            <div class="text-[10px] -mt-1 font-medium text-slate-500">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="programs.html" class="nav-link flex items-center gap-x-1">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="programs.html" class="block px-4 py-2 text-sm hover:bg-slate-100">All Programs &amp; Services</a>
+              <a href="national-housing-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Housing Campaign</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="college-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">College Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="financial-aid.html" class="nav-link flex items-center gap-x-1">Financial Aid <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="financial-aid.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Financial Aid</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Waiver</a>
+            </div>
+          </div>
+          <a href="national-campaign.html" class="nav-link nav-active">National Campaign</a>
+          <a href="get-involved.html" class="nav-link">Get Involved</a>
+          <a href="donate.html" class="nav-link">Donate</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="donate.html" class="px-5 py-2.5 bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold rounded-xl">Donate</a>
+        </div>
+
+        <button id="mobile-btn" class="md:hidden p-2" aria-label="Menu"><i class="fa-solid fa-bars text-xl"></i></button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t px-6 py-4 text-sm">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="board-of-directors.html" class="block py-2 pl-4 text-sm">— Board of Directors</a>
+      <a href="history.html" class="block py-2 pl-4 text-sm">— Our History</a>
+      <a href="values.html" class="block py-2 pl-4 text-sm">— Our Values</a>
+      <a href="financials.html" class="block py-2 pl-4 text-sm">— Financials</a>
+      <a href="programs.html" class="block py-2">Programs</a>
+      <a href="texas-aging-out-checklist.html" class="block py-2 pl-4 text-sm">— Texas Aging Out Checklist</a>
+      <a href="financial-aid.html" class="block py-2">Financial Aid</a>
+      <a href="texas-tuition-waiver.html" class="block py-2 pl-4 text-sm">— Texas Waiver</a>
+      <a href="national-campaign.html" class="block py-2 font-semibold">National Campaign</a>
+      <a href="get-involved.html" class="block py-2">Get Involved</a>
+      <a href="donate.html" class="mt-2 block py-2.5 bg-[#0F2C59] text-white text-center rounded-2xl font-semibold">Donate Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="bg-[#0F2C59] text-white">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <div class="max-w-3xl">
+        <div class="uppercase text-xs tracking-[2px] text-sky-300 font-medium">Model → Nationwide</div>
+        <h1 class="heading-serif text-5xl md:text-6xl tracking-tighter font-semibold mt-1">National Campaign</h1>
+        <p class="mt-4 text-lg text-sky-100">Expanding the Texas success story — full tuition waivers for foster youth — to every state in America. Our goal: No foster youth left behind when it comes to higher education.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#focus-states" class="px-6 py-3 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm hover:bg-slate-100 transition">See Focus States</a>
+          <a href="#map" class="px-6 py-3 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">View Campaign Map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-12">
+
+    <!-- Intro -->
+    <div class="max-w-3xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-[#0F2C59]">Why a National Campaign?</h2>
+      <p class="mt-4 text-slate-600">Texas has one of the strongest and most successful foster youth tuition waiver programs in the country. Our national campaign works state-by-state to pass similar legislation — removing financial barriers so foster youth can attend public colleges and universities tuition-free.</p>
+      <p class="mt-2 text-slate-600">We are prioritizing states that currently lack comprehensive waivers like Texas'.</p>
+    </div>
+
+    <!-- Focus States List -->
+    <div id="focus-states" class="mt-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-6">States Without a Texas-Style Tuition Waiver</h2>
+      <p class="text-sm text-slate-500 mb-4">These states currently do not have a comprehensive, statewide tuition waiver program for foster youth similar to Texas. Our campaign will focus here first.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- States list -->
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Alabama</div>
+          <div class="text-xs text-slate-500">No statewide waiver. Limited institutional aid only.</div>
+          <a href="https://www.ache.edu/" target="_blank" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Learn more →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Alaska</div>
+          <div class="text-xs text-slate-500">No comprehensive waiver program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Arkansas</div>
+          <div class="text-xs text-slate-500">No statewide foster youth tuition waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Hawaii</div>
+          <div class="text-xs text-slate-500">No dedicated statewide program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Idaho</div>
+          <div class="text-xs text-slate-500">No comprehensive tuition waiver for foster youth.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Kansas</div>
+          <div class="text-xs text-slate-500">No statewide waiver program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Kentucky</div>
+          <div class="text-xs text-slate-500">Limited benefits; no full Texas-style waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Louisiana</div>
+          <div class="text-xs text-slate-500">No comprehensive statewide program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Mississippi</div>
+          <div class="text-xs text-slate-500">No dedicated tuition waiver for foster youth.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Missouri</div>
+          <div class="text-xs text-slate-500">Scholarships exist but no full waiver like Texas.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Montana</div>
+          <div class="text-xs text-slate-500">No statewide tuition waiver program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Nebraska</div>
+          <div class="text-xs text-slate-500">No comprehensive foster youth waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Nevada</div>
+          <div class="text-xs text-slate-500">No dedicated statewide program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">New Hampshire</div>
+          <div class="text-xs text-slate-500">No comprehensive tuition waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">New Mexico</div>
+          <div class="text-xs text-slate-500">Limited aid; no Texas-style waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">North Dakota</div>
+          <div class="text-xs text-slate-500">No statewide program for foster youth.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Oklahoma</div>
+          <div class="text-xs text-slate-500">Some benefits but not a full waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">South Carolina</div>
+          <div class="text-xs text-slate-500">No comprehensive waiver program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">South Dakota</div>
+          <div class="text-xs text-slate-500">No dedicated foster youth tuition waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Utah</div>
+          <div class="text-xs text-slate-500">Limited programs; no full waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Vermont</div>
+          <div class="text-xs text-slate-500">No statewide tuition waiver for foster youth.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">West Virginia</div>
+          <div class="text-xs text-slate-500">No comprehensive program.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+        <div class="state-card bg-white border rounded-2xl p-4">
+          <div class="font-semibold text-red-600">Wyoming</div>
+          <div class="text-xs text-slate-500">No dedicated foster youth waiver.</div>
+          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div id="map" class="mt-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-4">National Campaign Focus Map</h2>
+      <p class="text-sm text-slate-600 mb-6">The map below highlights the 23 states (shown in red) where the national campaign will prioritize passing legislation modeled after Texas' successful tuition waiver program.</p>
+
+      <div class="map-container border rounded-3xl p-8 text-center">
+        <div class="mx-auto max-w-2xl">
+          <div class="text-4xl mb-2">🇺🇸</div>
+          <div class="font-semibold text-lg mb-4">United States — Campaign Focus</div>
+          
+          <!-- Simple visual map representation -->
+          <div class="bg-white border rounded-xl p-6 text-left text-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div>
+                <div class="font-semibold mb-1 text-red-600">West Region (Focus)</div>
+                <div class="text-xs text-slate-600">Alaska • Hawaii • Idaho • Montana • Nevada • New Mexico • Utah • Wyoming</div>
+              </div>
+              <div>
+                <div class="font-semibold mb-1 text-red-600">Midwest &amp; Plains (Focus)</div>
+                <div class="text-xs text-slate-600">Kansas • Missouri • Nebraska • North Dakota • Oklahoma • South Dakota</div>
+              </div>
+              <div>
+                <div class="font-semibold mb-1 text-red-600">South &amp; Southeast (Focus)</div>
+                <div class="text-xs text-slate-600">Alabama • Arkansas • Kentucky • Louisiana • Mississippi • South Carolina • West Virginia</div>
+              </div>
+              <div>
+                <div class="font-semibold mb-1 text-red-600">Northeast &amp; Other (Focus)</div>
+                <div class="text-xs text-slate-600">New Hampshire • Vermont • Wyoming (overlap)</div>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t text-xs text-slate-500">
+              <span class="inline-block w-3 h-3 bg-red-500 rounded mr-1"></span> Red = Priority campaign focus (no Texas-style waiver)
+              <br><span class="inline-block w-3 h-3 bg-green-500 rounded mr-1 mt-1"></span> Green = States with existing comprehensive programs (not primary focus)
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-4">This visual highlights the geographic areas of our national push. Full interactive map coming soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="get-involved.html" class="inline-flex items-center gap-x-2 px-6 py-3 bg-[#0F2C59] text-white font-semibold rounded-2xl text-sm hover:bg-[#1a3a6e]">
+        <span>Join the National Campaign</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80 mt-10">
+    <div class="max-w-7xl mx-auto px-6 pt-9 pb-6 grid md:grid-cols-12 gap-y-8 text-sm">
+      <div class="md:col-span-5">
+        <div class="flex gap-x-3 items-center mb-3">
+          <svg width="36" height="36" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div class="font-semibold text-white">American Foster Futures</div>
+        </div>
+        <p class="text-xs max-w-xs">A national nonprofit dedicated to empowering foster youth through advocacy and direct support.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-2">Navigate</div>
+        <div class="space-y-px text-sm">
+          <a href="index.html" class="footer-link block">Home</a>
+          <a href="about.html" class="footer-link block">About</a>
+          <a href="programs.html" class="footer-link block">Programs</a>
+          <a href="financial-aid.html" class="footer-link block">Financial Aid</a>
+          <a href="national-campaign.html" class="footer-link block">National Campaign</a>
+          <a href="get-involved.html" class="footer-link block">Get Involved</a>
+        </div>
+      </div>
+      <div class="md:col-span-4 text-sm">
+        307 White Oaks Dr., Irving, TX 75060<br>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:text-white">info@americanfosterfutures.org</a>
+      </div>
+    </div>
+    <div class="text-xs text-center py-4 border-t border-white/10 text-sky-100/60">© <span id="year"></span> American Foster Futures. All rights reserved.</div>
+  </footer>
+
+  <script>
+    function setupMobileMenu() {
+      const btn = document.getElementById('mobile-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    }
+
+    function setCurrentYear() {
+      const el = document.getElementById('year');
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    function init() {
+      setupMobileMenu();
+      setCurrentYear();
+    }
+
+    init();
+  </script>
+</body>
+</html>

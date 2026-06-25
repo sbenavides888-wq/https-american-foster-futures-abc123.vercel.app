@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>American Foster Futures | Empowering Foster Youth</title>
+  <meta name="description" content="American Foster Futures (AFF) runs a national campaign for foster youth tuition waivers and reciprocity while providing housing, education, and transition support nationwide.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    
+    :root {
+      --primary: #0F2C59;
+      --accent: #1E88E5;
+    }
+    
+    .tail-container {
+      font-family: 'Inter', system_ui, sans-serif;
+    }
+    
+    .heading-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .nav-link {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-link:hover {
+      color: #1E88E5;
+    }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0F2C59 0%, #1a3a6e 100%);
+    }
+
+    .section-header {
+      position: relative;
+      display: inline-block;
+    }
+    .section-header:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(to right, #1E88E5, #4FC3F7);
+      border-radius: 3px;
+    }
+
+    .stat-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .program-card {
+      transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    .impact-quote {
+      position: relative;
+    }
+    .impact-quote:before {
+      content: '\201C';
+      font-size: 6rem;
+      position: absolute;
+      left: -10px;
+      top: -30px;
+      opacity: 0.1;
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+
+    .donate-btn {
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .donate-btn:after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -100%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+      );
+      transition: 0.5s;
+    }
+    .donate-btn:hover:after {
+      left: 250%;
+    }
+
+    .footer-link {
+      transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+      color: #4FC3F7;
+    }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+
+    .mobile-menu {
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-active {
+      color: #1E88E5;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div class="flex items-center gap-x-4 text-xs sm:text-sm">
+        <div class="flex items-center gap-x-1.5">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <span>Irving, TX</span>
+        </div>
+        <div class="hidden sm:block">|</div>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:underline flex items-center gap-x-1.5">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="hidden sm:inline">info@americanfosterfutures.org</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-x-3 text-xs">
+        <a href="#donate" class="hidden sm:block hover:underline font-medium">Give Today →</a>
+        <div class="flex gap-x-2">
+          <a href="#" class="hover:text-sky-300" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-sky-300" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-sky-300" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-x-3 group">
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <!-- Modern accent: rising path symbolizing futures and growth -->
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div>
+            <div class="font-semibold tracking-tight text-2xl text-[#0F2C59]">American Foster Futures</div>
+            <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
+          <a href="index.html" class="nav-link nav-active">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="programs.html" class="nav-link flex items-center gap-x-1">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="programs.html" class="block px-4 py-2 text-sm hover:bg-slate-100">All Programs &amp; Services</a>
+              <a href="national-housing-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Housing Campaign</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="college-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">College Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="financial-aid.html" class="nav-link flex items-center gap-x-1">Financial Aid <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="financial-aid.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Financial Aid</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Waiver</a>
+            </div>
+          </div>
+          <a href="national-campaign.html" class="nav-link">National Campaign</a>
+          <a href="get-involved.html" class="nav-link">Get Involved</a>
+          <a href="donate.html" class="nav-link">Donate</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="donate.html" 
+             class="donate-btn px-5 py-2.5 bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold rounded-xl flex items-center gap-x-2 shadow-sm">
+            <i class="fa-solid fa-heart"></i>
+            <span>Donate</span>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn"
+                class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl transition"
+                aria-label="Toggle menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
+      <div class="px-6 py-4 flex flex-col gap-y-1 text-sm font-medium">
+        <a href="index.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Home</a>
+        <a href="about.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">About</a>
+        <a href="board-of-directors.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Board of Directors</a>
+        <a href="history.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our History</a>
+        <a href="values.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our Values</a>
+        <a href="financials.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Financials</a>
+        <a href="programs.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Programs &amp; Services</a>
+        <a href="texas-aging-out-checklist.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Aging Out Checklist</a>
+        <a href="financial-aid.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Financial Aid</a>
+        <a href="texas-tuition-waiver.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Waiver</a>
+        <a href="national-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">National Campaign</a>
+        <a href="get-involved.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Get Involved</a>
+        <a href="donate.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Donate</a>
+        <div class="pt-3 flex flex-col gap-y-2 border-t mt-2">
+          <a href="get-involved.html" class="py-2 px-3 text-center rounded-lg border border-slate-300">Get Involved</a>
+          <a href="donate.html" class="donate-btn py-2.5 px-3 bg-[#0F2C59] text-white text-center rounded-xl font-semibold">Donate Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / Landing -->
+  <header class="hero-bg text-white">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
+      <div class="grid md:grid-cols-12 gap-x-8 items-center">
+        <div class="md:col-span-7">
+          <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur px-4 py-1 rounded-full text-xs tracking-[1px] font-medium mb-6">
+            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+            501(c)(3) NONPROFIT • EST. 2025
+          </div>
+
+          <h1 class="text-5xl md:text-6xl leading-[1.05] font-semibold tracking-tighter heading-serif">
+            Every foster youth<br>deserves a future.
+          </h1>
+          
+          <p class="mt-6 max-w-lg text-lg md:text-xl text-sky-100/90">
+            American Foster Futures runs a national campaign for systemic change while delivering direct support so foster youth across the country can graduate, find stable housing, and build independent lives.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="donate.html" 
+               class="donate-btn inline-flex items-center justify-center gap-x-3 bg-white text-[#0F2C59] hover:bg-slate-100 font-semibold px-7 py-3.5 rounded-2xl text-base shadow-xl shadow-black/20 transition">
+              <i class="fa-solid fa-heart"></i>
+              <span>Donate Now</span>
+            </a>
+            <a href="#mission" 
+               class="inline-flex items-center justify-center gap-x-2 border border-white/30 hover:bg-white/10 font-medium px-6 py-3.5 rounded-2xl transition text-sm">
+              Learn our mission
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-x-8 text-sm">
+            <div class="flex -space-x-2">
+              <div class="w-7 h-7 bg-white/90 border border-white rounded-full overflow-hidden ring-2 ring-[#0F2C59]/30"><img src="https://picsum.photos/id/1011/28/28" class="object-cover"></div>
+              <div class="w-7 h-7 bg-white/90 border border-white rounded-full overflow-hidden ring-2 ring-[#0F2C59]/30"><img src="https://picsum.photos/id/1005/28/28" class="object-cover"></div>
+              <div class="w-7 h-7 bg-white/90 border border-white rounded-full overflow-hidden ring-2 ring-[#0F2C59]/30"><img src="https://picsum.photos/id/201/28/28" class="object-cover"></div>
+            </div>
+            <div class="text-xs text-sky-200">Join 200+ monthly supporters</div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 mt-10 md:mt-0">
+          <div class="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-5 shadow-2xl">
+            <div class="text-xs font-medium tracking-widest text-sky-200 mb-3 px-1">CURRENT FOCUS</div>
+            <div class="space-y-3 text-sm">
+              <div class="flex gap-3 items-start">
+                <i class="fa-solid fa-graduation-cap mt-1 text-sky-300 w-4"></i>
+                <div><span class="font-semibold">Tuition Waivers Nationwide</span><br><span class="text-sky-100/80 text-xs">Texas model + reciprocity campaign</span></div>
+              </div>
+              <div class="flex gap-3 items-start">
+                <i class="fa-solid fa-home mt-1 text-sky-300 w-4"></i>
+                <div><span class="font-semibold">National Housing Campaign</span><br><span class="text-sky-100/80 text-xs">Virtual programs + community partners nationwide</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust bar / Stats -->
+  <div class="border-b bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-7 text-center">
+        <div>
+          <div class="text-3xl font-semibold tracking-tight text-[#0F2C59]">1</div>
+          <div class="text-sm text-slate-500 font-medium mt-0.5">State at a time</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold tracking-tight text-[#0F2C59]">3</div>
+          <div class="text-sm text-slate-500 font-medium mt-0.5">Founding Directors</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold tracking-tight text-[#0F2C59]">100%</div>
+          <div class="text-sm text-slate-500 font-medium mt-0.5">Focus on foster youth</div>
+        </div>
+        <div>
+          <div class="text-3xl font-semibold tracking-tight text-[#0F2C59]">2025</div>
+          <div class="text-sm text-slate-500 font-medium mt-0.5">National nonprofit (CA incorporated)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section id="mission" class="max-w-7xl mx-auto px-6 pt-16 pb-12">
+    <div class="max-w-3xl">
+      <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Our Mission</div>
+      <h2 class="heading-serif text-4xl md:text-5xl font-semibold tracking-tighter text-[#0F2C59] mt-2">Breaking the cycle of disadvantage for foster youth.</h2>
+    </div>
+
+    <div class="mt-8 max-w-4xl text-[15px] leading-relaxed text-slate-600">
+      <p>Foster youth lack access to traditional family and social structures that create the foundation for achieving educational success. The combination of traumatic experience, unstable living conditions, and fractured relationships results in higher rates of criminal conviction, homelessness, addiction, and mental health challenges.</p>
+      
+      <p class="mt-4"><strong class="text-slate-900">American Foster Futures is dedicated to empowering foster youth</strong> by advocating for systemic improvements in state and federal policies and delivering nationwide access to educational, housing, and transitioning-out-of-care services through virtual programs and community partnerships.</p>
+    </div>
+
+    <!-- Values -->
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white border border-slate-200 rounded-2xl px-5 py-5">
+        <div class="text-[#0F2C59] font-semibold mb-1">Integrity</div>
+        <p class="text-sm text-slate-600">Unwavering honesty and transparency in everything we do.</p>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl px-5 py-5">
+        <div class="text-[#0F2C59] font-semibold mb-1">Compassion</div>
+        <p class="text-sm text-slate-600">We meet every young person with empathy and honor their potential.</p>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl px-5 py-5">
+        <div class="text-[#0F2C59] font-semibold mb-1">Collaboration</div>
+        <p class="text-sm text-slate-600">We build powerful partnerships to maximize reach and impact.</p>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl px-5 py-5">
+        <div class="text-[#0F2C59] font-semibold mb-1">Community</div>
+        <p class="text-sm text-slate-600">Creating a network of belonging, resilience, and opportunity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 KEY STATS + IMPACT -->
+  <section class="bg-white border-t border-b py-14">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-9">
+        <div>
+          <div class="font-semibold tracking-tight text-3xl text-[#0F2C59]">The need is urgent.</div>
+          <div class="text-slate-600">Foster youth deserve the same opportunities as their peers.</div>
+        </div>
+        <a href="programs.html" class="text-sm font-medium flex items-center gap-x-1.5 text-sky-700 hover:text-sky-800">See how we help <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Stat 1 -->
+        <div class="stat-card bg-slate-900 text-white rounded-3xl p-8">
+          <div class="text-6xl font-semibold tracking-tighter">~23,000</div>
+          <div class="mt-1 text-lg font-medium">youth age out of foster care in the U.S. every year.</div>
+          <div class="mt-4 text-sm leading-snug text-slate-300">Without support, many face homelessness, unemployment, and lost educational opportunities.</div>
+        </div>
+
+        <div class="stat-card bg-white border-2 border-slate-200 rounded-3xl p-8">
+          <div class="text-[#0F2C59] text-6xl font-semibold tracking-tighter">1 in 5</div>
+          <div class="mt-2 text-lg font-medium">experience homelessness after aging out.</div>
+          <div class="mt-5 text-sm text-slate-600">Stable housing and education are the most powerful protective factors.</div>
+          <div class="mt-auto pt-4">
+            <div class="text-xs font-medium bg-emerald-100 text-emerald-800 px-3 py-1 rounded inline-block">Our focus: prevention</div>
+          </div>
+        </div>
+
+        <div class="stat-card bg-white border-2 border-slate-200 rounded-3xl p-8">
+          <div class="text-[#0F2C59] text-6xl font-semibold tracking-tighter">2×</div>
+          <div class="mt-2 text-lg font-medium">more likely to be incarcerated or drop out of college.</div>
+          <div class="mt-5 text-sm text-slate-600">State tuition waivers and strong transition programs dramatically improve outcomes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTH IMPACT STATEMENTS -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="mb-8">
+      <div class="uppercase tracking-[2px] text-xs font-semibold text-sky-600">Real voices. Real futures.</div>
+      <h3 class="heading-serif text-3xl font-semibold tracking-tight text-[#0F2C59]">Youth Impact</h3>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="impact-quote bg-white border p-7 rounded-3xl">
+        <p class="text-slate-700">"Without AFF's help navigating the tuition waiver process and finding stable housing, I would never have made it to my second year of college. They didn't just advocate — they showed up for me."</p>
+        <div class="mt-6 text-sm">
+          <span class="font-semibold">— Alex R.</span><br>
+          <span class="text-slate-500">Former foster youth, California • Class of 2027</span>
+        </div>
+      </div>
+      <div class="impact-quote bg-white border p-7 rounded-3xl">
+        <p class="text-slate-700">"The reciprocity work they're doing matters so much. I was able to transfer to a specialized program out of state because they fought for cross-state recognition of my waiver. It changed everything."</p>
+        <div class="mt-6 text-sm">
+          <span class="font-semibold">— Jordan T.</span><br>
+          <span class="text-slate-500">Aging out of care • UC Berkeley transfer</span>
+        </div>
+      </div>
+      <div class="impact-quote bg-white border p-7 rounded-3xl">
+        <p class="text-slate-700">"AFF connected me with a mentor, helped me with my first apartment application, and made sure I had the resources to finish high school. I finally feel like I have a real future."</p>
+        <div class="mt-6 text-sm">
+          <span class="font-semibold">— Taylor M.</span><br>
+          <span class="text-slate-500">Aged out at 18 • Now employed &amp; housed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS PREVIEW -->
+  <section class="bg-white py-12 border-t">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <div class="text-sky-600 text-xs tracking-[1.5px] font-semibold">WHAT WE DO</div>
+          <h3 class="text-3xl font-semibold tracking-tighter heading-serif text-[#0F2C59]">Programs &amp; Services</h3>
+        </div>
+        <a href="programs.html" class="hidden sm:flex items-center text-sm font-medium text-sky-700 hover:text-[#0F2C59]">Explore all programs <i class="ml-1.5 fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="program-card group bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 flex items-center justify-center bg-[#0F2C59] text-white rounded-xl mb-5"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="font-semibold text-lg">College &amp; Tuition Advocacy</div>
+          <p class="text-sm text-slate-600 mt-2 flex-1">Pushing every state to adopt strong foster youth tuition waivers modeled after Texas + reciprocity between states.</p>
+          <a href="programs.html" class="text-xs font-medium inline-flex items-center text-[#0F2C59] group-hover:underline mt-5">Learn more →</a>
+        </div>
+
+        <div class="program-card group bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 flex items-center justify-center bg-[#0F2C59] text-white rounded-xl mb-5"><i class="fa-solid fa-home"></i></div>
+          <div class="font-semibold text-lg">National Housing &amp; Transition Campaign</div>
+          <p class="text-sm text-slate-600 mt-2 flex-1">Our national campaign delivers housing navigation, rental support, and stability planning for youth aging out of foster care through virtual programs and partners nationwide.</p>
+          <a href="programs.html" class="text-xs font-medium inline-flex items-center text-[#0F2C59] group-hover:underline mt-5">Learn more →</a>
+        </div>
+
+        <div class="program-card group bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 flex items-center justify-center bg-[#0F2C59] text-white rounded-xl mb-5"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="font-semibold text-lg">Employment &amp; Education</div>
+          <p class="text-sm text-slate-600 mt-2 flex-1">Job training, placement support, financial literacy, and wraparound services so youth can succeed in school and work.</p>
+          <a href="programs.html" class="text-xs font-medium inline-flex items-center text-[#0F2C59] group-hover:underline mt-5">Learn more →</a>
+        </div>
+
+        <div class="program-card group bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-6 flex flex-col">
+          <div class="w-10 h-10 flex items-center justify-center bg-[#0F2C59] text-white rounded-xl mb-5"><i class="fa-solid fa-balance-scale"></i></div>
+          <div class="font-semibold text-lg">Advocacy &amp; Policy</div>
+          <p class="text-sm text-slate-600 mt-2 flex-1">Federal and state-by-state campaigns to change laws and systems that hold foster youth back nationwide.</p>
+          <a href="programs.html" class="text-xs font-medium inline-flex items-center text-[#0F2C59] group-hover:underline mt-5">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="mt-5 sm:hidden">
+        <a href="programs.html" class="text-sm font-medium flex items-center text-sky-700">Explore all programs <i class="ml-1.5 fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS (placeholder) -->
+  <section class="max-w-7xl mx-auto px-6 py-14">
+    <div class="text-center mb-9">
+      <div class="text-xs uppercase tracking-[2px] text-sky-600 font-semibold">Together we are stronger</div>
+      <h4 class="text-2xl font-semibold text-[#0F2C59]">Our Partners &amp; Allies</h4>
+    </div>
+    
+    <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 opacity-80 text-sm">
+      <div class="font-semibold text-slate-500">Alliance for Children's Rights</div>
+      <div class="font-semibold text-slate-500">John Burton Advocates for Youth</div>
+      <div class="font-semibold text-slate-500">California Youth Connection</div>
+      <div class="font-semibold text-slate-500">Foster Nation</div>
+      <div class="font-semibold text-slate-500">First Place for Youth</div>
+      <div class="font-semibold text-slate-500">United Friends of the Children</div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="get-involved.html" class="text-xs font-medium text-[#0F2C59] underline">Become a partner →</a>
+    </div>
+  </section>
+
+  <!-- JOIN US / FINAL CTA -->
+  <section id="donate" class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="rounded-3xl bg-gradient-to-br from-[#0F2C59] to-[#1a3a6e] text-white px-8 py-12 md:py-14 md:px-12 shadow-xl">
+      <div class="max-w-2xl">
+        <div class="uppercase tracking-widest text-xs text-sky-300 font-semibold">Join the movement</div>
+        <h3 class="text-3xl md:text-4xl font-semibold tracking-tight mt-3">Help us build brighter futures for foster youth.</h3>
+        <p class="mt-3 text-sky-100 max-w-md">Your support funds advocacy that changes laws and direct services that change lives.</p>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="donate.html" class="donate-btn flex-1 sm:flex-none justify-center bg-white text-[#0F2C59] px-8 py-3.5 font-semibold text-center rounded-2xl inline-flex items-center gap-x-2 hover:bg-slate-100">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <span>Give a one-time gift</span>
+        </a>
+        <a href="get-involved.html" class="flex-1 sm:flex-none justify-center border border-white/40 hover:bg-white/10 px-8 py-3.5 font-medium rounded-2xl text-center inline-flex items-center gap-x-2 transition">
+          <span>Become a monthly supporter</span>
+        </a>
+        <a href="get-involved.html" class="flex-1 sm:flex-none justify-center border border-white/40 hover:bg-white/10 px-8 py-3.5 font-medium rounded-2xl text-center inline-flex items-center gap-x-2 transition">
+          <span>Volunteer or partner</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0F2C59] text-sky-100/80">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-10 text-sm">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-x-3 mb-4">
+          <svg width="36" height="36" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div class="font-semibold text-white text-lg tracking-tighter">American Foster Futures</div>
+        </div>
+        <p class="max-w-xs text-sm">A national nonprofit founded in Oakland, CA in 2025, organized exclusively for charitable and educational purposes.</p>
+        
+        <div class="mt-6 text-xs flex gap-x-4">
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="md:col-span-3 text-sm">
+        <div class="font-semibold text-white mb-3 tracking-tight">Navigate</div>
+        <div class="space-y-[7px]">
+          <a href="index.html" class="footer-link block">Home</a>
+          <a href="about.html" class="footer-link block">About Us</a>
+          <a href="board-of-directors.html" class="footer-link block">Board of Directors</a>
+          <a href="history.html" class="footer-link block">Our History</a>
+          <a href="values.html" class="footer-link block">Our Values</a>
+          <a href="financials.html" class="footer-link block">Financials</a>
+          <a href="programs.html" class="footer-link block">Programs &amp; Services</a>
+          <a href="get-involved.html" class="footer-link block">Get Involved</a>
+          <a href="donate.html" class="footer-link block">Donate</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <div class="font-semibold text-white mb-3 tracking-tight">Contact</div>
+        <div class="space-y-1 text-sm">
+          <div>307 White Oaks Dr.</div>
+          <div>Irving, TX 75060</div>
+          <a href="mailto:info@americanfosterfutures.org" class="block hover:text-white mt-1">info@americanfosterfutures.org</a>
+        </div>
+        
+        <div class="mt-6">
+          <a href="donate.html" class="inline-block bg-white/10 hover:bg-white/15 transition px-5 py-2 text-sm font-medium rounded-2xl">Donate securely →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/10 text-xs text-center py-4 text-sky-100/60">
+      © <span id="year"></span> American Foster Futures. All rights reserved. 501(c)(3) pending / in process.
+    </div>
+  </footer>
+
+  <script>
+    // Tailwind script
+    function initializeTailwind() {
+      document.documentElement.style.setProperty('--accent', '#1E88E5');
+    }
+
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      
+      if (!btn || !menu) return;
+      
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const icon = btn.querySelector('i');
+        if (menu.classList.contains('hidden')) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      });
+    }
+
+    // Smooth scroll for anchor links
+    function setupSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    // Current year
+    function setCurrentYear() {
+      const el = document.getElementById('year');
+      if (el) el.textContent = new Date().getFullYear();
+    }
+
+    // Keyboard accessibility improvements
+    function setupAccessibility() {
+      // Close mobile menu on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          const menu = document.getElementById('mobile-menu');
+          const btn = document.getElementById('mobile-menu-btn');
+          if (menu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+            const icon = btn && btn.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        }
+      });
+    }
+
+    // Simple donation nudge (demo)
+    function setupDonationNudges() {
+      // In real site this could open a modal or go to donate
+      console.log('%c[American Foster Futures] Static site ready. Open donate.html to see donation options.', 'color:#64748b');
+    }
+
+    // Boot everything
+    function init() {
+      initializeTailwind();
+      setupMobileMenu();
+      setupSmoothScroll();
+      setCurrentYear();
+      setupAccessibility();
+      setupDonationNudges();
+    }
+
+    init();
+  </script>
+</body>
+</html>

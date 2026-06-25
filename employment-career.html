@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employment &amp; Career | American Foster Futures</title>
+  <meta name="description" content="Employment &amp; Career support for foster youth including job training, placement, and financial literacy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .nav-link { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .nav-link:hover { color: #1E88E5; }
+    .nav-active { color: #1E88E5; font-weight: 600; }
+    .footer-link { transition: color 0.2s ease; }
+    .footer-link:hover { color: #4FC3F7; }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div class="flex items-center gap-x-4 text-xs sm:text-sm">
+        <div>Irving, TX</div>
+        <div class="hidden sm:block">|</div>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
+      </div>
+      <div class="flex gap-x-3 text-xs">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-x-3 group">
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <!-- Modern accent: rising path symbolizing futures and growth -->
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div>
+            <div class="font-semibold tracking-tight text-xl text-[#0F2C59]">American Foster Futures</div>
+            <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="programs.html" class="nav-link flex items-center gap-x-1 nav-active">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="programs.html" class="block px-4 py-2 text-sm hover:bg-slate-100">All Programs &amp; Services</a>
+              <a href="national-housing-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Housing Campaign</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="college-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">College Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Employment &amp; Career</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="financial-aid.html" class="nav-link flex items-center gap-x-1">Financial Aid <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="financial-aid.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Financial Aid</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Waiver</a>
+            </div>
+          </div>
+          <a href="national-campaign.html" class="nav-link">National Campaign</a>
+          <a href="get-involved.html" class="nav-link">Get Involved</a>
+          <a href="donate.html" class="nav-link">Donate</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-x-3">
+          <a href="donate.html" class="px-5 py-2.5 bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold rounded-xl flex items-center gap-x-2">Donate</a>
+        </div>
+
+        <button id="mobile-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm font-medium flex flex-col gap-y-1">
+      <a href="index.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Home</a>
+      <a href="about.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">About</a>
+      <a href="board-of-directors.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Board of Directors</a>
+      <a href="history.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our History</a>
+      <a href="values.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our Values</a>
+      <a href="financials.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Financials</a>
+      <a href="programs.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Programs</a>
+      <a href="national-housing-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— National Housing Campaign</a>
+      <a href="education-support.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Education Support</a>
+      <a href="college-support.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— College Support</a>
+      <a href="employment-career.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm font-semibold">— Employment &amp; Career</a>
+      <a href="texas-aging-out-checklist.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Aging Out Checklist</a>
+      <a href="financial-aid.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Financial Aid</a>
+      <a href="texas-tuition-waiver.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Waiver</a>
+      <a href="national-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">National Campaign</a>
+      <a href="get-involved.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Get Involved</a>
+      <a href="donate.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Donate</a>
+      <a href="donate.html" class="mt-2 bg-[#0F2C59] text-white py-2.5 text-center rounded-xl font-semibold">Donate Now</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="bg-[#0F2C59] text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl">
+        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">National Programs</div>
+        <h1 class="heading-serif text-5xl tracking-tighter font-semibold mt-1">Employment &amp; Career</h1>
+        <p class="mt-2 text-lg text-sky-100">Job readiness training, interview coaching, placement partnerships, and financial literacy programs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="max-w-3xl">
+      <p class="text-lg text-slate-600">Job readiness training, interview coaching, placement partnerships, and financial literacy programs. We connect youth with meaningful work and career pathways.</p>
+
+      <h3 class="mt-8 text-xl font-semibold text-[#0F2C59]">Why It's Needed</h3>
+      <ul class="mt-3 space-y-2 text-slate-600">
+        <li><strong>Fact:</strong> Young adults who aged out of foster care face unemployment rates nearly double the national average.</li>
+        <li><strong>Fact:</strong> Lack of family networks and work experience leaves many without the skills or connections needed for stable careers.</li>
+      </ul>
+
+      <h3 class="mt-8 text-xl font-semibold text-[#0F2C59]">How We Help</h3>
+      <div class="mt-4 flex gap-2 text-sm">
+        <div class="px-3 py-1 bg-slate-100 rounded">Employer network</div>
+        <div class="px-3 py-1 bg-slate-100 rounded">Financial coaching</div>
+      </div>
+
+      <div class="mt-8">
+        <a href="get-involved.html" class="inline-block px-6 py-3 bg-[#0F2C59] text-white font-semibold rounded-2xl text-sm hover:bg-[#1a3a6e]">Get Involved or Donate</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-[#0F2C59] mt-16 text-sky-100/80">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-8 text-sm">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-x-3 mb-3">
+          <svg width="36" height="36" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div class="font-semibold text-white text-lg tracking-tighter">American Foster Futures</div>
+        </div>
+        <p class="text-xs max-w-xs">A national nonprofit (CA incorporated). 501(c)(3) pending.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-3">Navigate</div>
+        <div class="space-y-1 text-sm">
+          <a href="index.html" class="footer-link block">Home</a>
+          <a href="about.html" class="footer-link block">About Us</a>
+          <a href="programs.html" class="footer-link block">Programs</a>
+          <a href="get-involved.html" class="footer-link block">Get Involved</a>
+          <a href="donate.html" class="footer-link block">Donate</a>
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-semibold text-white mb-3">Contact</div>
+        <div>307 White Oaks Dr., Irving, TX 75060</div>
+        <a href="mailto:info@americanfosterfutures.org" class="block mt-1 hover:text-white">info@americanfosterfutures.org</a>
+        <a href="donate.html" class="mt-5 inline-block bg-white/10 hover:bg-white/15 px-5 py-2 rounded-2xl text-sm font-medium">Support our work</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-xs text-center text-sky-100/60">
+      © <span id="year"></span> American Foster Futures. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('mobile-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        const icon = btn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

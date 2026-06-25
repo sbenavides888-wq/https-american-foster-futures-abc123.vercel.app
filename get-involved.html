@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved | American Foster Futures</title>
+  <meta name="description" content="Get involved with our national campaign. Donate, volunteer, or request help for foster youth nationwide.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .nav-link:hover { color: #1E88E5; }
+    .nav-active { color: #1E88E5; font-weight: 600; }
+    .footer-link:hover { color: #4FC3F7; }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .form-input { transition: border .2s ease, box-shadow .2s ease; }
+    .form-input:focus { border-color: #1E88E5; box-shadow: 0 0 0 3px rgba(30,136,229,0.1); outline: none; }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div class="flex gap-x-4 items-center text-xs sm:text-sm">
+        <span>Irving, TX</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
+      </div>
+      <div class="flex gap-3 text-xs">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="h-16 flex justify-between items-center">
+        <a href="index.html" class="flex gap-x-3 items-center">
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
+            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
+            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
+            <!-- Modern accent: rising path symbolizing futures and growth -->
+            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+          </svg>
+          <div>
+            <div class="font-semibold text-[#0F2C59] tracking-tighter text-xl">American Foster Futures</div>
+            <div class="text-[10px] -mt-1 text-slate-500 font-medium">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex gap-x-5 font-medium text-sm">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="programs.html" class="nav-link flex items-center gap-x-1">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="programs.html" class="block px-4 py-2 text-sm hover:bg-slate-100">All Programs &amp; Services</a>
+              <a href="national-housing-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Housing Campaign</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="college-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">College Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="financial-aid.html" class="nav-link flex items-center gap-x-1">Financial Aid <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute hidden group-hover:block bg-white border shadow-lg rounded-lg mt-1 py-1 w-56 z-50">
+              <a href="financial-aid.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Financial Aid</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Waiver</a>
+            </div>
+          </div>
+          <a href="national-campaign.html" class="nav-link">National Campaign</a>
+          <a href="get-involved.html" class="nav-link nav-active">Get Involved</a>
+          <a href="donate.html" class="nav-link">Donate</a>
+        </div>
+
+        <div class="hidden md:flex gap-x-3 items-center">
+          <a href="donate.html" class="bg-[#0F2C59] hover:bg-[#1a3a6e] px-5 py-2.5 text-white text-sm font-semibold rounded-xl">Donate</a>
+        </div>
+        <button id="mobile-btn" class="md:hidden p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 py-3 border-t text-sm">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="about.html" class="block py-2">About</a>
+      <a href="board-of-directors.html" class="block py-2 pl-4 text-sm">— Board of Directors</a>
+      <a href="history.html" class="block py-2 pl-4 text-sm">— Our History</a>
+      <a href="values.html" class="block py-2 pl-4 text-sm">— Our Values</a>
+      <a href="financials.html" class="block py-2 pl-4 text-sm">— Financials</a>
+      <a href="programs.html" class="block py-2">Programs</a>
+      <a href="texas-aging-out-checklist.html" class="block py-2 pl-4 text-sm">— Texas Aging Out Checklist</a>
+      <a href="financial-aid.html" class="block py-2">Financial Aid</a>
+      <a href="texas-tuition-waiver.html" class="block py-2 pl-4 text-sm">— Texas Waiver</a>
+      <a href="national-campaign.html" class="block py-2">National Campaign</a>
+      <a href="get-involved.html" class="block py-2 font-semibold">Get Involved</a>
+      <a href="donate.html" class="block py-2">Donate</a>
+      <a href="donate.html" class="mt-3 block text-center bg-[#0F2C59] text-white py-2 rounded-2xl">Donate</a>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-6 pt-10">
+    <div class="grid lg:grid-cols-2 gap-10">
+      <!-- Contact + Info -->
+      <div>
+        <div class="uppercase tracking-[2px] text-xs font-semibold text-sky-600">Reach out</div>
+        <h1 class="heading-serif text-4xl tracking-tighter text-[#0F2C59] font-semibold mt-1">Let's work together.</h1>
+        
+        <div class="mt-8 space-y-6 text-sm">
+          <div>
+            <div class="font-medium mb-1">Mailing Address</div>
+            <div>American Foster Futures<br>307 White Oaks Dr.<br>Irving, TX 75060</div>
+          </div>
+
+          <div>
+            <div class="font-medium mb-1">Email</div>
+            <a href="mailto:info@americanfosterfutures.org" class="text-sky-700 hover:underline">info@americanfosterfutures.org</a>
+          </div>
+
+          <div>
+            <div class="font-medium mb-1">Follow us</div>
+            <div class="flex gap-x-4 text-lg">
+              <a href="#" class="hover:text-[#0F2C59]"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="hover:text-[#0F2C59]"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="hover:text-[#0F2C59]"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simple map placeholder -->
+        <div class="mt-8 rounded-3xl overflow-hidden border h-64 bg-slate-200 relative">
+          <div class="absolute inset-0 flex items-center justify-center text-center">
+            <div>
+              <i class="fa-solid fa-map text-3xl text-slate-400 mb-2"></i>
+              <div class="text-sm font-medium">National</div>
+              <div class="text-xs text-slate-500">Map integration coming soon</div>
+            </div>
+          </div>
+          <iframe class="w-full h-full opacity-70 grayscale" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.5!2d-118.37!3d34.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDEwJzQ4LjAiTiAxMTjCsDIyJzEyLjAiVw!5e0!3m2!1sen!2sus!4v1700000000000" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div>
+        <div class="bg-white border rounded-3xl p-7">
+          <h3 class="font-semibold text-xl mb-5">Send us a message</h3>
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs mb-1 text-slate-600">First name</label>
+                <input required type="text" class="form-input w-full border rounded-xl px-4 py-2.5 text-sm" placeholder="Jane">
+              </div>
+              <div>
+                <label class="block text-xs mb-1 text-slate-600">Last name</label>
+                <input required type="text" class="form-input w-full border rounded-xl px-4 py-2.5 text-sm" placeholder="Doe">
+              </div>
+            </div>
+            <div class="mt-4">
+              <label class="block text-xs mb-1 text-slate-600">Email</label>
+              <input required type="email" class="form-input w-full border rounded-xl px-4 py-2.5 text-sm" placeholder="you@example.com">
+            </div>
+            <div class="mt-4">
+              <label class="block text-xs mb-1 text-slate-600">Subject</label>
+              <select class="form-input w-full border rounded-xl px-4 py-2.5 text-sm bg-white">
+                <option>General inquiry</option>
+                <option>Volunteer interest</option>
+                <option>Partnership / Organization</option>
+                <option>Youth or family needing support</option>
+                <option>Media or press</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mt-4">
+              <label class="block text-xs mb-1 text-slate-600">Message</label>
+              <textarea required rows="5" class="form-input w-full border rounded-2xl px-4 py-3 text-sm resize-y" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="mt-5 w-full py-3 bg-[#0F2C59] text-white rounded-2xl font-semibold text-sm">Send message</button>
+            <p class="text-[10px] text-center text-slate-500 mt-3">We respond within 3–5 business days.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Get Involved Sections -->
+    <div class="mt-16">
+      <div class="uppercase font-semibold text-xs tracking-[2px] text-sky-600">Take action</div>
+      <h2 class="text-4xl heading-serif tracking-tighter font-semibold text-[#0F2C59]">Get Involved</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-7">
+      <!-- Donate -->
+      <div class="bg-white border rounded-3xl p-6 flex flex-col">
+        <div class="text-[#0F2C59]"><i class="fa-solid fa-heart fa-2x"></i></div>
+        <div class="font-semibold text-xl mt-3">Donate</div>
+        <p class="text-sm flex-1 mt-2 text-slate-600">One-time gifts and monthly recurring donations fund our national tuition advocacy campaign, national housing campaign, and transition services for foster youth.</p>
+        <a href="donate.html" class="mt-4 inline-block text-center px-5 py-2.5 rounded-2xl bg-[#0F2C59] text-white text-sm font-semibold">Give now</a>
+      </div>
+
+      <!-- Volunteer -->
+      <div class="bg-white border rounded-3xl p-6 flex flex-col">
+        <div class="text-[#0F2C59]"><i class="fa-solid fa-hands-helping fa-2x"></i></div>
+        <div class="font-semibold text-xl mt-3">Volunteer</div>
+        <p class="text-sm flex-1 mt-2 text-slate-600">Mentor a young person, assist with events, support policy research, or help with administrative and outreach tasks.</p>
+        <a href="#volunteer-form" class="mt-4 text-sm inline-block px-5 py-2.5 rounded-2xl border font-medium text-center hover:bg-slate-50">Apply to volunteer</a>
+      </div>
+
+      <!-- Careers -->
+      <div class="bg-white border rounded-3xl p-6 flex flex-col">
+        <div class="text-[#0F2C59]"><i class="fa-solid fa-briefcase fa-2x"></i></div>
+        <div class="font-semibold text-xl mt-3">Jobs &amp; Careers</div>
+        <p class="text-sm flex-1 mt-2 text-slate-600">We are a small but growing team. Openings will be posted here when available. Internships and fellowships also considered.</p>
+        <a href="#careers" class="mt-4 inline-block px-5 py-2.5 rounded-2xl border text-sm font-medium text-center hover:bg-slate-50">View openings</a>
+      </div>
+
+      <!-- Wish List -->
+      <div class="bg-white border rounded-3xl p-6 flex flex-col">
+        <div class="text-[#0F2C59]"><i class="fa-solid fa-gift fa-2x"></i></div>
+        <div class="font-semibold text-xl mt-3">Wish List</div>
+        <p class="text-sm flex-1 mt-2 text-slate-600">We regularly need items for youth we serve: gift cards, hygiene kits, backpacks, laptops, professional clothing, and more.</p>
+        <a href="#wishlist" class="mt-4 inline-block px-5 py-2.5 rounded-2xl border text-sm font-medium text-center hover:bg-slate-50">See current needs</a>
+      </div>
+    </div>
+
+    <!-- Volunteer form anchor -->
+    <div id="volunteer-form" class="mt-12 bg-white border rounded-3xl p-8">
+      <h3 class="text-xl font-semibold">Volunteer Application</h3>
+      <p class="text-sm text-slate-600 mt-1">Tell us about your skills and availability.</p>
+      
+      <form onsubmit="handleVolunteerSubmit(event)" class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input class="form-input border px-4 py-2.5 rounded-xl text-sm" placeholder="Full name" required>
+        <input class="form-input border px-4 py-2.5 rounded-xl text-sm" type="email" placeholder="Email address" required>
+        <input class="form-input border px-4 py-2.5 rounded-xl text-sm md:col-span-2" placeholder="Phone number">
+        <select class="form-input border px-4 py-2.5 rounded-xl text-sm">
+          <option>General volunteer / events</option>
+          <option>Mentoring</option>
+          <option>Policy / research support</option>
+          <option>Administrative / comms</option>
+          <option>Other</option>
+        </select>
+        <input class="form-input border px-4 py-2.5 rounded-xl text-sm" placeholder="City / Region">
+        <textarea class="form-input border rounded-2xl px-4 py-3 text-sm md:col-span-2" rows="3" placeholder="Why do you want to volunteer with AFF? What skills or experience can you offer?"></textarea>
+        
+        <button type="submit" class="md:col-span-2 mt-1 py-3 rounded-2xl bg-[#0F2C59] hover:bg-[#1a3a6e] text-white font-semibold text-sm">Submit application</button>
+      </form>
+    </div>
+
+    <!-- Careers -->
+    <div id="careers" class="mt-8 bg-white border rounded-3xl p-8">
+      <h3 class="text-xl font-semibold">Open Positions</h3>
+      <div class="mt-5 text-sm">
+        <div class="py-4 border-t flex justify-between items-center text-sm">
+          <div>
+            <div class="font-medium">No current openings</div>
+            <div class="text-xs text-slate-500">We are a small startup nonprofit. Check back soon or send your resume.</div>
+          </div>
+          <a href="#contact-form" class="text-xs px-4 py-1.5 border rounded-full hover:bg-slate-50">Email us your resume</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wish list -->
+    <div id="wishlist" class="mt-8 bg-white border rounded-3xl p-8">
+      <h3 class="text-xl font-semibold">Current Wish List</h3>
+      <div class="mt-4 grid sm:grid-cols-2 gap-x-8 text-sm">
+        <ul class="space-y-2 text-slate-700">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Gift cards (Target, Amazon, grocery)</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> New or gently used laptops</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Hygiene &amp; toiletry kits</li>
+        </ul>
+        <ul class="space-y-2 text-slate-700">
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Backpacks and duffel bags</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Interview clothing (professional)</li>
+          <li class="flex gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> School supplies &amp; dorm essentials</li>
+        </ul>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Email us to arrange a drop-off or shipment. Thank you!</p>
+    </div>
+  </div>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80 mt-16">
+    <div class="max-w-7xl mx-auto px-6 pt-8 pb-6 grid md:grid-cols-12 gap-y-8 text-sm">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white"><span class="font-bold">AFF</span></div>
+          <span class="font-semibold text-white text-lg tracking-tighter">American Foster Futures</span>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-2">Navigate</div>
+        <div class="text-sm space-y-px">
+          <a href="index.html" class="footer-link block">Home</a>
+          <a href="about.html" class="footer-link block">About</a>
+          <a href="programs.html" class="footer-link block">Programs</a>
+          <a href="get-involved.html" class="footer-link block">Get Involved</a>
+          <a href="donate.html" class="footer-link block">Donate</a>
+        </div>
+      </div>
+      <div class="md:col-span-4 text-sm">307 White Oaks Dr., Irving, TX 75060<br><a href="mailto:info@americanfosterfutures.org" class="hover:text-white">info@americanfosterfutures.org</a></div>
+    </div>
+    <div class="text-xs text-center py-4 border-t border-white/10 text-sky-100/60">© <span id="year"></span> American Foster Futures. 501(c)(3) nonprofit.</div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('mobile-btn');
+    const mm = document.getElementById('mobile-menu');
+    if (btn) btn.onclick = () => mm.classList.toggle('hidden');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      form.innerHTML = `<div class="text-center py-8"><i class="fa-solid fa-check-circle text-emerald-500 text-4xl"></i><div class="mt-4 font-semibold">Thank you! Your message has been sent.</div><p class="text-sm text-slate-500 mt-1">We'll get back to you soon.</p></div>`;
+    }
+
+    function handleVolunteerSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      form.innerHTML = `<div class="py-6 text-center"><i class="fa-solid fa-check-circle text-emerald-500 text-4xl"></i><div class="mt-3 font-semibold">Thank you for applying to volunteer!</div><div class="text-sm text-slate-500">We'll contact you within 5 business days.</div></div>`;
+    }
+  </script>
+</body>
+</html>
