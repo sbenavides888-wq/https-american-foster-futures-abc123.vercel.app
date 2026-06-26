@@ -35,7 +35,7 @@ Content is based on:
 ## Key Pages / Sections (per design doc)
 
 - Home: Rotating hero, Mission, Youth Impact, Programs teaser, Partners, Stats (3), Donate CTAs, Footer
-- About: Board of Directors (Stephen M. Benavides, Michael S. Driver, Ronda Kasper), History, Publications, Financials, AFF in the News
+- About: Board of Directors (Stephen M. Benavides, Michael S. Driver, Ronni Kasper), History, Publications, Financials, AFF in the News
 - Programs and Services: National Housing, Education, College Support, Employment, Federal & State-by-State Advocacy, Resources
 - Our Approach / Get Involved: Advocacy, Services, Coaching, Donate, Volunteer, Careers, Wish List
 - Contact: Info, Map embed, Socials
