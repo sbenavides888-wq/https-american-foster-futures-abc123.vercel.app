@@ -34,6 +34,24 @@
     .state-card { transition: transform 0.2s, box-shadow 0.2s; }
     .state-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
     .map-container { background: linear-gradient(135deg, #f1f5f9 0%, #e0e7ff 100%); }
+    #waiver-map svg { width: 100%; height: auto; display: block; }
+    #waiver-map path { stroke: #fff; stroke-width: 0.75; cursor: pointer; transition: opacity 0.15s ease; }
+    #waiver-map path:hover { opacity: 0.85; }
+    #waiver-map path.is-texas { stroke: #0F2C59; stroke-width: 1.5; }
+    #map-tooltip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 60;
+      display: none;
+      max-width: 220px;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: #0F2C59;
+      color: #fff;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+    }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -156,10 +174,28 @@
       <p class="mt-3 text-sm"><a href="texas-tuition-waiver.html" class="text-sky-700 font-medium hover:underline">Learn how the Texas model works →</a> · <a href="how-to-apply-pay-for-college.html" class="text-sky-700 font-medium hover:underline">How youth can apply and pay for college today →</a></p>
     </div>
 
+    <!-- Interactive US Map -->
+    <div id="map" class="mt-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">National Tuition Waiver Map</h2>
+      <p class="text-sm text-slate-600 mb-4 max-w-3xl">This map shows which states have a tuition waiver or comparable structure to help foster youth pay for college — and which states still lack a Texas-style comprehensive program. Hover a state for details. See the list below for state-by-state clarification.</p>
+
+      <div class="map-container border rounded-3xl p-4 sm:p-6">
+        <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map showing foster youth tuition waiver status by state"></div>
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600 justify-center sm:justify-start">
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-emerald-500 border border-white shadow-sm"></span> Waiver or comparable college support</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-red-500 border border-white shadow-sm"></span> No Texas-style comprehensive waiver (campaign focus)</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-emerald-600 ring-2 ring-[#0F2C59] border border-white shadow-sm"></span> Texas (model program)</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Map data reflects AFF’s campaign research. Programs vary by state — use the detailed list below and official state resources to confirm eligibility.</p>
+      </div>
+    </div>
+
+    <div id="map-tooltip" aria-hidden="true"></div>
+
     <!-- Focus States List -->
     <div id="focus-states" class="mt-12">
       <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-6">States Without a Texas-Style Tuition Waiver</h2>
-      <p class="text-sm text-slate-500 mb-4">These states currently do not have a comprehensive, statewide tuition waiver program for foster youth similar to Texas. Our campaign will focus here first.</p>
+      <p class="text-sm text-slate-500 mb-4">The <strong>red states on the map above</strong> currently do not have a comprehensive, statewide tuition waiver program for foster youth similar to Texas. Our campaign will focus here first. This list provides state-by-state clarification.</p>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- States list -->
@@ -281,46 +317,6 @@
       </div>
     </div>
 
-    <!-- Map Section -->
-    <div id="map" class="mt-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-4">National Campaign Focus Map</h2>
-      <p class="text-sm text-slate-600 mb-6">The map below highlights the 23 states (shown in red) where the national campaign will prioritize passing legislation modeled after Texas' successful tuition waiver program.</p>
-
-      <div class="map-container border rounded-3xl p-8 text-center">
-        <div class="mx-auto max-w-2xl">
-          <div class="text-4xl mb-2">🇺🇸</div>
-          <div class="font-semibold text-lg mb-4">United States — Campaign Focus</div>
-          
-          <!-- Simple visual map representation -->
-          <div class="bg-white border rounded-xl p-6 text-left text-sm">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <div>
-                <div class="font-semibold mb-1 text-red-600">West Region (Focus)</div>
-                <div class="text-xs text-slate-600">Alaska • Hawaii • Idaho • Montana • Nevada • New Mexico • Utah • Wyoming</div>
-              </div>
-              <div>
-                <div class="font-semibold mb-1 text-red-600">Midwest &amp; Plains (Focus)</div>
-                <div class="text-xs text-slate-600">Kansas • Missouri • Nebraska • North Dakota • Oklahoma • South Dakota</div>
-              </div>
-              <div>
-                <div class="font-semibold mb-1 text-red-600">South &amp; Southeast (Focus)</div>
-                <div class="text-xs text-slate-600">Alabama • Arkansas • Kentucky • Louisiana • Mississippi • South Carolina • West Virginia</div>
-              </div>
-              <div>
-                <div class="font-semibold mb-1 text-red-600">Northeast &amp; Other (Focus)</div>
-                <div class="text-xs text-slate-600">New Hampshire • Vermont • Wyoming (overlap)</div>
-              </div>
-            </div>
-            <div class="mt-4 pt-4 border-t text-xs text-slate-500">
-              <span class="inline-block w-3 h-3 bg-red-500 rounded mr-1"></span> Red = Priority campaign focus (no Texas-style waiver)
-              <br><span class="inline-block w-3 h-3 bg-green-500 rounded mr-1 mt-1"></span> Green = States with existing comprehensive programs (not primary focus)
-            </div>
-          </div>
-          <p class="text-xs text-slate-500 mt-4">This visual highlights the geographic areas of our national push. Full interactive map coming soon.</p>
-        </div>
-      </div>
-    </div>
-
     <div class="mt-8 text-center">
       <a href="get-involved.html" class="inline-flex items-center gap-x-2 px-6 py-3 bg-[#0F2C59] text-white font-semibold rounded-2xl text-sm hover:bg-[#1a3a6e]">
         <span>Join the National Campaign</span>
@@ -362,7 +358,84 @@
     <div class="text-xs text-center py-4 border-t border-white/10 text-sky-100/60">© <span id="year"></span> American Foster Futures. All rights reserved.</div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <script>
+    const NO_WAIVER_STATES = new Set([
+      'Alabama', 'Alaska', 'Arkansas', 'Hawaii', 'Idaho', 'Kansas', 'Kentucky',
+      'Louisiana', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada',
+      'New Hampshire', 'New Mexico', 'North Dakota', 'Oklahoma', 'South Carolina',
+      'South Dakota', 'Utah', 'Vermont', 'West Virginia', 'Wyoming'
+    ]);
+
+    function getStateStatus(name) {
+      if (name === 'Texas') {
+        return { fill: '#059669', label: 'Texas — model tuition waiver program', className: 'is-texas' };
+      }
+      if (NO_WAIVER_STATES.has(name)) {
+        return { fill: '#ef4444', label: 'No Texas-style comprehensive waiver — campaign focus', className: '' };
+      }
+      return { fill: '#22c55e', label: 'Tuition waiver or comparable college support in place', className: '' };
+    }
+
+    async function renderWaiverMap() {
+      const container = document.getElementById('waiver-map');
+      const tooltip = document.getElementById('map-tooltip');
+      if (!container || !window.d3 || !window.topojson) return;
+
+      try {
+        const us = await d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+        const states = topojson.feature(us, us.objects.states).features.filter(
+          (d) => d.properties.name !== 'District of Columbia'
+        );
+
+        const width = 960;
+        const height = 600;
+        const projection = d3.geoAlbersUsa().fitSize([width, height], { type: 'FeatureCollection', features: states });
+        const path = d3.geoPath(projection);
+
+        const svg = d3.select(container)
+          .append('svg')
+          .attr('viewBox', `0 0 ${width} ${height}`)
+          .attr('role', 'presentation');
+
+        svg.selectAll('path')
+          .data(states)
+          .join('path')
+          .attr('d', path)
+          .attr('fill', (d) => getStateStatus(d.properties.name).fill)
+          .attr('class', (d) => getStateStatus(d.properties.name).className)
+          .attr('tabindex', '0')
+          .attr('aria-label', (d) => {
+            const status = getStateStatus(d.properties.name);
+            return `${d.properties.name}: ${status.label}`;
+          })
+          .on('mousemove', (event, d) => {
+            const status = getStateStatus(d.properties.name);
+            tooltip.style.display = 'block';
+            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}`;
+            tooltip.style.left = `${event.clientX + 12}px`;
+            tooltip.style.top = `${event.clientY + 12}px`;
+          })
+          .on('mouseleave', () => {
+            tooltip.style.display = 'none';
+          })
+          .on('focus', function(event, d) {
+            const status = getStateStatus(d.properties.name);
+            tooltip.style.display = 'block';
+            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}`;
+            const rect = this.getBoundingClientRect();
+            tooltip.style.left = `${rect.left + 12}px`;
+            tooltip.style.top = `${rect.top + 12}px`;
+          })
+          .on('blur', () => {
+            tooltip.style.display = 'none';
+          });
+      } catch (err) {
+        container.innerHTML = '<p class="text-sm text-slate-500 p-6 text-center">Map could not be loaded. Please use the state list below.</p>';
+      }
+    }
+
     function setupMobileMenu() {
       const btn = document.getElementById('mobile-btn');
       const menu = document.getElementById('mobile-menu');
@@ -381,6 +454,7 @@
     function init() {
       setupMobileMenu();
       setCurrentYear();
+      renderWaiverMap();
     }
 
     init();
