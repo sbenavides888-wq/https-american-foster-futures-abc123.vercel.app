@@ -7,7 +7,7 @@ A professional, accessible static website for American Foster Futures (AFF) — 
 american-foster-futures-website/
 ├── index.html          # Home / Landing page
 ├── about.html          # About the organization, Board, History, Values
-├── programs.html       # Programs & Services
+├── foundation-program.html  # Programs (dropdown; no overview page)
 ├── get-involved.html        # Contact, Get Involved, Volunteer, Donate forms
 ├── donate.html         # Dedicated donation options page
 ├── README.md
