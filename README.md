@@ -19,7 +19,7 @@ Simply open `index.html` in any modern browser. All styling uses Tailwind CSS vi
 
 For production:
 - Add real logo and photography
-- Replace placeholder links and forms with real donation processor (Stripe, PayPal, Donorbox, etc.)
+- Donation form on donate.html is powered by Zeffy embed (campaign: donate-to-change-lives-18130)
 - Add real images for board members and impact
 - Connect forms to Formspree, Netlify Forms, or backend
 - Deploy to Netlify, Vercel, GitHub Pages, or traditional hosting

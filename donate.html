@@ -31,9 +31,9 @@
     }
     .dropdown:hover .dropdown-menu,
     .dropdown:focus-within .dropdown-menu { display: block; }
-    .amount-btn { transition: all .1s ease; }
-    .amount-btn.active { background-color: #0F2C59; color: white; border-color: #0F2C59; }
     .donation-card { transition: box-shadow .2s ease, transform .2s ease; }
+    /* Give Zeffy embed room to grow; script handles responsive height */
+    .zeffy-embed-wrap { min-height: 520px; width: 100%; }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -138,64 +138,39 @@
       <p class="text-slate-600 mt-3">Your gift helps us expand tuition waivers across the country and deliver housing, education, and transition support nationwide.</p>
     </div>
 
-    <div class="mt-10 max-w-xl mx-auto">
-      <!-- Donation form -->
-      <div class="bg-white border rounded-3xl p-7 md:p-9 shadow-sm donation-card">
-        <div class="flex items-center justify-between mb-5">
+    <div class="mt-10 max-w-2xl mx-auto">
+      <div class="text-xs text-slate-500 mb-2 font-medium text-center">What your gift supports:</div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 text-xs gap-2 mb-6">
+        <div class="bg-white border px-3 py-2 rounded-xl text-center">• Tuition waiver advocacy</div>
+        <div class="bg-white border px-3 py-2 rounded-xl text-center">• National housing campaign</div>
+        <div class="bg-white border px-3 py-2 rounded-xl text-center">• Youth transition support</div>
+      </div>
+
+      <!-- Zeffy donation form embed -->
+      <div class="bg-white border rounded-3xl p-4 sm:p-6 shadow-sm donation-card">
+        <div class="flex items-center justify-between mb-4 px-1">
           <div class="font-semibold text-lg">Make a donation</div>
-          <div class="text-xs px-2.5 py-1 bg-slate-100 text-slate-600 rounded">Secure</div>
+          <div class="text-xs px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded">Secure · Powered by Zeffy</div>
         </div>
-
-        <!-- Frequency -->
-        <div class="mb-5">
-          <div class="flex border rounded-2xl p-1 bg-slate-50 text-sm">
-            <button onclick="setFrequency(this, 'onetime')" id="freq-onetime" class="flex-1 py-2 font-medium rounded-[14px] amount-btn active">One-time</button>
-            <button onclick="setFrequency(this, 'monthly')" id="freq-monthly" class="flex-1 py-2 font-medium rounded-[14px] amount-btn">Monthly</button>
+        <div class="zeffy-embed-wrap">
+          <div data-zeffy-embed data-form-url="/embed/donation-form/donate-to-change-lives-18130"></div>
+          <div data-zeffy-embed-fallback style="display:none;">
+            <div style="position:relative;overflow:hidden;height:650px;width:100%;">
+              <iframe title="Donation form powered by Zeffy"
+                      style="position:absolute;border:0;top:0;left:0;bottom:0;right:0;width:100%;height:100%"
+                      data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18130"
+                      allowpaymentrequest
+                      allowTransparency="true"></iframe>
+            </div>
           </div>
         </div>
-
-        <!-- Amounts -->
-        <div class="grid grid-cols-4 gap-2 mb-4" id="amount-grid">
-          <button onclick="selectAmount(this, 25)" class="amount-btn border py-3 text-sm rounded-2xl font-medium active">$25</button>
-          <button onclick="selectAmount(this, 50)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$50</button>
-          <button onclick="selectAmount(this, 100)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$100</button>
-          <button onclick="selectAmount(this, 250)" class="amount-btn border py-3 text-sm rounded-2xl font-medium">$250</button>
-        </div>
-
-        <div class="mb-5">
-          <label class="text-xs font-medium text-slate-600 block mb-1.5">Other amount</label>
-          <div class="relative">
-            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">$</span>
-            <input id="custom-amount" type="number" placeholder="Enter amount" class="pl-7 form-input w-full border rounded-2xl py-3 text-sm" oninput="selectCustomAmount(this)">
-          </div>
-        </div>
-
-        <div class="text-xs text-slate-500 mb-2 font-medium">What your gift supports:</div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 text-xs gap-2 mb-6">
-          <div class="bg-slate-50 px-3 py-2 rounded-xl">• Tuition waiver advocacy</div>
-          <div class="bg-slate-50 px-3 py-2 rounded-xl">• National housing campaign</div>
-          <div class="bg-slate-50 px-3 py-2 rounded-xl">• Youth transition support</div>
-        </div>
-
-        <form id="donate-form" onsubmit="handleDonate(event)">
-          <div class="grid sm:grid-cols-2 gap-4 mb-4">
-            <input required class="border rounded-2xl px-4 py-3 text-sm" placeholder="Full name">
-            <input required type="email" class="border rounded-2xl px-4 py-3 text-sm" placeholder="Email address">
-          </div>
-          <input class="border w-full rounded-2xl px-4 py-3 text-sm mb-4" placeholder="Card number (demo)" value="4242 4242 4242 4242">
-          <div class="grid grid-cols-2 gap-4 mb-6">
-            <input class="border rounded-2xl px-4 py-3 text-sm" placeholder="MM / YY" value="03 / 28">
-            <input class="border rounded-2xl px-4 py-3 text-sm" placeholder="CVC" value="123">
-          </div>
-
-          <button type="submit" id="donate-submit-btn"
-                  class="w-full py-[15px] rounded-2xl bg-[#0F2C59] hover:bg-[#1a3a6e] text-white font-semibold flex items-center justify-center gap-x-2">
-            <i class="fa-solid fa-lock mr-1"></i>
-            <span id="donate-btn-text">Donate $50</span>
-          </button>
-
-          <p class="text-center text-xs text-slate-500 mt-4">This is a demo form. In production we will integrate Stripe, PayPal, or a nonprofit donation platform.</p>
-        </form>
+        <script
+          src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+          onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});">
+        </script>
+        <p class="text-center text-xs text-slate-500 mt-4">
+          Payments are processed securely by Zeffy. American Foster Futures receives 100% of your gift.
+        </p>
       </div>
 
       <div class="text-center mt-6">
@@ -233,77 +208,12 @@
   </footer>
 
   <script>
-    let currentAmount = 50;
-    let frequency = 'onetime';
-
-    function setFrequency(el, freq) {
-      document.querySelectorAll('[id^="freq-"]').forEach(b => b.classList.remove('active', 'bg-white'));
-      el.classList.add('active');
-      frequency = freq;
-      updateDonateButton();
-    }
-
-    function selectAmount(el, amt) {
-      document.querySelectorAll('#amount-grid button').forEach(b => b.classList.remove('active', 'bg-[#0F2C59]', 'text-white'));
-      el.classList.add('active', 'bg-[#0F2C59]', 'text-white');
-      currentAmount = amt;
-      document.getElementById('custom-amount').value = '';
-      updateDonateButton();
-    }
-
-    function selectCustomAmount(input) {
-      if (!input.value) return;
-      currentAmount = parseInt(input.value) || 0;
-      document.querySelectorAll('#amount-grid button').forEach(b => b.classList.remove('active', 'bg-[#0F2C59]', 'text-white'));
-      updateDonateButton();
-    }
-
-    function updateDonateButton() {
-      const btnText = document.getElementById('donate-btn-text');
-      const label = frequency === 'monthly' ? `Donate $${currentAmount} monthly` : `Donate $${currentAmount}`;
-      btnText.textContent = label;
-    }
-
-    function handleDonate(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = document.getElementById('donate-submit-btn');
-      const orig = btn.innerHTML;
-      
-      btn.disabled = true;
-      btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fa-solid fa-spinner fa-spin"></i> Processing...</span>`;
-      
-      setTimeout(() => {
-        form.innerHTML = `
-          <div class="text-center py-8">
-            <i class="fa-solid fa-check-circle text-emerald-500 text-5xl"></i>
-            <div class="font-semibold text-lg mt-4">Thank you!</div>
-            <p class="text-sm text-slate-600 mt-1">Your ${frequency === 'monthly' ? 'monthly ' : ''}gift of <strong>$${currentAmount}</strong> has been received.</p>
-            <div class="text-xs text-slate-500 mt-4">A receipt has been sent to your email (demo).</div>
-            <a href="index.html" class="inline-block mt-6 px-6 py-2 bg-white border text-sm font-medium rounded-2xl">Return to homepage</a>
-          </div>
-        `;
-      }, 1350);
-    }
-
-    function initDonate() {
-      // Default amount selected
-      const defaultBtn = document.querySelector('#amount-grid button:nth-child(2)');
-      if (defaultBtn) {
-        defaultBtn.classList.add('active', 'bg-[#0F2C59]', 'text-white');
-      }
-      document.getElementById('freq-onetime').classList.add('active');
-      updateDonateButton();
-    }
-
     // Mobile menu
     const mbtn = document.getElementById('mobile-btn');
     const mmenu = document.getElementById('mobile-menu');
     if (mbtn) mbtn.onclick = () => mmenu.classList.toggle('hidden');
 
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    initDonate();
   </script>
 </body>
 </html>
