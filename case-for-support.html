@@ -132,6 +132,58 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .impact-showcase {
+      position: relative;
+      border-radius: 1.75rem;
+      padding: 1.75rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(79, 195, 247, 0.35), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(30, 136, 229, 0.25), transparent 50%),
+        linear-gradient(145deg, #0F2C59 0%, #163a6e 45%, #0c2247 100%);
+      box-shadow:
+        0 25px 50px -12px rgba(15, 44, 89, 0.45),
+        0 0 0 1px rgba(79, 195, 247, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+    .impact-showcase::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79, 195, 247, 0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .impact-stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      backdrop-filter: blur(8px);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .impact-stat-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .impact-chart-panel {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      border: 2px solid rgba(79, 195, 247, 0.35);
+      box-shadow: 0 12px 40px -10px rgba(15, 44, 89, 0.35);
+    }
+    .pulse-badge {
+      animation: pulseGlow 2.4s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+      50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    }
+
     @media print {
       nav, .top-bar, .sticky-cta, footer, .toc-sidebar { display: none !important; }
       .hero-case { background: #0F2C59 !important; }
@@ -284,12 +336,12 @@
         <div class="text-xs text-slate-500 mt-1">Experience homelessness after aging out</div>
       </div>
       <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">$5M</div>
-        <div class="text-xs text-slate-500 mt-1">Annual capacity goal</div>
+        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">$1.25M</div>
+        <div class="text-xs text-slate-500 mt-1">Per state office / year</div>
       </div>
       <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">50</div>
-        <div class="text-xs text-slate-500 mt-1">States. One vision: tuition-free futures</div>
+        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">~34%</div>
+        <div class="text-xs text-slate-500 mt-1">Est. grad rate by Y10 with waivers</div>
       </div>
     </div>
   </div>
@@ -307,6 +359,7 @@
             <a href="#vision" class="toc-link px-3 py-2 rounded-r-lg">Vision &amp; Purpose</a>
             <a href="#problem" class="toc-link px-3 py-2 rounded-r-lg">The Problem</a>
             <a href="#solution" class="toc-link px-3 py-2 rounded-r-lg">Our Solution</a>
+            <a href="#impact" class="toc-link px-3 py-2 rounded-r-lg font-semibold text-[#0F2C59]">10-Year Impact</a>
             <a href="#evidence" class="toc-link px-3 py-2 rounded-r-lg">Why It Works</a>
             <a href="#leadership" class="toc-link px-3 py-2 rounded-r-lg">Leadership</a>
             <a href="#goals" class="toc-link px-3 py-2 rounded-r-lg">Goals &amp; Roadmap</a>
@@ -529,6 +582,95 @@
               <p class="img-credit p-2 bg-white">Mentorship &amp; support · Illustrative imagery</p>
             </div>
           </div>
+
+          <!-- PRIMARY IMPACT: 10-year waiver outcomes (featured) -->
+          <div id="impact" class="impact-showcase mt-14 scroll-mt-28 relative z-0">
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <span class="pulse-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400 text-[#0F2C59] text-[10px] font-bold uppercase tracking-wider">
+                  <i class="fa-solid fa-star"></i> Priority metrics for donors
+                </span>
+                <span class="text-sky-200/90 text-xs font-medium tracking-wide uppercase">National planning model · 10 years</span>
+              </div>
+              <h3 class="heading-serif text-3xl md:text-4xl font-semibold text-white tracking-tight">
+                What victory looks like: college access &amp; graduation
+              </h3>
+              <p class="mt-3 text-sky-100/90 text-sm md:text-base max-w-3xl leading-relaxed">
+                These are the numbers that matter most. As AFF wins comprehensive tuition waivers in states with no waiver or multilayered grant systems — then runs a one-year <strong class="text-white">implementation office</strong> so the law actually works — first-time college enrollment and degree completion for foster youth rise nationwide.
+              </p>
+
+              <div class="mt-8 grid sm:grid-cols-3 gap-4">
+                <div class="impact-stat-card text-center">
+                  <div class="text-sky-300 text-[10px] font-bold uppercase tracking-[2px]">By year 10</div>
+                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">14,200+</div>
+                  <div class="text-sky-100 text-sm mt-2 font-medium">First-time college enrollments / year</div>
+                  <div class="text-sky-300/70 text-xs mt-1">Foster youth entering under new or expanded waivers</div>
+                </div>
+                <div class="impact-stat-card text-center ring-2 ring-emerald-400/50">
+                  <div class="text-emerald-300 text-[10px] font-bold uppercase tracking-[2px]">By year 10</div>
+                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">4,500+</div>
+                  <div class="text-sky-100 text-sm mt-2 font-medium">Estimated graduates / year</div>
+                  <div class="text-emerald-300/80 text-xs mt-1">Degrees earned as early waiver cohorts finish</div>
+                </div>
+                <div class="impact-stat-card text-center">
+                  <div class="text-sky-300 text-[10px] font-bold uppercase tracking-[2px]">Graduation rate lift</div>
+                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">12% → 34%</div>
+                  <div class="text-sky-100 text-sm mt-2 font-medium">Est. 6-year completion rate</div>
+                  <div class="text-sky-300/70 text-xs mt-1">Waiver-state foster youth vs. baseline without comprehensive waiver</div>
+                </div>
+              </div>
+
+              <div class="mt-8 grid lg:grid-cols-2 gap-5">
+                <div class="impact-chart-panel">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <h4 class="font-semibold text-[#0F2C59] text-base">10-year waiver impact</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 mb-3">First-time college enrollments and estimated annual graduates as cumulative state wins grow.</p>
+                  <div class="relative h-72">
+                    <canvas id="waiverImpactChart" aria-label="Line chart of college enrollment and graduation over 10 years after waivers"></canvas>
+                  </div>
+                </div>
+                <div class="impact-chart-panel">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+                    <h4 class="font-semibold text-[#0F2C59] text-base">College graduation rate trajectory</h4>
+                  </div>
+                  <p class="text-xs text-slate-500 mb-3">Estimated six-year completion among foster youth who enter college after a comprehensive waiver takes effect.</p>
+                  <div class="relative h-72">
+                    <canvas id="gradRateChart" aria-label="Line chart of estimated foster youth college graduation rates over 10 years"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 overflow-x-auto rounded-2xl bg-white/95 border border-white/20">
+                <table class="w-full text-xs text-left border-collapse min-w-[520px]">
+                  <thead>
+                    <tr class="border-b-2 border-slate-200 uppercase tracking-wider text-slate-500 bg-slate-50">
+                      <th class="py-2.5 px-3 font-semibold">Year</th>
+                      <th class="py-2.5 px-2 font-semibold text-right">Cum. waiver wins</th>
+                      <th class="py-2.5 px-2 font-semibold text-right">First-time college</th>
+                      <th class="py-2.5 px-2 font-semibold text-right">Est. graduates</th>
+                      <th class="py-2.5 px-3 font-semibold text-right">Est. 6-yr grad rate</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y1</td><td class="py-2 px-2 text-right tabular-nums">0</td><td class="py-2 px-2 text-right tabular-nums">400</td><td class="py-2 px-2 text-right tabular-nums">40</td><td class="py-2 px-3 text-right tabular-nums">12%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y2</td><td class="py-2 px-2 text-right tabular-nums">2</td><td class="py-2 px-2 text-right tabular-nums">1,200</td><td class="py-2 px-2 text-right tabular-nums">100</td><td class="py-2 px-3 text-right tabular-nums">13%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y3</td><td class="py-2 px-2 text-right tabular-nums">3</td><td class="py-2 px-2 text-right tabular-nums">2,200</td><td class="py-2 px-2 text-right tabular-nums">280</td><td class="py-2 px-3 text-right tabular-nums">15%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y4</td><td class="py-2 px-2 text-right tabular-nums">5</td><td class="py-2 px-2 text-right tabular-nums">3,800</td><td class="py-2 px-2 text-right tabular-nums">550</td><td class="py-2 px-3 text-right tabular-nums">17%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y5</td><td class="py-2 px-2 text-right tabular-nums">6</td><td class="py-2 px-2 text-right tabular-nums">5,200</td><td class="py-2 px-2 text-right tabular-nums">1,000</td><td class="py-2 px-3 text-right tabular-nums">19%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y6</td><td class="py-2 px-2 text-right tabular-nums">8</td><td class="py-2 px-2 text-right tabular-nums">7,200</td><td class="py-2 px-2 text-right tabular-nums">1,600</td><td class="py-2 px-3 text-right tabular-nums">22%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y7</td><td class="py-2 px-2 text-right tabular-nums">10</td><td class="py-2 px-2 text-right tabular-nums">9,200</td><td class="py-2 px-2 text-right tabular-nums">2,400</td><td class="py-2 px-3 text-right tabular-nums">26%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y8</td><td class="py-2 px-2 text-right tabular-nums">12</td><td class="py-2 px-2 text-right tabular-nums">11,200</td><td class="py-2 px-2 text-right tabular-nums">3,200</td><td class="py-2 px-3 text-right tabular-nums">29%</td></tr>
+                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y9</td><td class="py-2 px-2 text-right tabular-nums">14</td><td class="py-2 px-2 text-right tabular-nums">12,800</td><td class="py-2 px-2 text-right tabular-nums">3,900</td><td class="py-2 px-3 text-right tabular-nums">32%</td></tr>
+                    <tr class="bg-emerald-50 font-semibold"><td class="py-2.5 px-3 text-[#0F2C59]">Y10</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">15</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">14,200</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">4,500</td><td class="py-2.5 px-3 text-right tabular-nums text-emerald-700">34%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-3 text-[11px] text-sky-200/70">Planning estimates for donor and partner use — not guaranteed outcomes. Timing assumes ~2 years of campaign work per victory, then a one-year implementation office before redeploying to the next focus state.</p>
+            </div>
+          </div>
         </section>
 
         <!-- 5. EVIDENCE -->
@@ -716,7 +858,7 @@
 
           <div class="mt-10 chart-card">
             <h3 class="font-semibold text-[#0F2C59] text-lg">Rolling campaign capacity (10-year planning view)</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-4">Concurrent funded offices stay limited; cumulative waiver wins keep rising as slots redeploy one year after each state implements its law. See Investment Required for full funding rules and impact curves.</p>
+            <p class="text-xs text-slate-500 mt-1 mb-4">Each victory takes ~2 campaign years; then a 1-year implementation office; then redeploy. Concurrent offices × $1.25M set annual cost. Impact metrics are featured under <a href="#impact" class="text-sky-700 underline">Solution</a>.</p>
             <div class="relative h-72">
               <canvas id="growthChart" aria-label="Chart showing concurrent offices vs cumulative waiver wins over 10 years"></canvas>
             </div>
@@ -727,23 +869,23 @@
         <section id="financials" class="scroll-mt-28">
           <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Investment Required</div>
           <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">What it takes to win state by state.</h2>
-          <p class="mt-4 text-sm text-slate-600 max-w-2xl">Below is AFF’s <strong>estimated annual operating budget</strong> for donors and partners — fully itemized. Figures are planning estimates (mid-market U.S. office and nonprofit norms) and will be refined with local leases and actual hires. National capacity goal remains <a href="financials.html" class="text-sky-700 font-medium hover:underline">$5 million per year</a>.</p>
+          <p class="mt-4 text-sm text-slate-600 max-w-2xl">Below is AFF’s <strong>estimated annual operating budget</strong> for donors and partners — fully itemized. Figures are planning estimates (mid-market U.S. office and nonprofit norms) and will be refined with local leases and actual hires. Funding scales with concurrent state offices; there is <strong>no fixed annual ceiling</strong> — capacity grows as donors enable more simultaneous campaigns.</p>
 
           <div class="mt-8 grid md:grid-cols-3 gap-4">
             <div class="bg-[#0F2C59] text-white rounded-3xl p-6">
-              <div class="text-sky-300 text-xs font-semibold tracking-[2px] uppercase">Per state office slot</div>
-              <div class="heading-serif text-4xl font-semibold mt-2">$1.00M</div>
-              <p class="mt-2 text-xs text-sky-100/90">HQ share + full state team, office &amp; campaign (planning unit)</p>
+              <div class="text-sky-300 text-xs font-semibold tracking-[2px] uppercase">Per state office / year</div>
+              <div class="heading-serif text-4xl font-semibold mt-2">$1.25M</div>
+              <p class="mt-2 text-xs text-sky-100/90">Full state team, medium office, program &amp; campaign (planning unit)</p>
             </div>
             <div class="bg-white border-2 border-slate-200 rounded-3xl p-6">
-              <div class="text-sky-600 text-xs font-semibold tracking-[2px] uppercase">Rolling campaign model</div>
-              <div class="heading-serif text-3xl sm:text-4xl font-semibold mt-2 text-[#0F2C59]">Pass → +1 yr → redeploy</div>
-              <p class="mt-2 text-xs text-slate-500">Keep office one year after law takes effect, then open the next state</p>
+              <div class="text-sky-600 text-xs font-semibold tracking-[2px] uppercase">Time to victory</div>
+              <div class="heading-serif text-3xl sm:text-4xl font-semibold mt-2 text-[#0F2C59]">2 years</div>
+              <p class="mt-2 text-xs text-slate-500">Campaign phase per state, then 1-year implementation office, then redeploy</p>
             </div>
-            <div class="bg-white border-2 border-slate-200 rounded-3xl p-6">
-              <div class="text-sky-600 text-xs font-semibold tracking-[2px] uppercase">Org capacity goal</div>
-              <div class="heading-serif text-4xl font-semibold mt-2 text-[#0F2C59]">$5M</div>
-              <p class="mt-2 text-xs text-slate-500">Funds concurrent offices cycling across focus states</p>
+            <div class="bg-white border-2 border-emerald-200 rounded-3xl p-6 bg-emerald-50/40">
+              <div class="text-emerald-700 text-xs font-semibold tracking-[2px] uppercase">10-year funding total</div>
+              <div class="heading-serif text-4xl font-semibold mt-2 text-[#0F2C59]">$52.5M</div>
+              <p class="mt-2 text-xs text-slate-500">Sum of estimated annual budgets across the rolling office cycle below</p>
             </div>
           </div>
 
@@ -887,7 +1029,7 @@
           <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
             <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-2">
               <h3 class="font-semibold text-lg text-[#0F2C59]">3. Estimated annual budget — one active state</h3>
-              <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded">Planning total ≈ $1,000,000</span>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded">Planning total ≈ $1,250,000</span>
             </div>
             <p class="text-sm text-slate-600 mb-6">Complete itemized operating budget donors can review. Midpoint estimates; contingency included for market and program variance.</p>
 
@@ -932,27 +1074,27 @@
                   <tr class="bg-slate-100">
                     <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">D. Program, campaign &amp; field work</td>
                   </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Travel, gasoline &amp; lodging (organizing / capitol visits)</td><td class="py-2 text-right tabular-nums">$24,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Advocacy materials, printing &amp; public testimony</td><td class="py-2 text-right tabular-nums">$12,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Coalition meetings, events &amp; community forums</td><td class="py-2 text-right tabular-nums">$15,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Public records, research fees &amp; data</td><td class="py-2 text-right tabular-nums">$5,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Youth education &amp; advocacy training delivery</td><td class="py-2 text-right tabular-nums">$25,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Direct youth support &amp; emergency assistance fund</td><td class="py-2 text-right tabular-nums">$40,000</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal program &amp; campaign</td><td class="py-2.5 text-right font-semibold tabular-nums">$121,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Travel, gasoline &amp; lodging (organizing / capitol visits)</td><td class="py-2 text-right tabular-nums">$48,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Advocacy materials, printing &amp; public testimony</td><td class="py-2 text-right tabular-nums">$24,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Coalition meetings, events &amp; community forums</td><td class="py-2 text-right tabular-nums">$30,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Public records, research fees &amp; data</td><td class="py-2 text-right tabular-nums">$8,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Youth education &amp; advocacy training delivery</td><td class="py-2 text-right tabular-nums">$40,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Direct youth support &amp; emergency assistance fund</td><td class="py-2 text-right tabular-nums">$121,000</td></tr>
+                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal program &amp; campaign (direct lines)</td><td class="py-2.5 text-right font-semibold tabular-nums">$271,000</td></tr>
 
                   <tr class="bg-slate-100">
                     <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">E. Professional services &amp; administration</td>
                   </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Legal, accounting, audit &amp; compliance</td><td class="py-2 text-right tabular-nums">$18,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Banking, payment processing &amp; misc. fees</td><td class="py-2 text-right tabular-nums">$3,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Staff development &amp; training</td><td class="py-2 text-right tabular-nums">$5,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Fundraising outreach (mail, print, prospecting)</td><td class="py-2 text-right tabular-nums">$12,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Contingency reserve (~10% of operating lines above)</td><td class="py-2 text-right tabular-nums">$111,700</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal admin &amp; contingency</td><td class="py-2.5 text-right font-semibold tabular-nums">$149,700</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Legal, accounting, audit &amp; compliance</td><td class="py-2 text-right tabular-nums">$22,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Banking, payment processing &amp; misc. fees</td><td class="py-2 text-right tabular-nums">$4,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Staff development &amp; training</td><td class="py-2 text-right tabular-nums">$6,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Fundraising outreach (mail, print, prospecting)</td><td class="py-2 text-right tabular-nums">$16,000</td></tr>
+                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Contingency reserve</td><td class="py-2 text-right tabular-nums">$201,700</td></tr>
+                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal admin &amp; contingency</td><td class="py-2.5 text-right font-semibold tabular-nums">$249,700</td></tr>
 
                   <tr class="bg-[#0F2C59] text-white">
                     <td class="py-4 pr-4 font-semibold text-base rounded-bl-xl">Estimated annual total — 1 active state</td>
-                    <td class="py-4 text-right font-semibold text-base tabular-nums rounded-br-xl">$1,000,000</td>
+                    <td class="py-4 text-right font-semibold text-base tabular-nums rounded-br-xl">$1,250,000</td>
                   </tr>
                 </tbody>
               </table>
@@ -960,61 +1102,45 @@
             <p class="mt-4 text-xs text-slate-500">Totals are rounded for donor presentation. Line items may shift between categories without changing the overall ask. Early-stage Executive Director compensation is expected to be below the $200,000 ceiling until revenue supports full capacity.</p>
           </div>
 
-          <!-- Charts: allocation pie + 10-year waiver impact lines -->
-          <div class="mt-8 grid md:grid-cols-2 gap-6">
-            <div class="chart-card">
-              <h3 class="font-semibold text-[#0F2C59] text-lg">Where a $1M state budget goes</h3>
-              <p class="text-xs text-slate-500 mt-1 mb-3">Personnel salaries are included inside <strong>Program &amp; campaign</strong> — advocacy, organizing, research, and youth support are staff-driven work.</p>
-              <div class="relative h-72">
-                <canvas id="budgetChart" aria-label="Doughnut chart of annual budget with personnel inside program costs"></canvas>
-              </div>
-              <p class="text-[10px] text-slate-400 mt-2">Program &amp; campaign = all salaries &amp; benefits ($614.4k) + direct campaign/youth lines ($121k).</p>
+          <!-- Budget pie only (impact charts live under Solution) -->
+          <div class="mt-8 chart-card max-w-xl">
+            <h3 class="font-semibold text-[#0F2C59] text-lg">Where a $1.25M state budget goes</h3>
+            <p class="text-xs text-slate-500 mt-1 mb-3">Personnel salaries are included inside <strong>Program &amp; campaign</strong> — advocacy, organizing, research, and youth support are staff-driven work.</p>
+            <div class="relative h-72">
+              <canvas id="budgetChart" aria-label="Doughnut chart of annual budget with personnel inside program costs"></canvas>
             </div>
-            <div class="chart-card">
-              <h3 class="font-semibold text-[#0F2C59] text-lg">10-year waiver impact (national planning model)</h3>
-              <p class="text-xs text-slate-500 mt-1 mb-3">Estimated first-time college enrollments and degree completions among foster youth as comprehensive waivers (or simplified systems) replace no-waiver / multilayered states.</p>
-              <div class="relative h-72">
-                <canvas id="waiverImpactChart" aria-label="Line chart of college enrollment and graduation over 10 years after waivers"></canvas>
-              </div>
-              <p class="text-[10px] text-slate-400 mt-2">Illustrative planning estimates — not audited outcomes. See methodology notes below.</p>
-            </div>
-          </div>
-
-          <!-- Graduation rate secondary visual -->
-          <div class="mt-6 chart-card">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-3">
-              <div>
-                <h3 class="font-semibold text-[#0F2C59] text-lg">Estimated college graduation rate — foster youth in waiver states</h3>
-                <p class="text-xs text-slate-500 mt-1">Six-year completion rate among foster youth who enter college after a comprehensive state waiver is in effect (cohort lag reflected in later years).</p>
-              </div>
-            </div>
-            <div class="relative h-64">
-              <canvas id="gradRateChart" aria-label="Line chart of estimated foster youth college graduation rates over 10 years"></canvas>
-            </div>
+            <p class="text-[10px] text-slate-400 mt-2">Program &amp; campaign = salaries &amp; benefits ($614.4k) + direct campaign/youth lines ($271k). Impact charts: <a href="#impact" class="text-sky-700 underline">see Solution → 10-Year Impact</a>.</p>
           </div>
 
           <!-- Rolling campaign model -->
           <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <h3 class="font-semibold text-lg text-[#0F2C59]">4. Rolling campaign funding — win, implement, redeploy</h3>
-            <p class="text-sm text-slate-600 mt-2 mb-4">AFF does not permanently fund every state office forever. Once a state <strong>passes comprehensive waiver legislation</strong> (or replaces a multilayered grant maze with a true waiver), we keep that office open for <strong>one full year after implementation</strong> to support rollout, agency training, and youth navigation — then <strong>close or reassign that office and open the next priority state</strong> (no-waiver or fragmented-system states first).</p>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">4. Rolling campaign funding — 2-year victories, then implement &amp; redeploy</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Each state victory is planned as a <strong>two-year campaign</strong> (research, coalitions, bill introduction, testimony, and floor action). AFF does not fund every state office forever. After a state <strong>passes comprehensive waiver legislation</strong>, the office converts for <strong>one implementation year</strong>, then the slot is <strong>redeployed</strong> to the next focus state.</p>
 
-            <div class="grid sm:grid-cols-3 gap-3 text-xs mb-6">
+            <div class="mt-5 p-5 rounded-2xl border-2 border-sky-200 bg-sky-50">
+              <div class="text-xs font-bold uppercase tracking-[2px] text-sky-800">What is an implementation office?</div>
+              <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+                An <strong>implementation office</strong> is a fully staffed state office that stays open for <strong>one year after the waiver law takes effect</strong>. Its job is no longer lobbying for passage — it is <strong>making the law work in practice</strong>: training child-welfare and higher-education agencies, helping campuses process the waiver, assisting foster youth with applications and eligibility, fixing rollout problems, and documenting what other states can copy. After that year, the office closes or moves to a new campaign state so donor dollars keep buying new victories instead of permanent overhead where the fight is already won.
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-3 text-xs mt-5 mb-6">
               <div class="p-4 rounded-2xl bg-[#0F2C59] text-white">
-                <div class="text-sky-300 font-semibold uppercase tracking-wider text-[10px]">Phase 1 · Campaign</div>
-                <p class="mt-2 text-sky-50">Full office: lobby, research, coalitions, testimony until the bill becomes law.</p>
+                <div class="text-sky-300 font-semibold uppercase tracking-wider text-[10px]">Phase 1 · Campaign (2 years)</div>
+                <p class="mt-2 text-sky-50">Full office: lobby, research, coalitions, and testimony until comprehensive waiver legislation becomes law. Planning assumption: <strong>two years per victory</strong>.</p>
               </div>
               <div class="p-4 rounded-2xl bg-sky-100 border border-sky-200">
-                <div class="text-sky-800 font-semibold uppercase tracking-wider text-[10px]">Phase 2 · Implementation (+1 year)</div>
-                <p class="mt-2 text-slate-700">Office stays open one year after the waiver takes effect — agencies, campuses, and youth get help using it.</p>
+                <div class="text-sky-800 font-semibold uppercase tracking-wider text-[10px]">Phase 2 · Implementation office (+1 year)</div>
+                <p class="mt-2 text-slate-700">Same team, new mission: operationalize the win so agencies, campuses, and youth can use the waiver. Not a second campaign office — a transition year after passage.</p>
               </div>
               <div class="p-4 rounded-2xl bg-slate-50 border">
                 <div class="text-[#0F2C59] font-semibold uppercase tracking-wider text-[10px]">Phase 3 · Redeploy</div>
-                <p class="mt-2 text-slate-600">Drop that state office; transfer the ~$850k–$1M slot to the next focus state. National HQ remains continuous.</p>
+                <p class="mt-2 text-slate-600">Drop that state office; transfer the <strong>~$1.25M / year</strong> slot to the next no-waiver or multilayered-system state. National leadership continues.</p>
               </div>
             </div>
 
-            <h4 class="font-semibold text-[#0F2C59] text-sm mb-3">10-year office cycle (planning scenario · up to 3 concurrent slots)</h4>
-            <p class="text-xs text-slate-500 mb-4">Scenario assumes AFF ramps to three concurrent state office slots within the $5M capacity goal, wins roughly 1–2 states per year after Year 2, holds each winner one implementation year, then redeploys. Cumulative wins compound nationally even as individual offices cycle off.</p>
+            <h4 class="font-semibold text-[#0F2C59] text-sm mb-3">10-year office cycle (planning scenario)</h4>
+            <p class="text-xs text-slate-500 mb-4">Costed at <strong>$1.25M per concurrent state office per year</strong> (campaign + implementation slots). Victories require two campaign years; cumulative wins rise while individual offices cycle off. No annual funding cap — totals scale with concurrent offices donors enable.</p>
 
             <div class="overflow-x-auto">
               <table class="w-full text-sm text-left border-collapse min-w-[640px]">
@@ -1037,70 +1163,70 @@
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$1.85M</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.50M</td>
                   </tr>
                   <tr class="border-b border-slate-100">
                     <td class="py-2.5 pr-2 font-medium">Y2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.70M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$3.75M</td>
                   </tr>
                   <tr class="border-b border-slate-100 bg-sky-50/40">
                     <td class="py-2.5 pr-2 font-medium">Y3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.70M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
                   </tr>
                   <tr class="border-b border-slate-100">
                     <td class="py-2.5 pr-2 font-medium">Y4</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">4</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.70M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">5</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
                   </tr>
                   <tr class="border-b border-slate-100">
                     <td class="py-2.5 pr-2 font-medium">Y5</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">5</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.70M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">6</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
                   </tr>
                   <tr class="border-b border-slate-100 bg-sky-50/40">
                     <td class="py-2.5 pr-2 font-medium">Y6</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">7</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$3.55M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">8</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
                   </tr>
                   <tr class="border-b border-slate-100">
                     <td class="py-2.5 pr-2 font-medium">Y7</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">9</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$3.55M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">10</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
                   </tr>
                   <tr class="border-b border-slate-100">
                     <td class="py-2.5 pr-2 font-medium">Y8</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">11</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$4.40M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">12</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
                   </tr>
                   <tr class="border-b border-slate-100 bg-sky-50/40">
                     <td class="py-2.5 pr-2 font-medium">Y9</td>
@@ -1108,17 +1234,21 @@
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
                     <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">13</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$4.40M</td>
+                    <td class="py-2.5 pr-2 text-right tabular-nums">14</td>
+                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
+                  </tr>
+                  <tr class="border-b-2 border-[#0F2C59]">
+                    <td class="py-3 pr-2 font-semibold text-[#0F2C59]">Y10</td>
+                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">3</td>
+                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">2</td>
+                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">1</td>
+                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">2</td>
+                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">15</td>
+                    <td class="py-3 text-right font-semibold tabular-nums text-[#0F2C59]">$6.25M</td>
                   </tr>
                   <tr class="bg-[#0F2C59] text-white">
-                    <td class="py-3 pr-2 font-semibold rounded-bl-xl">Y10</td>
-                    <td class="py-3 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-3 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-3 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-3 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">15</td>
-                    <td class="py-3 text-right font-semibold tabular-nums rounded-br-xl">$4.40M</td>
+                    <td class="py-4 pr-2 font-semibold rounded-bl-xl" colspan="6">Total estimated funding — 10-year period</td>
+                    <td class="py-4 text-right font-semibold text-lg tabular-nums rounded-br-xl">$52.50M</td>
                   </tr>
                 </tbody>
               </table>
@@ -1126,56 +1256,18 @@
 
             <div class="mt-6 grid sm:grid-cols-3 gap-3 text-xs">
               <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Budget stays efficient</div>
-                <p class="text-slate-600 mt-1">Annual spend rises with concurrent slots (campaign + implementation), not with cumulative wins. By Y10, ~15 states can have won while funding only ~5 office slots.</p>
+                <div class="font-semibold text-[#0F2C59]">2 years to win</div>
+                <p class="text-slate-600 mt-1">Each victory is budgeted as two full campaign years before the law passes — realistic for state legislative cycles.</p>
               </div>
               <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Focus states first</div>
-                <p class="text-slate-600 mt-1">Priority queue: states with no comprehensive waiver, then multilayered grant-only systems that create waitlists and debt risk.</p>
+                <div class="font-semibold text-[#0F2C59]">$1.25M × concurrent offices</div>
+                <p class="text-slate-600 mt-1">Annual cost = number of campaign + implementation offices × $1.25M. No artificial annual cap.</p>
               </div>
-              <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Donor takeaway</div>
-                <p class="text-slate-600 mt-1">Your gift funds a renewable campaign engine — not permanent overhead in states that have already won.</p>
+              <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
+                <div class="font-semibold text-[#0F2C59]">$52.5M over 10 years</div>
+                <p class="text-slate-600 mt-1">Sum of the annual column above — the decade investment to cycle offices through ~15 state victories.</p>
               </div>
             </div>
-          </div>
-
-          <!-- Impact methodology -->
-          <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <h3 class="font-semibold text-lg text-[#0F2C59]">5. 10-year national impact estimates — methodology</h3>
-            <p class="text-sm text-slate-600 mt-2 mb-4">Line charts above model an <strong>aggregate national pathway</strong> among states that currently lack a Texas-style waiver or rely on multilayered grants. Figures are planning estimates for donors, not guaranteed outcomes.</p>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-1 text-xs"></i><span><strong>Baseline:</strong> Foster youth in no-waiver / fragmented-aid states enter and complete college at substantially lower rates than peers; national research often cites elevated homelessness and low degree completion after aging out.</span></li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-1 text-xs"></i><span><strong>First-time college enrollment:</strong> As each state gains a comprehensive waiver and AFF completes its implementation year, more youth can enroll without tuition as the barrier — annual first-time enrollees rise as cumulative wins grow (Y1–Y10: roughly 400 → 14,000+ youth/year in the planning model).</span></li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-1 text-xs"></i><span><strong>Graduates:</strong> Degree completions lag enrollment by several years; the model shows graduates rising sharply mid-decade as early waiver cohorts finish (Y1–Y10: near 0 → ~4,500/year by Y10 in the planning curve).</span></li>
-              <li class="flex gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-1 text-xs"></i><span><strong>Graduation rate:</strong> Estimated six-year completion among foster youth who entered under a waiver climbs from low teens toward the low-to-mid 30% range as systems mature — still room to grow, but a clear lift versus baseline.</span></li>
-            </ul>
-            <div class="mt-5 overflow-x-auto">
-              <table class="w-full text-xs text-left border-collapse min-w-[520px]">
-                <thead>
-                  <tr class="border-b-2 border-slate-200 uppercase tracking-wider text-slate-500">
-                    <th class="py-2 pr-2 font-semibold">Year</th>
-                    <th class="py-2 pr-2 font-semibold text-right">Cumulative states with new/expanded waivers</th>
-                    <th class="py-2 pr-2 font-semibold text-right">First-time college (annual)</th>
-                    <th class="py-2 pr-2 font-semibold text-right">Estimated graduates (annual)</th>
-                    <th class="py-2 font-semibold text-right">Est. 6-yr grad rate</th>
-                  </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                  <tr class="border-b border-slate-100"><td class="py-2">Y1</td><td class="py-2 text-right tabular-nums">0</td><td class="py-2 text-right tabular-nums">400</td><td class="py-2 text-right tabular-nums">40</td><td class="py-2 text-right tabular-nums">12%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y2</td><td class="py-2 text-right tabular-nums">1</td><td class="py-2 text-right tabular-nums">900</td><td class="py-2 text-right tabular-nums">80</td><td class="py-2 text-right tabular-nums">13%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y3</td><td class="py-2 text-right tabular-nums">2</td><td class="py-2 text-right tabular-nums">1,800</td><td class="py-2 text-right tabular-nums">200</td><td class="py-2 text-right tabular-nums">14%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y4</td><td class="py-2 text-right tabular-nums">4</td><td class="py-2 text-right tabular-nums">3,200</td><td class="py-2 text-right tabular-nums">450</td><td class="py-2 text-right tabular-nums">16%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y5</td><td class="py-2 text-right tabular-nums">5</td><td class="py-2 text-right tabular-nums">4,800</td><td class="py-2 text-right tabular-nums">900</td><td class="py-2 text-right tabular-nums">18%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y6</td><td class="py-2 text-right tabular-nums">7</td><td class="py-2 text-right tabular-nums">6,800</td><td class="py-2 text-right tabular-nums">1,500</td><td class="py-2 text-right tabular-nums">22%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y7</td><td class="py-2 text-right tabular-nums">9</td><td class="py-2 text-right tabular-nums">8,800</td><td class="py-2 text-right tabular-nums">2,200</td><td class="py-2 text-right tabular-nums">25%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y8</td><td class="py-2 text-right tabular-nums">11</td><td class="py-2 text-right tabular-nums">10,800</td><td class="py-2 text-right tabular-nums">3,100</td><td class="py-2 text-right tabular-nums">28%</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2">Y9</td><td class="py-2 text-right tabular-nums">13</td><td class="py-2 text-right tabular-nums">12,500</td><td class="py-2 text-right tabular-nums">3,800</td><td class="py-2 text-right tabular-nums">31%</td></tr>
-                  <tr class="bg-slate-50"><td class="py-2.5 font-semibold">Y10</td><td class="py-2.5 text-right font-semibold tabular-nums">15</td><td class="py-2.5 text-right font-semibold tabular-nums">14,200</td><td class="py-2.5 text-right font-semibold tabular-nums">4,500</td><td class="py-2.5 text-right font-semibold tabular-nums">34%</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="mt-4 text-[11px] text-slate-400">Planning model only. Actual results depend on legislation, state agency capacity, housing stability, and complementary supports. AFF will refine projections with state-level data as campaigns launch.</p>
           </div>
         </section>
 
@@ -1423,7 +1515,7 @@
           {
             type: 'bar',
             label: 'Concurrent funded offices (campaign + implementation)',
-            data: [2, 3, 3, 3, 3, 4, 4, 5, 5, 5],
+            data: [2, 3, 4, 4, 5, 4, 5, 5, 5, 5],
             backgroundColor: brand.sky,
             borderRadius: 4,
             yAxisID: 'y',
@@ -1432,7 +1524,7 @@
           {
             type: 'line',
             label: 'Cumulative states with new/expanded waivers',
-            data: [0, 1, 2, 4, 5, 7, 9, 11, 13, 15],
+            data: [0, 2, 3, 5, 6, 8, 10, 12, 14, 15],
             borderColor: brand.navy,
             backgroundColor: brand.navy,
             tension: 0.3,
@@ -1512,19 +1604,19 @@
       }
     });
 
-    // Full $1M budget — personnel salaries rolled into Program & campaign
-    // Program & campaign = $614,400 salaries/benefits + $121,000 direct program lines = $735,400
+    // Full $1.25M budget — personnel salaries rolled into Program & campaign
+    // Program & campaign = $614,400 salaries/benefits + $271,000 direct program lines = $885,400
     new Chart(document.getElementById('budgetChart'), {
       type: 'doughnut',
       data: {
         labels: [
-          'Program & campaign incl. salaries ($735.4k)',
+          'Program & campaign incl. salaries ($885.4k)',
           'Office rent & bills ($84.9k)',
           'Tech & supplies ($30k)',
-          'Admin & contingency ($149.7k)'
+          'Admin & contingency ($249.7k)'
         ],
         datasets: [{
-          data: [735400, 84900, 30000, 149700],
+          data: [885400, 84900, 30000, 249700],
           backgroundColor: [brand.navy, brand.blue, brand.sky, brand.slate],
           borderWidth: 2,
           borderColor: '#fff'
@@ -1554,9 +1646,9 @@
 
     // 10-year national waiver impact: first-time college enrollments + graduates
     const years = ['Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6', 'Y7', 'Y8', 'Y9', 'Y10'];
-    const firstTimeCollege = [400, 900, 1800, 3200, 4800, 6800, 8800, 10800, 12500, 14200];
-    const graduates = [40, 80, 200, 450, 900, 1500, 2200, 3100, 3800, 4500];
-    const gradRates = [12, 13, 14, 16, 18, 22, 25, 28, 31, 34];
+    const firstTimeCollege = [400, 1200, 2200, 3800, 5200, 7200, 9200, 11200, 12800, 14200];
+    const graduates = [40, 100, 280, 550, 1000, 1600, 2400, 3200, 3900, 4500];
+    const gradRates = [12, 13, 15, 17, 19, 22, 26, 29, 32, 34];
 
     new Chart(document.getElementById('waiverImpactChart'), {
       type: 'line',
