@@ -10,8 +10,9 @@ american-foster-futures-website/
 ├── foundation-program.html  # Programs (dropdown; no overview page)
 ├── get-involved.html        # Contact, Get Involved, Volunteer, Donate forms
 ├── donate.html         # Dedicated donation options page
+├── case-for-support.html  # Full Case for Support (donors & partners)
 ├── README.md
-└── (future) assets/    # images, logo, etc.
+└── assets/             # images, logo, board photos, stock imagery
 
 ## Quick Start
 
