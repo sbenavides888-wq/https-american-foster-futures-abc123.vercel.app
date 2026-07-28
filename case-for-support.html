@@ -3,1772 +3,398 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case for Support | American Foster Futures</title>
-  <meta name="description" content="American Foster Futures Case for Support — why foster youth need tuition waivers, housing, and education support, and how your investment creates lasting change.">
+  <title>Case for Support — Request Access | American Foster Futures</title>
+  <meta name="description" content="Request access to the American Foster Futures Case for Support. Create an account and submit a request for admin approval.">
+  <meta name="robots" content="noindex, nofollow">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-    .tail-container { font-family: 'Inter', system-ui, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    body { font-family: Inter, system-ui, sans-serif; }
     .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
-    .nav-link { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-    .nav-link:hover { color: #1E88E5; }
-    .nav-active { color: #1E88E5; font-weight: 600; }
-    .footer-link { transition: color 0.2s ease; }
-    .footer-link:hover { color: #4FC3F7; }
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      top: 100%;
-      left: 0;
-      margin-top: 0;
-    }
-    .dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -0.75rem;
-      left: 0;
-      right: 0;
-      height: 0.75rem;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu { display: block; }
-
-    .section-header {
-      position: relative;
-      display: inline-block;
-    }
-    .section-header:after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 48px;
-      height: 3px;
-      background: linear-gradient(to right, #1E88E5, #4FC3F7);
-      border-radius: 3px;
-    }
-
-    .hero-case {
-      background:
-        linear-gradient(135deg, rgba(15, 44, 89, 0.92) 0%, rgba(15, 44, 89, 0.78) 45%, rgba(30, 136, 229, 0.55) 100%),
-        url('assets/hero-youth.jpg') center/cover no-repeat;
-    }
-
-    .toc-link {
-      transition: all 0.2s ease;
-      border-left: 2px solid transparent;
-    }
-    .toc-link:hover,
-    .toc-link.active {
-      border-left-color: #1E88E5;
-      color: #0F2C59;
-      background: #f0f9ff;
-    }
-
-    .stat-glow {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .stat-glow:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25);
-    }
-
-    .story-pullquote {
-      position: relative;
-    }
-    .story-pullquote:before {
-      content: '\201C';
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 5rem;
-      line-height: 1;
-      position: absolute;
-      top: -1.5rem;
-      left: -0.5rem;
-      color: #1E88E5;
-      opacity: 0.2;
-    }
-
-    .timeline-line {
-      position: absolute;
-      left: 1.25rem;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #1E88E5, #0F2C59);
-    }
-
-    .chart-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
-    }
-
-    .progress-bar-track {
-      height: 10px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #0F2C59, #1E88E5);
-    }
-
-    .img-credit {
-      font-size: 10px;
-      color: #94a3b8;
-    }
-
-    .fade-in {
-      animation: fadeUp 0.6s ease both;
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .impact-showcase {
-      position: relative;
-      border-radius: 1.75rem;
-      padding: 1.75rem;
-      background:
-        radial-gradient(ellipse 80% 60% at 10% 0%, rgba(79, 195, 247, 0.35), transparent 55%),
-        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(30, 136, 229, 0.25), transparent 50%),
-        linear-gradient(145deg, #0F2C59 0%, #163a6e 45%, #0c2247 100%);
-      box-shadow:
-        0 25px 50px -12px rgba(15, 44, 89, 0.45),
-        0 0 0 1px rgba(79, 195, 247, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      overflow: hidden;
-    }
-    .impact-showcase::before {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -15%;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(79, 195, 247, 0.2), transparent 70%);
-      pointer-events: none;
-    }
-    .impact-stat-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 1.25rem;
-      padding: 1.25rem;
-      backdrop-filter: blur(8px);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-    .impact-stat-card:hover {
-      transform: translateY(-3px);
-      background: rgba(255, 255, 255, 0.12);
-    }
-    .impact-chart-panel {
-      background: #fff;
-      border-radius: 1.25rem;
-      padding: 1.25rem;
-      border: 2px solid rgba(79, 195, 247, 0.35);
-      box-shadow: 0 12px 40px -10px rgba(15, 44, 89, 0.35);
-    }
-    .pulse-badge {
-      animation: pulseGlow 2.4s ease-in-out infinite;
-    }
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
-      50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-    }
-
-    @media print {
-      nav, .top-bar, .sticky-cta, footer, .toc-sidebar { display: none !important; }
-      .hero-case { background: #0F2C59 !important; }
-    }
   </style>
 </head>
-<body class="tail-container bg-slate-50 text-slate-800">
-  <!-- Top bar -->
-  <div class="top-bar bg-[#0F2C59] text-white text-sm py-2">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <div class="flex items-center gap-x-4 text-xs sm:text-sm">
-        <div class="flex items-center gap-x-1.5">
-          <i class="fa-solid fa-map-marker-alt"></i>
-          <span>Irving, TX</span>
-        </div>
-        <div class="hidden sm:block">|</div>
-        <a href="mailto:info@americanfosterfutures.org" class="hover:underline flex items-center gap-x-1.5">
-          <i class="fa-solid fa-envelope"></i>
-          <span class="hidden sm:inline">info@americanfosterfutures.org</span>
-        </a>
-      </div>
-      <div class="flex items-center gap-x-3 text-xs">
-        <a href="donate.html" class="hidden sm:block hover:underline font-medium">Give Today →</a>
-        <div class="flex gap-x-2">
-          <a href="#" class="hover:text-sky-300" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="hover:text-sky-300" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="hover:text-sky-300" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+  <header class="bg-[#0F2C59] text-white">
+    <div class="max-w-lg mx-auto px-5 py-6">
+      <a href="index.html" class="text-sky-300 text-xs font-semibold hover:underline">← Back to website</a>
+      <div class="uppercase text-[10px] tracking-[2px] text-sky-300 font-bold mt-3">American Foster Futures</div>
+      <h1 class="heading-serif text-3xl font-semibold mt-1 tracking-tight">Case for Support</h1>
+      <p class="text-sky-100/90 text-sm mt-2 leading-relaxed">
+        This document is for donors, partners, and foundations. Create an account and request access — we’ll review and notify you when approved.
+      </p>
     </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-x-3 group">
-          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
-            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
-            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
-            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
-          </svg>
-          <div>
-            <div class="font-semibold tracking-tight text-2xl text-[#0F2C59]">American Foster Futures</div>
-            <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
-          </div>
-        </a>
-
-        <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
-          <a href="index.html" class="nav-link">Home</a>
-          <div class="dropdown relative group">
-            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
-            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-56 z-50">
-              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
-              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
-              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
-              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
-              <a href="financials.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Financials</a>
-            </div>
-          </div>
-          <div class="dropdown relative group">
-            <a href="national-campaign.html" class="nav-link flex items-center gap-x-1">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
-            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-56 z-50">
-              <a href="national-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Campaign</a>
-              <a href="foundation-program.html" class="block px-4 py-2 text-sm hover:bg-slate-100">The Foundation Program</a>
-              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
-              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
-            </div>
-          </div>
-          <div class="dropdown relative group">
-            <a href="resources.html" class="nav-link flex items-center gap-x-1">Resources <i class="fa-solid fa-chevron-down text-xs"></i></a>
-            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-64 z-50">
-              <a href="resources.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Resources Overview</a>
-              <a href="how-to-apply-pay-for-college.html" class="block px-4 py-2 text-sm hover:bg-slate-100">How to Apply &amp; Pay for College</a>
-              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Tuition Waiver</a>
-              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
-            </div>
-          </div>
-          <a href="get-involved.html" class="nav-link">Get Involved</a>
-          <a href="case-for-support.html" class="nav-link nav-active">Case for Support</a>
-          <a href="donate.html" class="nav-link">Donate</a>
-        </div>
-
-        <div class="hidden md:flex items-center gap-x-3">
-          <a href="donate.html" class="px-5 py-2.5 bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold rounded-xl flex items-center gap-x-2 shadow-sm">
-            <i class="fa-solid fa-heart"></i>
-            <span>Donate</span>
-          </a>
-        </div>
-
-        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl transition" aria-label="Toggle menu">
-          <i class="fa-solid fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden border-t bg-white">
-      <div class="px-6 py-4 flex flex-col gap-y-1 text-sm font-medium">
-        <a href="index.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Home</a>
-        <a href="about.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">About</a>
-        <a href="board-of-directors.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Board of Directors</a>
-        <a href="history.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our History</a>
-        <a href="values.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our Values</a>
-        <a href="financials.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Financials</a>
-        <a href="national-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Programs</a>
-        <a href="get-involved.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Get Involved</a>
-        <a href="case-for-support.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg font-semibold">Case for Support</a>
-        <a href="donate.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Donate</a>
-        <a href="donate.html" class="mt-2 bg-[#0F2C59] text-white py-2.5 text-center rounded-xl font-semibold">Donate Now</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header class="hero-case text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 relative z-10">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-xs tracking-[1.5px] font-medium mb-6 border border-white/20">
-          <i class="fa-solid fa-file-lines text-sky-300"></i>
-          CASE FOR SUPPORT · JULY 2026
-        </div>
-        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter leading-[1.08]">
-          Every foster youth deserves a path to college — and a future worth fighting for.
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-sky-100/95 max-w-2xl leading-relaxed">
-          American Foster Futures is building a national movement for tuition waivers, housing stability, and education support so young people leaving care can thrive — not just survive.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="donate.html" class="inline-flex items-center gap-x-2 bg-white text-[#0F2C59] hover:bg-slate-100 font-semibold px-7 py-3.5 rounded-2xl text-sm shadow-xl transition">
-            <i class="fa-solid fa-heart"></i> Invest in their future
-          </a>
-          <a href="#story" class="inline-flex items-center gap-x-2 border border-white/40 hover:bg-white/10 font-medium px-6 py-3.5 rounded-2xl text-sm transition">
-            Read the full case <i class="fa-solid fa-arrow-down text-xs"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-50 to-transparent"></div>
   </header>
 
-  <!-- Trust strip -->
-  <div class="bg-white border-b">
-    <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">~23,000</div>
-        <div class="text-xs text-slate-500 mt-1">Youth age out of care each year</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">1 in 5</div>
-        <div class="text-xs text-slate-500 mt-1">Experience homelessness after aging out</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">$1.25M</div>
-        <div class="text-xs text-slate-500 mt-1">Per state office / year</div>
-      </div>
-      <div>
-        <div class="text-2xl md:text-3xl font-semibold text-[#0F2C59] tracking-tight">~34%</div>
-        <div class="text-xs text-slate-500 mt-1">Est. grad rate by Y10 with waivers</div>
-      </div>
+  <main class="max-w-lg mx-auto px-5 py-8">
+    <div id="alert" class="hidden mb-4 rounded-xl border px-4 py-3 text-sm"></div>
+
+    <!-- Loading -->
+    <div id="view-loading" class="text-center text-sm text-slate-500 py-12">
+      <i class="fa-solid fa-spinner fa-spin text-2xl text-[#0F2C59]"></i>
+      <p class="mt-3">Checking access…</p>
     </div>
-  </div>
 
-  <!-- Main layout: TOC + content -->
-  <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-10">
-
-      <!-- Sticky TOC -->
-      <aside class="toc-sidebar hidden lg:block lg:col-span-3">
-        <div class="sticky top-24">
-          <div class="text-xs font-semibold tracking-[2px] uppercase text-sky-600 mb-3">On this page</div>
-          <nav class="flex flex-col gap-0.5 text-sm text-slate-600" id="toc">
-            <a href="#story" class="toc-link px-3 py-2 rounded-r-lg">The Story</a>
-            <a href="#vision" class="toc-link px-3 py-2 rounded-r-lg">Vision &amp; Purpose</a>
-            <a href="#problem" class="toc-link px-3 py-2 rounded-r-lg">The Problem</a>
-            <a href="#solution" class="toc-link px-3 py-2 rounded-r-lg">Our Solution</a>
-            <a href="#impact" class="toc-link px-3 py-2 rounded-r-lg font-semibold text-[#0F2C59]">10-Year Impact</a>
-            <a href="#evidence" class="toc-link px-3 py-2 rounded-r-lg">Why It Works</a>
-            <a href="#leadership" class="toc-link px-3 py-2 rounded-r-lg">Leadership</a>
-            <a href="#goals" class="toc-link px-3 py-2 rounded-r-lg">Goals &amp; Roadmap</a>
-            <a href="#financials" class="toc-link px-3 py-2 rounded-r-lg">Financial Needs</a>
-            <a href="#fundraising" class="toc-link px-3 py-2 rounded-r-lg">Fundraising Strategy</a>
-            <a href="#join" class="toc-link px-3 py-2 rounded-r-lg">Join Us</a>
-          </nav>
-          <a href="donate.html" class="mt-6 flex items-center justify-center gap-2 w-full bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold py-3 rounded-xl transition">
-            <i class="fa-solid fa-heart"></i> Donate Now
-          </a>
+    <!-- Auth: login / register -->
+    <div id="view-auth" class="hidden space-y-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex gap-2 mb-5">
+          <button type="button" data-auth-tab="login" class="auth-tab flex-1 py-2 rounded-xl text-sm font-semibold bg-[#0F2C59] text-white">Sign in</button>
+          <button type="button" data-auth-tab="register" class="auth-tab flex-1 py-2 rounded-xl text-sm font-semibold border bg-white text-slate-700">Create account</button>
         </div>
-      </aside>
 
-      <!-- Content -->
-      <main class="lg:col-span-9 space-y-20">
+        <form id="form-login" class="space-y-3">
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Email</label>
+            <input id="login-email" type="email" required autocomplete="email" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Password</label>
+            <input id="login-password" type="password" required autocomplete="current-password" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Sign in</button>
+        </form>
 
-        <!-- 1. STORY -->
-        <section id="story" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Opening</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">A manila envelope. A second chance.</h2>
-
-          <div class="mt-8 grid md:grid-cols-5 gap-8 items-start">
-            <div class="md:col-span-3 space-y-4 text-[15px] leading-relaxed text-slate-600">
-              <p>A teenage boy looks out the window of the group home he is forced to live in — taken from a single mother struggling with drug addiction, navigating foster homes, homelessness, and secured facilities. He is uncertain about the future. He knows he does not have much more time as a ward of the state, but what comes next?</p>
-              <p>A year later, at an emancipation hearing in downtown Dallas, a caseworker hands him a manila envelope and says it is important. He is 17. He does not open it. How important can it be? Three years go by before he remembers the document.</p>
-              <p>At 20, he opens the envelope and finds a <strong class="text-slate-800">tuition waiver to all public colleges and universities in the state of Texas</strong> inside. A plan forms. Life does not get easier — but for the first time, there is a chance. And maybe even hope.</p>
-              <p>Years later, this young man earns his bachelor’s degree. Then a master’s. That hope became reality — not by magic, but because someone fought for foster care tuition waivers.</p>
+        <form id="form-register" class="hidden space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-500">First name</label>
+              <input id="reg-first" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
             </div>
-            <div class="md:col-span-2">
-              <div class="rounded-3xl overflow-hidden shadow-lg border border-slate-200">
-                <img src="assets/young-adult-study.jpg" alt="Young adult studying — representing the path from care to education" class="w-full h-64 object-cover">
-              </div>
-              <p class="img-credit mt-2">Illustrative stock photography · Educational opportunity for youth leaving care</p>
-              <div class="story-pullquote mt-6 bg-[#0F2C59] text-white p-6 rounded-3xl">
-                <p class="text-sm leading-relaxed relative z-10">American Foster Futures’ primary mission is to ensure that every foster youth — regardless of the state they live in — can go to college or university without paying tuition and fees.</p>
-              </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-500">Last name</label>
+              <input id="reg-last" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
             </div>
           </div>
-        </section>
-
-        <!-- 2. VISION -->
-        <section id="vision" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Organizational Vision</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">What if every foster youth had a clearly defined path?</h2>
-
-          <div class="mt-8 bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
-            <p class="text-[15px] leading-relaxed text-slate-600">
-              Every day, thousands of young adults face 18 barreling toward them like a freight train — no parents, no safety net, and the knowledge that state care will end. Many will face incarceration, homelessness, or addiction. The questions compound: <em>“What did I do to deserve this?”</em> and <em>“What do I do now?”</em>
-            </p>
-            <p class="mt-4 text-[15px] leading-relaxed text-slate-600">
-              But what if entire generations of foster youth had a clearly defined path toward higher education, higher lifetime wages, better quality of life — and a real chance at happiness?
-            </p>
-            <div class="mt-6 p-5 bg-sky-50 border border-sky-100 rounded-2xl">
-              <div class="text-xs font-semibold tracking-wider text-sky-700 uppercase">Our answer</div>
-              <p class="mt-2 text-[#0F2C59] font-medium leading-relaxed">
-                The <a href="national-campaign.html" class="underline decoration-sky-300 hover:text-sky-700">National Campaign for Foster Youth Tuition Waivers</a> expands the Texas model to every state — giving those without financial or familial structure a genuine shot at success. Alongside waivers, we deliver education navigation, housing advocacy, career pathways, and youth leadership training.
-              </p>
-            </div>
-            <div class="mt-6 grid sm:grid-cols-4 gap-3 text-center text-xs">
-              <div class="p-3 rounded-xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Integrity</div>
-                <div class="text-slate-500 mt-1">Honest &amp; accountable</div>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Compassion</div>
-                <div class="text-slate-500 mt-1">Lived experience first</div>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Collaboration</div>
-                <div class="text-slate-500 mt-1">Coalitions that scale</div>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">Community</div>
-                <div class="text-slate-500 mt-1">Belonging &amp; opportunity</div>
-              </div>
-            </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Email</label>
+            <input id="reg-email" type="email" required autocomplete="email" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
           </div>
-        </section>
-
-        <!-- 3. PROBLEM -->
-        <section id="problem" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">The Need</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">The problem is multifold — and solving it is a moral imperative.</h2>
-
-          <div class="mt-8 grid md:grid-cols-3 gap-4">
-            <div class="stat-glow bg-slate-900 text-white rounded-3xl p-6">
-              <div class="text-sky-300 text-xs font-semibold tracking-wider uppercase">Education access</div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-200">Foster youth often lack the family and financial structure peers take for granted. Without a clear path to college, opportunity collapses at 18.</p>
-            </div>
-            <div class="stat-glow bg-white border-2 border-slate-200 rounded-3xl p-6">
-              <div class="text-sky-600 text-xs font-semibold tracking-wider uppercase">Public cost</div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">Lower education access correlates with higher incarceration, recidivism, and long-term reliance on public systems — costs society pays either way.</p>
-            </div>
-            <div class="stat-glow bg-white border-2 border-slate-200 rounded-3xl p-6">
-              <div class="text-sky-600 text-xs font-semibold tracking-wider uppercase">Human dignity</div>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">A civilized nation is judged by how it treats its least fortunate citizens. Every year, thousands peer over the precipice of life after care ends.</p>
-            </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Password (min 8 characters)</label>
+            <input id="reg-password" type="password" required minlength="8" autocomplete="new-password" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
           </div>
-
-          <!-- Charts row -->
-          <div class="mt-10 grid md:grid-cols-2 gap-6">
-            <div class="chart-card">
-              <h3 class="font-semibold text-[#0F2C59] text-lg">Outcomes gap: foster youth vs. peers</h3>
-              <p class="text-xs text-slate-500 mt-1 mb-4">Illustrative comparison based on widely reported national research on youth who age out of care.</p>
-              <div class="relative h-64">
-                <canvas id="outcomesChart" aria-label="Bar chart comparing foster youth outcomes to general population"></canvas>
-              </div>
-              <p class="text-[10px] text-slate-400 mt-3">Sources: national foster care research literature (e.g., Midwest Evaluation / Courtney et al.; AFCARS; college completion studies). Figures are approximate for communication.</p>
-            </div>
-            <div class="chart-card">
-              <h3 class="font-semibold text-[#0F2C59] text-lg">Where support is most urgent</h3>
-              <p class="text-xs text-slate-500 mt-1 mb-4">AFF prioritizes proven levers that change lifetime trajectories.</p>
-              <div class="relative h-64">
-                <canvas id="needsChart" aria-label="Doughnut chart of AFF priority needs"></canvas>
-              </div>
-              <div class="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-600">
-                <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#0F2C59]"></span> Tuition waivers (core need)</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#1E88E5]"></span> Housing 18–23 (core need)</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#4FC3F7]"></span> Education &amp; aid navigation</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#94a3b8]"></span> Advocacy training &amp; future programs</div>
-              </div>
-            </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">State (US)</label>
+            <select id="reg-state" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm">
+              <option value="">Select state…</option>
+            </select>
           </div>
-
-          <div class="mt-8 rounded-3xl overflow-hidden relative">
-            <img src="assets/students-group.jpg" alt="Diverse group of students learning together" class="w-full h-56 md:h-72 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#0F2C59]/90 via-[#0F2C59]/60 to-transparent flex items-center">
-              <div class="p-8 max-w-lg text-white">
-                <div class="text-xs tracking-[2px] uppercase text-sky-300 font-medium">The stakes</div>
-                <p class="mt-2 text-lg font-medium leading-snug">Access to a college or university degree significantly increases quality of life and earning potential — and decreases criminal justice involvement.</p>
-              </div>
-            </div>
-          </div>
-          <p class="img-credit mt-2">Illustrative stock photography · Young people in educational settings</p>
-        </section>
-
-        <!-- 4. SOLUTION / PROGRAMS -->
-        <section id="solution" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">How We Solve It</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Programs that match the problem.</h2>
-          <p class="mt-4 text-[15px] text-slate-600 max-w-2xl">AFF organizes around clear needs — tuition access first, then housing and navigation supports that make education possible — while investing in youth leadership and long-horizon opportunity programs.</p>
-
-          <div class="mt-8 space-y-4">
-            <!-- Program cards -->
-            <a href="national-campaign.html" class="group block bg-white border border-slate-200 hover:border-sky-300 rounded-3xl p-6 shadow-sm hover:shadow-md transition">
-              <div class="flex flex-col sm:flex-row gap-5">
-                <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center flex-shrink-0">
-                  <i class="fa-solid fa-landmark text-lg"></i>
-                </div>
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <h3 class="font-semibold text-lg text-[#0F2C59] group-hover:text-sky-700">National Campaign for State Tuition Waivers</h3>
-                    <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-semibold">Primary · Need</span>
-                  </div>
-                  <p class="mt-2 text-sm text-slate-600 leading-relaxed">Lobby state-by-state for Texas-style tuition waivers. Where multilayer grant systems (including limited Chafee funding) create waiting lists and annual application burdens, we fight for simplified state waivers so foster youth are not blocked by scarcity or paperwork.</p>
-                  <div class="mt-3 text-sm font-medium text-sky-700">Explore the campaign →</div>
-                </div>
-              </div>
-            </a>
-
-            <a href="education-support.html" class="group block bg-white border border-slate-200 hover:border-sky-300 rounded-3xl p-6 shadow-sm hover:shadow-md transition">
-              <div class="flex flex-col sm:flex-row gap-5">
-                <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center flex-shrink-0">
-                  <i class="fa-solid fa-graduation-cap text-lg"></i>
-                </div>
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <h3 class="font-semibold text-lg text-[#0F2C59] group-hover:text-sky-700">Education Support &amp; Financial Literacy</h3>
-                    <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-semibold">Need</span>
-                  </div>
-                  <p class="mt-2 text-sm text-slate-600 leading-relaxed">Help youth apply to college, navigate tuition waivers, grants, scholarships, and loans — and build financial literacy so they do not accumulate crippling debt. <a href="how-to-apply-pay-for-college.html" class="text-sky-700 underline">How to apply &amp; pay for college</a>.</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="national-housing-campaign.html" class="group block bg-white border border-slate-200 hover:border-sky-300 rounded-3xl p-6 shadow-sm hover:shadow-md transition">
-              <div class="flex flex-col sm:flex-row gap-5">
-                <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center flex-shrink-0">
-                  <i class="fa-solid fa-house text-lg"></i>
-                </div>
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <h3 class="font-semibold text-lg text-[#0F2C59] group-hover:text-sky-700">Housing for Youth Aging Out (18–23)</h3>
-                    <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-semibold">Need</span>
-                  </div>
-                  <p class="mt-2 text-sm text-slate-600 leading-relaxed">Stable housing through local, state, and federal programs for young adults who have aged out of care — the foundation that makes college completion and employment possible.</p>
-                </div>
-              </div>
-            </a>
-
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="bg-white border border-slate-200 rounded-3xl p-6">
-                <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-3">
-                  <i class="fa-solid fa-microphone"></i>
-                </div>
-                <h3 class="font-semibold text-[#0F2C59]">Youth Advocacy Training</h3>
-                <p class="mt-2 text-sm text-slate-600">Public speaking, power analysis, and legislative skills so foster youth can advocate for themselves and their peers. Important — and complementary to tuition and housing.</p>
-              </div>
-              <a href="foundation-program.html" class="block bg-white border border-slate-200 hover:border-sky-300 rounded-3xl p-6 transition">
-                <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center mb-3">
-                  <i class="fa-solid fa-rocket"></i>
-                </div>
-                <div class="flex items-center gap-2">
-                  <h3 class="font-semibold text-[#0F2C59]">The Foundation Program</h3>
-                  <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 bg-slate-100 text-slate-600 rounded font-semibold">Vision · Want</span>
-                </div>
-                <p class="mt-2 text-sm text-slate-600">AI literacy, modular greenhouse projects, and space-forward skills — expanding horizons beyond survival. A long-term investment in possibility.</p>
-              </a>
-            </div>
-          </div>
-
-          <div class="mt-8 grid sm:grid-cols-2 gap-4">
-            <div class="rounded-2xl overflow-hidden border">
-              <img src="assets/classroom.jpg" alt="Students in a learning environment" class="w-full h-48 object-cover">
-              <p class="img-credit p-2 bg-white">Education pathways · Illustrative imagery</p>
-            </div>
-            <div class="rounded-2xl overflow-hidden border">
-              <img src="assets/mentorship.jpg" alt="Mentorship and collaborative support" class="w-full h-48 object-cover">
-              <p class="img-credit p-2 bg-white">Mentorship &amp; support · Illustrative imagery</p>
-            </div>
-          </div>
-
-          <!-- PRIMARY IMPACT: 10-year waiver outcomes (featured) -->
-          <div id="impact" class="impact-showcase mt-14 scroll-mt-28 relative z-0">
-            <div class="relative z-10">
-              <div class="flex flex-wrap items-center gap-3 mb-3">
-                <span class="pulse-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400 text-[#0F2C59] text-[10px] font-bold uppercase tracking-wider">
-                  <i class="fa-solid fa-star"></i> Priority metrics for donors
-                </span>
-                <span class="text-sky-200/90 text-xs font-medium tracking-wide uppercase">National planning model · 10 years</span>
-              </div>
-              <h3 class="heading-serif text-3xl md:text-4xl font-semibold text-white tracking-tight">
-                What victory looks like: college access &amp; graduation
-              </h3>
-              <p class="mt-3 text-sky-100/90 text-sm md:text-base max-w-3xl leading-relaxed">
-                These are the numbers that matter most. As AFF wins comprehensive tuition waivers in states with no waiver or multilayered grant systems — then runs a one-year <strong class="text-white">implementation office</strong> so the law actually works — first-time college enrollment and degree completion for foster youth rise nationwide.
-              </p>
-
-              <div class="mt-8 grid sm:grid-cols-3 gap-4">
-                <div class="impact-stat-card text-center">
-                  <div class="text-sky-300 text-[10px] font-bold uppercase tracking-[2px]">By year 10</div>
-                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">14,200+</div>
-                  <div class="text-sky-100 text-sm mt-2 font-medium">First-time college enrollments / year</div>
-                  <div class="text-sky-300/70 text-xs mt-1">Foster youth entering under new or expanded waivers</div>
-                </div>
-                <div class="impact-stat-card text-center ring-2 ring-emerald-400/50">
-                  <div class="text-emerald-300 text-[10px] font-bold uppercase tracking-[2px]">By year 10</div>
-                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">4,500+</div>
-                  <div class="text-sky-100 text-sm mt-2 font-medium">Estimated graduates / year</div>
-                  <div class="text-emerald-300/80 text-xs mt-1">Degrees earned as early waiver cohorts finish</div>
-                </div>
-                <div class="impact-stat-card text-center">
-                  <div class="text-sky-300 text-[10px] font-bold uppercase tracking-[2px]">Graduation rate lift</div>
-                  <div class="heading-serif text-4xl md:text-5xl font-semibold text-white mt-1 tabular-nums">12% → 34%</div>
-                  <div class="text-sky-100 text-sm mt-2 font-medium">Est. 6-year completion rate</div>
-                  <div class="text-sky-300/70 text-xs mt-1">Waiver-state foster youth vs. baseline without comprehensive waiver</div>
-                </div>
-              </div>
-
-              <div class="mt-8 grid lg:grid-cols-2 gap-5">
-                <div class="impact-chart-panel">
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <h4 class="font-semibold text-[#0F2C59] text-base">10-year waiver impact</h4>
-                  </div>
-                  <p class="text-xs text-slate-500 mb-3">First-time college enrollments and estimated annual graduates as cumulative state wins grow.</p>
-                  <div class="relative h-72">
-                    <canvas id="waiverImpactChart" aria-label="Line chart of college enrollment and graduation over 10 years after waivers"></canvas>
-                  </div>
-                </div>
-                <div class="impact-chart-panel">
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-                    <h4 class="font-semibold text-[#0F2C59] text-base">College graduation rate trajectory</h4>
-                  </div>
-                  <p class="text-xs text-slate-500 mb-3">Estimated six-year completion among foster youth who enter college after a comprehensive waiver takes effect.</p>
-                  <div class="relative h-72">
-                    <canvas id="gradRateChart" aria-label="Line chart of estimated foster youth college graduation rates over 10 years"></canvas>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-6 overflow-x-auto rounded-2xl bg-white/95 border border-white/20">
-                <table class="w-full text-xs text-left border-collapse min-w-[520px]">
-                  <thead>
-                    <tr class="border-b-2 border-slate-200 uppercase tracking-wider text-slate-500 bg-slate-50">
-                      <th class="py-2.5 px-3 font-semibold">Year</th>
-                      <th class="py-2.5 px-2 font-semibold text-right">Cum. waiver wins</th>
-                      <th class="py-2.5 px-2 font-semibold text-right">First-time college</th>
-                      <th class="py-2.5 px-2 font-semibold text-right">Est. graduates</th>
-                      <th class="py-2.5 px-3 font-semibold text-right">Est. 6-yr grad rate</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y1</td><td class="py-2 px-2 text-right tabular-nums">0</td><td class="py-2 px-2 text-right tabular-nums">400</td><td class="py-2 px-2 text-right tabular-nums">40</td><td class="py-2 px-3 text-right tabular-nums">12%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y2</td><td class="py-2 px-2 text-right tabular-nums">2</td><td class="py-2 px-2 text-right tabular-nums">1,200</td><td class="py-2 px-2 text-right tabular-nums">100</td><td class="py-2 px-3 text-right tabular-nums">13%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y3</td><td class="py-2 px-2 text-right tabular-nums">3</td><td class="py-2 px-2 text-right tabular-nums">2,200</td><td class="py-2 px-2 text-right tabular-nums">280</td><td class="py-2 px-3 text-right tabular-nums">15%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y4</td><td class="py-2 px-2 text-right tabular-nums">5</td><td class="py-2 px-2 text-right tabular-nums">3,800</td><td class="py-2 px-2 text-right tabular-nums">550</td><td class="py-2 px-3 text-right tabular-nums">17%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y5</td><td class="py-2 px-2 text-right tabular-nums">6</td><td class="py-2 px-2 text-right tabular-nums">5,200</td><td class="py-2 px-2 text-right tabular-nums">1,000</td><td class="py-2 px-3 text-right tabular-nums">19%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y6</td><td class="py-2 px-2 text-right tabular-nums">8</td><td class="py-2 px-2 text-right tabular-nums">7,200</td><td class="py-2 px-2 text-right tabular-nums">1,600</td><td class="py-2 px-3 text-right tabular-nums">22%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y7</td><td class="py-2 px-2 text-right tabular-nums">10</td><td class="py-2 px-2 text-right tabular-nums">9,200</td><td class="py-2 px-2 text-right tabular-nums">2,400</td><td class="py-2 px-3 text-right tabular-nums">26%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y8</td><td class="py-2 px-2 text-right tabular-nums">12</td><td class="py-2 px-2 text-right tabular-nums">11,200</td><td class="py-2 px-2 text-right tabular-nums">3,200</td><td class="py-2 px-3 text-right tabular-nums">29%</td></tr>
-                    <tr class="border-b border-slate-100"><td class="py-2 px-3">Y9</td><td class="py-2 px-2 text-right tabular-nums">14</td><td class="py-2 px-2 text-right tabular-nums">12,800</td><td class="py-2 px-2 text-right tabular-nums">3,900</td><td class="py-2 px-3 text-right tabular-nums">32%</td></tr>
-                    <tr class="bg-emerald-50 font-semibold"><td class="py-2.5 px-3 text-[#0F2C59]">Y10</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">15</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">14,200</td><td class="py-2.5 px-2 text-right tabular-nums text-[#0F2C59]">4,500</td><td class="py-2.5 px-3 text-right tabular-nums text-emerald-700">34%</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="mt-3 text-[11px] text-sky-200/70">Planning estimates for donor and partner use — not guaranteed outcomes. Timing assumes ~2 years of campaign work per victory, then a one-year implementation office before redeploying to the next focus state.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- 5. EVIDENCE -->
-        <section id="evidence" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Evidence Base</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Why education, waivers, and housing work.</h2>
-          <p class="mt-4 text-sm text-slate-600 max-w-2xl">The case for AFF rests on decades of foster care and education research. Below: mission-aligned findings that donors, legislators, and partners can rely on.</p>
-
-          <div class="mt-8 grid gap-4">
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">01</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">College completion transforms lifetime earnings</h3>
-                <p class="mt-1 text-sm text-slate-600">Postsecondary credentials are among the strongest predictors of higher wages, employment stability, and intergenerational mobility — outcomes foster youth are systematically denied without targeted aid.</p>
-              </div>
-            </div>
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">02</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">Youth who age out face elevated homelessness</h3>
-                <p class="mt-1 text-sm text-slate-600">Longitudinal studies of youth leaving care document homelessness rates far above peers — often cited around one in five — making housing a prerequisite for educational persistence.</p>
-              </div>
-            </div>
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">03</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">Criminal justice involvement is preventable with opportunity</h3>
-                <p class="mt-1 text-sm text-slate-600">Foster youth experience higher rates of arrest and incarceration. Education and stable transitions are protective factors that reduce system involvement and public costs.</p>
-              </div>
-            </div>
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">04</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">Tuition waivers remove the first barrier to enrollment</h3>
-                <p class="mt-1 text-sm text-slate-600">State waiver programs (Texas model and peers) reduce sticker-price barriers that stop foster youth before applications, FAFSA, or campus life ever begin. Simplifying aid is itself an equity intervention.</p>
-              </div>
-            </div>
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">05</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">Fragmented grants create waitlists and debt risk</h3>
-                <p class="mt-1 text-sm text-slate-600">Limited federal and state grant pools (including Chafee-related constraints) can favor students already enrolled and force annual re-application. Comprehensive state waivers reduce that churn and debt pressure.</p>
-              </div>
-            </div>
-            <div class="bg-white border rounded-2xl p-5 flex gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">06</div>
-              <div>
-                <h3 class="font-semibold text-[#0F2C59]">Lived-experience leadership improves program design</h3>
-                <p class="mt-1 text-sm text-slate-600">Organizations led by people who have navigated care and waivers themselves are uniquely positioned to design advocacy and support that meet youth where systems fail them.</p>
-              </div>
-            </div>
-          </div>
-          <p class="mt-4 text-[11px] text-slate-400">Evidence statements synthesize peer-reviewed and policy research on foster care transitions, education, and housing. AFF will publish a full annotated bibliography for grant partners upon request.</p>
-        </section>
-
-        <!-- 6. LEADERSHIP -->
-        <section id="leadership" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Team &amp; Assets</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Built by people who know the path.</h2>
-
-          <!-- Stephen — featured, no photo -->
-          <div class="mt-8 bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-              <div>
-                <div class="font-semibold text-2xl text-[#0F2C59]">Stephen M. Benavides</div>
-                <div class="text-sky-700 text-sm font-medium mt-0.5">Founder &amp; Executive Director</div>
-              </div>
-              <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-semibold">
-                <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">Campaigns that win</span>
-                <span class="px-2.5 py-1 rounded-full bg-sky-100 text-sky-800">Lived experience</span>
-                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">Public testimony</span>
-              </div>
-            </div>
-
-            <p class="mt-5 text-[15px] text-slate-600 leading-relaxed">
-              Stephen does not lead this work from a distance. He was a ward of the State of Texas — moving through foster homes and secured facilities, experiencing homelessness as a runaway, and emancipating at 17. A caseworker once handed him a manila envelope he nearly ignored. Inside was the Texas Foster Care Tuition Waiver — the same tool that later carried him through a B.A. in Political Science at the University of North Texas and toward a Master of Public Administration in Criminal Justice at the University of Texas at Tyler. That lived path is not a footnote. It is the strategic lens AFF uses every day: he knows where systems break, what youth actually hear (and ignore), and which barriers money, paperwork, and stigma still put in the way of a degree.
-            </p>
-
-            <div class="mt-6 grid md:grid-cols-3 gap-4">
-              <div class="rounded-2xl bg-[#0F2C59] text-white p-5">
-                <div class="flex items-center gap-2 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-                  <i class="fa-solid fa-landmark"></i> Policy campaigns that win
-                </div>
-                <p class="mt-3 text-sm text-sky-50 leading-relaxed">Stephen has worked on numerous successful policy campaigns at the director level — in labor unions and community organizations across the nation. He knows how to move from problem definition to bill language, coalition pressure, and a floor vote that changes the rules for thousands of people.</p>
-              </div>
-              <div class="rounded-2xl bg-sky-50 border border-sky-100 p-5">
-                <div class="flex items-center gap-2 text-sky-800 text-xs font-semibold uppercase tracking-wider">
-                  <i class="fa-solid fa-microphone-lines"></i> Testimony &amp; the record
-                </div>
-                <p class="mt-3 text-sm text-slate-600 leading-relaxed">He has extensive experience providing public testimony before decision-makers — translating technical policy and personal stakes into clear, credible arguments legislators and agencies can act on. That skill is central to AFF’s state-by-state waiver strategy.</p>
-              </div>
-              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
-                <div class="flex items-center gap-2 text-[#0F2C59] text-xs font-semibold uppercase tracking-wider">
-                  <i class="fa-solid fa-bullhorn"></i> Organizing that delivers
-                </div>
-                <p class="mt-3 text-sm text-slate-600 leading-relaxed">Winning campaigns are built, not hoped for. Stephen’s background is in organizing — aligning partners, power analysis, field pressure, and disciplined message — so AFF is designed to run campaigns that pass laws, not only write reports about why laws matter.</p>
-              </div>
-            </div>
-
-            <div class="mt-6 p-5 rounded-2xl border-l-4 border-sky-500 bg-slate-50">
-              <div class="text-xs font-semibold uppercase tracking-[2px] text-sky-700">Why lived experience is a strategic asset</div>
-              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                Many advocates understand foster care as data. Stephen understands it as a sequence of closed doors — and as the moment a tuition waiver became the first real map out. That perspective shapes how AFF designs outreach (youth who will not open the envelope), how we brief lawmakers (what “access” feels like at 17), and how we prioritize comprehensive state waivers over grant systems that only the already-enrolled can navigate. Donors are not funding abstract awareness. They are funding leadership that has already walked the path we ask the nation to open for every foster youth.
-              </p>
-            </div>
-
-            <div class="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
-              <span>Policy &amp; legislative advocacy</span>
-              <span>·</span>
-              <span>Public speaking &amp; testimony</span>
-              <span>·</span>
-              <span>Campaign strategy &amp; organizing</span>
-              <span>·</span>
-              <span>Artificial intelligence &amp; leadership</span>
-            </div>
-          </div>
-
-          <!-- Ronni — text only, no photo -->
-          <div class="mt-6 bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-sm">
-            <div class="font-semibold text-xl text-[#0F2C59]">Ronni Kasper</div>
-            <div class="text-sky-700 text-sm font-medium mt-0.5">Co-Founder &amp; Treasurer</div>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-              Registered Nurse specializing in dermatology and reconstructive surgery. Dual B.A. in Psychology &amp; Philosophy and M.S. Nursing from the University of Texas at Austin. Coordinated graduate-level research in neuroscience, cognitive science, sleep medicine, and neurology. Ronni brings healthcare, psychology, and nonprofit development expertise to national advocacy for young adults who have experienced foster care — strengthening AFF’s governance, financial stewardship, and whole-person view of youth wellbeing.
-            </p>
-          </div>
-
-          <div class="mt-6 grid sm:grid-cols-3 gap-4 text-sm">
-            <div class="bg-slate-900 text-white rounded-2xl p-5">
-              <i class="fa-solid fa-scale-balanced text-sky-300 mb-2"></i>
-              <div class="font-semibold">Governance</div>
-              <p class="text-xs text-slate-300 mt-1">Bylaws adopted May 2025 · Conflict of interest policy · CA incorporated nonprofit</p>
-            </div>
-            <div class="bg-white border rounded-2xl p-5">
-              <i class="fa-solid fa-map text-sky-600 mb-2"></i>
-              <div class="font-semibold text-[#0F2C59]">Campaign infrastructure</div>
-              <p class="text-xs text-slate-600 mt-1">National waiver map, state research, public records strategy, and coalition model</p>
-            </div>
-            <div class="bg-white border rounded-2xl p-5">
-              <i class="fa-solid fa-heart-pulse text-sky-600 mb-2"></i>
-              <div class="font-semibold text-[#0F2C59]">Values-driven culture</div>
-              <p class="text-xs text-slate-600 mt-1"><a href="values.html" class="text-sky-700 hover:underline">Integrity, Compassion, Collaboration, Community</a></p>
-            </div>
-          </div>
-          <p class="mt-4 text-sm"><a href="board-of-directors.html" class="text-sky-700 font-medium hover:underline">Full board bios →</a> · <a href="history.html" class="text-sky-700 font-medium hover:underline">Our history →</a></p>
-        </section>
-
-        <!-- 7. GOALS -->
-        <section id="goals" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Forward-Looking Goals</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">From one state to a national standard.</h2>
-
-          <div class="mt-8 relative pl-12">
-            <div class="timeline-line"></div>
-            <div class="space-y-8">
-              <div class="relative">
-                <div class="absolute -left-12 w-10 h-10 rounded-full bg-[#0F2C59] text-white flex items-center justify-center text-sm font-bold shadow-lg">1</div>
-                <div class="bg-white border rounded-2xl p-5">
-                  <div class="font-semibold text-[#0F2C59]">Launch national fundraising &amp; first office</div>
-                  <p class="text-sm text-slate-600 mt-1">Build core capacity, hire essential staff, and establish a professional base of operations as funding arrives.</p>
-                </div>
-              </div>
-              <div class="relative">
-                <div class="absolute -left-12 w-10 h-10 rounded-full bg-[#0F2C59] text-white flex items-center justify-center text-sm font-bold shadow-lg">2</div>
-                <div class="bg-white border rounded-2xl p-5">
-                  <div class="font-semibold text-[#0F2C59]">Select 3–5 focus states; research deeply</div>
-                  <p class="text-sm text-slate-600 mt-1">Public records requests, policy analysis, and mapping of existing aid — state by state.</p>
-                </div>
-              </div>
-              <div class="relative">
-                <div class="absolute -left-12 w-10 h-10 rounded-full bg-[#0F2C59] text-white flex items-center justify-center text-sm font-bold shadow-lg">3</div>
-                <div class="bg-white border rounded-2xl p-5">
-                  <div class="font-semibold text-[#0F2C59]">Coalition building &amp; legislative engagement</div>
-                  <p class="text-sm text-slate-600 mt-1">Partner with aligned organizations; meet elected officials; deliver public testimony on relevant bills.</p>
-                </div>
-              </div>
-              <div class="relative">
-                <div class="absolute -left-12 w-10 h-10 rounded-full bg-sky-600 text-white flex items-center justify-center text-sm font-bold shadow-lg">4</div>
-                <div class="bg-white border rounded-2xl p-5">
-                  <div class="font-semibold text-[#0F2C59]">Youth programs online</div>
-                  <p class="text-sm text-slate-600 mt-1">Launch foster youth advocacy training and educational support series virtually — scalable from day one.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-10 chart-card">
-            <h3 class="font-semibold text-[#0F2C59] text-lg">Rolling campaign capacity (10-year planning view)</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-4">Each victory takes ~2 campaign years; then a 1-year implementation office; then redeploy. Concurrent offices × $1.25M set annual cost. Impact metrics are featured under <a href="#impact" class="text-sky-700 underline">Solution</a>.</p>
-            <div class="relative h-72">
-              <canvas id="growthChart" aria-label="Chart showing concurrent offices vs cumulative waiver wins over 10 years"></canvas>
-            </div>
-          </div>
-        </section>
-
-        <!-- 8. FINANCIAL NEEDS -->
-        <section id="financials" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Investment Required</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">What it takes to win state by state.</h2>
-          <p class="mt-4 text-sm text-slate-600 max-w-2xl">Below is AFF’s <strong>estimated annual operating budget</strong> for donors and partners — fully itemized. Figures are planning estimates (mid-market U.S. office and nonprofit norms) and will be refined with local leases and actual hires. Funding scales with concurrent state offices; there is <strong>no fixed annual ceiling</strong> — capacity grows as donors enable more simultaneous campaigns.</p>
-
-          <div class="mt-8 grid md:grid-cols-3 gap-4">
-            <div class="bg-[#0F2C59] text-white rounded-3xl p-6">
-              <div class="text-sky-300 text-xs font-semibold tracking-[2px] uppercase">Per state office / year</div>
-              <div class="heading-serif text-4xl font-semibold mt-2">$1.25M</div>
-              <p class="mt-2 text-xs text-sky-100/90">Full state team, medium office, program &amp; campaign (planning unit)</p>
-            </div>
-            <div class="bg-white border-2 border-slate-200 rounded-3xl p-6">
-              <div class="text-sky-600 text-xs font-semibold tracking-[2px] uppercase">Time to victory</div>
-              <div class="heading-serif text-3xl sm:text-4xl font-semibold mt-2 text-[#0F2C59]">2 years</div>
-              <p class="mt-2 text-xs text-slate-500">Campaign phase per state, then 1-year implementation office, then redeploy</p>
-            </div>
-            <div class="bg-white border-2 border-emerald-200 rounded-3xl p-6 bg-emerald-50/40">
-              <div class="text-emerald-700 text-xs font-semibold tracking-[2px] uppercase">10-year funding total</div>
-              <div class="heading-serif text-4xl font-semibold mt-2 text-[#0F2C59]">$52.5M</div>
-              <p class="mt-2 text-xs text-slate-500">Sum of estimated annual budgets across the rolling office cycle below</p>
-            </div>
-          </div>
-
-          <!-- Staffing -->
-          <div class="mt-10 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-2">
-              <h3 class="font-semibold text-lg text-[#0F2C59]">1. Personnel — salaries (per active state office)</h3>
-              <span class="text-xs text-slate-500">Planning midpoints · annual</span>
-            </div>
-            <p class="text-sm text-slate-600 mb-6">One Executive Director serves the organization nationally. Each active state office is staffed with an Office Manager, Policy &amp; Research Analyst, Grant Writer, and Community Organizer.</p>
-
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm text-left border-collapse min-w-[520px]">
-                <thead>
-                  <tr class="border-b-2 border-slate-200 text-xs uppercase tracking-wider text-slate-500">
-                    <th class="py-3 pr-4 font-semibold">Role</th>
-                    <th class="py-3 pr-4 font-semibold">Range</th>
-                    <th class="py-3 text-right font-semibold">Budget estimate</th>
-                  </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4 font-medium">Executive Director <span class="text-xs text-slate-400 font-normal">(org-wide, not duplicated per state)</span></td>
-                    <td class="py-3 pr-4 text-slate-500">Up to $200,000</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$200,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4 font-medium">Office Manager</td>
-                    <td class="py-3 pr-4 text-slate-500">$65,000 – $75,000</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$70,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4 font-medium">Policy &amp; Research Analyst</td>
-                    <td class="py-3 pr-4 text-slate-500">$65,000 – $75,000</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$70,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4 font-medium">Grant Writer</td>
-                    <td class="py-3 pr-4 text-slate-500">$65,000 – $75,000</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$70,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4 font-medium">Community Organizer</td>
-                    <td class="py-3 pr-4 text-slate-500">$65,000 – $75,000</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$70,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-200 bg-slate-50">
-                    <td class="py-3 pr-4 font-medium" colspan="2">Gross salaries subtotal (1 state + ED)</td>
-                    <td class="py-3 text-right font-semibold tabular-nums">$480,000</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-3 pr-4" colspan="2">Employer payroll taxes, benefits &amp; insurance (~28%)</td>
-                    <td class="py-3 text-right tabular-nums">$134,400</td>
-                  </tr>
-                  <tr class="bg-[#0F2C59] text-white">
-                    <td class="py-3.5 pr-4 font-semibold rounded-bl-xl" colspan="2">Total personnel</td>
-                    <td class="py-3.5 text-right font-semibold tabular-nums rounded-br-xl">$614,400</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Medium office costs -->
-          <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-2">
-              <h3 class="font-semibold text-lg text-[#0F2C59]">2. Medium office — rent, bills &amp; facility overhead</h3>
-              <span class="text-xs text-slate-500">~1,800–2,200 sq ft · 5 workstations · per office / year</span>
-            </div>
-            <p class="text-sm text-slate-600 mb-6">Estimated cost to run one medium-size professional office (rent, utilities, telecom, insurance, and day-to-day facility bills). Costs vary by market; these figures use mid-range U.S. commercial norms for planning.</p>
-
-            <div class="grid md:grid-cols-2 gap-6 mb-6">
-              <div class="chart-card !p-4 !shadow-none">
-                <h4 class="text-sm font-semibold text-[#0F2C59] mb-2">Office cost breakdown</h4>
-                <div class="relative h-64">
-                  <canvas id="officeCostChart" aria-label="Doughnut chart of medium office annual costs"></canvas>
-                </div>
-              </div>
-              <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left border-collapse">
-                  <thead>
-                    <tr class="border-b-2 border-slate-200 text-xs uppercase tracking-wider text-slate-500">
-                      <th class="py-2.5 pr-3 font-semibold">Line item</th>
-                      <th class="py-2.5 pr-3 font-semibold">Monthly est.</th>
-                      <th class="py-2.5 text-right font-semibold">Annual est.</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Office rent (lease)</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$4,200</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$50,400</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Electricity, gas &amp; HVAC</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$650</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$7,800</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Water, sewer &amp; trash</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$150</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$1,800</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Internet &amp; business phone</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$350</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$4,200</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Mobile / field phones</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$200</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$2,400</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Property, liability &amp; D&amp;O insurance</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$1,000</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$12,000</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Janitorial / cleaning</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$400</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$4,800</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                      <td class="py-2.5 pr-3">Security, access &amp; alarms</td>
-                      <td class="py-2.5 pr-3 text-slate-500 tabular-nums">$125</td>
-                      <td class="py-2.5 text-right tabular-nums font-medium">$1,500</td>
-                    </tr>
-                    <tr class="bg-sky-50 border-t border-sky-100">
-                      <td class="py-3 pr-3 font-semibold text-[#0F2C59]" colspan="2">Facility overhead subtotal</td>
-                      <td class="py-3 text-right font-semibold tabular-nums text-[#0F2C59]">$84,900</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500">As each new state campaign opens, this full facility package is largely recreated in that state — rent and bills scale with the number of active offices.</p>
-          </div>
-
-          <!-- Full annual budget -->
-          <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-2">
-              <h3 class="font-semibold text-lg text-[#0F2C59]">3. Estimated annual budget — one active state</h3>
-              <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded">Planning total ≈ $1,250,000</span>
-            </div>
-            <p class="text-sm text-slate-600 mb-6">Complete itemized operating budget donors can review. Midpoint estimates; contingency included for market and program variance.</p>
-
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm text-left border-collapse min-w-[480px]">
-                <thead>
-                  <tr class="border-b-2 border-slate-200 text-xs uppercase tracking-wider text-slate-500">
-                    <th class="py-3 pr-4 font-semibold">Category / line item</th>
-                    <th class="py-3 text-right font-semibold">Annual estimate</th>
-                  </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                  <tr class="bg-slate-100">
-                    <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">A. Personnel</td>
-                  </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Executive Director (up to $200,000)</td><td class="py-2 text-right tabular-nums">$200,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Office Manager</td><td class="py-2 text-right tabular-nums">$70,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Policy &amp; Research Analyst</td><td class="py-2 text-right tabular-nums">$70,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Grant Writer</td><td class="py-2 text-right tabular-nums">$70,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Community Organizer</td><td class="py-2 text-right tabular-nums">$70,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Payroll taxes, benefits &amp; employer insurance (~28%)</td><td class="py-2 text-right tabular-nums">$134,400</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal personnel</td><td class="py-2.5 text-right font-semibold tabular-nums">$614,400</td></tr>
-
-                  <tr class="bg-slate-100">
-                    <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">B. Medium office — rent &amp; bills</td>
-                  </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Office rent</td><td class="py-2 text-right tabular-nums">$50,400</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Utilities (electric, gas, HVAC, water, trash)</td><td class="py-2 text-right tabular-nums">$9,600</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Internet, phone &amp; mobile</td><td class="py-2 text-right tabular-nums">$6,600</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Insurance (property, liability, D&amp;O)</td><td class="py-2 text-right tabular-nums">$12,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Janitorial, security &amp; building services</td><td class="py-2 text-right tabular-nums">$6,300</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal office facility</td><td class="py-2.5 text-right font-semibold tabular-nums">$84,900</td></tr>
-
-                  <tr class="bg-slate-100">
-                    <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">C. Technology, capital &amp; supplies</td>
-                  </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Computers, printers, furniture &amp; equipment (annualized)</td><td class="py-2 text-right tabular-nums">$18,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Software, CRM, web hosting &amp; online accounts</td><td class="py-2 text-right tabular-nums">$7,200</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Office supplies, postage &amp; shipping</td><td class="py-2 text-right tabular-nums">$4,800</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal tech &amp; supplies</td><td class="py-2.5 text-right font-semibold tabular-nums">$30,000</td></tr>
-
-                  <tr class="bg-slate-100">
-                    <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">D. Program, campaign &amp; field work</td>
-                  </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Travel, gasoline &amp; lodging (organizing / capitol visits)</td><td class="py-2 text-right tabular-nums">$48,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Advocacy materials, printing &amp; public testimony</td><td class="py-2 text-right tabular-nums">$24,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Coalition meetings, events &amp; community forums</td><td class="py-2 text-right tabular-nums">$30,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Public records, research fees &amp; data</td><td class="py-2 text-right tabular-nums">$8,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Youth education &amp; advocacy training delivery</td><td class="py-2 text-right tabular-nums">$40,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Direct youth support &amp; emergency assistance fund</td><td class="py-2 text-right tabular-nums">$121,000</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal program &amp; campaign (direct lines)</td><td class="py-2.5 text-right font-semibold tabular-nums">$271,000</td></tr>
-
-                  <tr class="bg-slate-100">
-                    <td class="py-2.5 pr-4 font-semibold text-[#0F2C59]" colspan="2">E. Professional services &amp; administration</td>
-                  </tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Legal, accounting, audit &amp; compliance</td><td class="py-2 text-right tabular-nums">$22,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Banking, payment processing &amp; misc. fees</td><td class="py-2 text-right tabular-nums">$4,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Staff development &amp; training</td><td class="py-2 text-right tabular-nums">$6,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Fundraising outreach (mail, print, prospecting)</td><td class="py-2 text-right tabular-nums">$16,000</td></tr>
-                  <tr class="border-b border-slate-100"><td class="py-2 pr-4 pl-4">Contingency reserve</td><td class="py-2 text-right tabular-nums">$201,700</td></tr>
-                  <tr class="border-b border-slate-200 bg-slate-50"><td class="py-2.5 pr-4 font-medium">Subtotal admin &amp; contingency</td><td class="py-2.5 text-right font-semibold tabular-nums">$249,700</td></tr>
-
-                  <tr class="bg-[#0F2C59] text-white">
-                    <td class="py-4 pr-4 font-semibold text-base rounded-bl-xl">Estimated annual total — 1 active state</td>
-                    <td class="py-4 text-right font-semibold text-base tabular-nums rounded-br-xl">$1,250,000</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="mt-4 text-xs text-slate-500">Totals are rounded for donor presentation. Line items may shift between categories without changing the overall ask. Early-stage Executive Director compensation is expected to be below the $200,000 ceiling until revenue supports full capacity.</p>
-          </div>
-
-          <!-- Budget pie only (impact charts live under Solution) -->
-          <div class="mt-8 chart-card max-w-xl">
-            <h3 class="font-semibold text-[#0F2C59] text-lg">Where a $1.25M state budget goes</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-3">Personnel salaries are included inside <strong>Program &amp; campaign</strong> — advocacy, organizing, research, and youth support are staff-driven work.</p>
-            <div class="relative h-72">
-              <canvas id="budgetChart" aria-label="Doughnut chart of annual budget with personnel inside program costs"></canvas>
-            </div>
-            <p class="text-[10px] text-slate-400 mt-2">Program &amp; campaign = salaries &amp; benefits ($614.4k) + direct campaign/youth lines ($271k). Impact charts: <a href="#impact" class="text-sky-700 underline">see Solution → 10-Year Impact</a>.</p>
-          </div>
-
-          <!-- Rolling campaign model -->
-          <div class="mt-8 bg-white border rounded-3xl p-6 md:p-8 shadow-sm">
-            <h3 class="font-semibold text-lg text-[#0F2C59]">4. Rolling campaign funding — 2-year victories, then implement &amp; redeploy</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-relaxed">Each state victory is planned as a <strong>two-year campaign</strong> (research, coalitions, bill introduction, testimony, and floor action). AFF does not fund every state office forever. After a state <strong>passes comprehensive waiver legislation</strong>, the office converts for <strong>one implementation year</strong>, then the slot is <strong>redeployed</strong> to the next focus state.</p>
-
-            <div class="mt-5 p-5 rounded-2xl border-2 border-sky-200 bg-sky-50">
-              <div class="text-xs font-bold uppercase tracking-[2px] text-sky-800">What is an implementation office?</div>
-              <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-                An <strong>implementation office</strong> is a fully staffed state office that stays open for <strong>one year after the waiver law takes effect</strong>. Its job is no longer lobbying for passage — it is <strong>making the law work in practice</strong>: training child-welfare and higher-education agencies, helping campuses process the waiver, assisting foster youth with applications and eligibility, fixing rollout problems, and documenting what other states can copy. After that year, the office closes or moves to a new campaign state so donor dollars keep buying new victories instead of permanent overhead where the fight is already won.
-              </p>
-            </div>
-
-            <div class="grid sm:grid-cols-3 gap-3 text-xs mt-5 mb-6">
-              <div class="p-4 rounded-2xl bg-[#0F2C59] text-white">
-                <div class="text-sky-300 font-semibold uppercase tracking-wider text-[10px]">Phase 1 · Campaign (2 years)</div>
-                <p class="mt-2 text-sky-50">Full office: lobby, research, coalitions, and testimony until comprehensive waiver legislation becomes law. Planning assumption: <strong>two years per victory</strong>.</p>
-              </div>
-              <div class="p-4 rounded-2xl bg-sky-100 border border-sky-200">
-                <div class="text-sky-800 font-semibold uppercase tracking-wider text-[10px]">Phase 2 · Implementation office (+1 year)</div>
-                <p class="mt-2 text-slate-700">Same team, new mission: operationalize the win so agencies, campuses, and youth can use the waiver. Not a second campaign office — a transition year after passage.</p>
-              </div>
-              <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="text-[#0F2C59] font-semibold uppercase tracking-wider text-[10px]">Phase 3 · Redeploy</div>
-                <p class="mt-2 text-slate-600">Drop that state office; transfer the <strong>~$1.25M / year</strong> slot to the next no-waiver or multilayered-system state. National leadership continues.</p>
-              </div>
-            </div>
-
-            <h4 class="font-semibold text-[#0F2C59] text-sm mb-3">10-year office cycle (planning scenario)</h4>
-            <p class="text-xs text-slate-500 mb-4">Costed at <strong>$1.25M per concurrent state office per year</strong> (campaign + implementation slots). Victories require two campaign years; cumulative wins rise while individual offices cycle off. No annual funding cap — totals scale with concurrent offices donors enable.</p>
-
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm text-left border-collapse min-w-[640px]">
-                <thead>
-                  <tr class="border-b-2 border-slate-200 text-xs uppercase tracking-wider text-slate-500">
-                    <th class="py-3 pr-2 font-semibold">Year</th>
-                    <th class="py-3 pr-2 font-semibold text-right">Campaign offices</th>
-                    <th class="py-3 pr-2 font-semibold text-right">Implementation offices</th>
-                    <th class="py-3 pr-2 font-semibold text-right">New wins</th>
-                    <th class="py-3 pr-2 font-semibold text-right">Offices redeployed</th>
-                    <th class="py-3 pr-2 font-semibold text-right">Cumulative waiver wins</th>
-                    <th class="py-3 font-semibold text-right">Est. annual budget</th>
-                  </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$2.50M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$3.75M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100 bg-sky-50/40">
-                    <td class="py-2.5 pr-2 font-medium">Y3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">0</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y4</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">5</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y5</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">6</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100 bg-sky-50/40">
-                    <td class="py-2.5 pr-2 font-medium">Y6</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">8</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$5.00M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y7</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">1</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">10</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100">
-                    <td class="py-2.5 pr-2 font-medium">Y8</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">12</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
-                  </tr>
-                  <tr class="border-b border-slate-100 bg-sky-50/40">
-                    <td class="py-2.5 pr-2 font-medium">Y9</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">3</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">2</td>
-                    <td class="py-2.5 pr-2 text-right tabular-nums">14</td>
-                    <td class="py-2.5 text-right font-semibold tabular-nums">$6.25M</td>
-                  </tr>
-                  <tr class="border-b-2 border-[#0F2C59]">
-                    <td class="py-3 pr-2 font-semibold text-[#0F2C59]">Y10</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">3</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">2</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">1</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">2</td>
-                    <td class="py-3 pr-2 text-right tabular-nums font-semibold">15</td>
-                    <td class="py-3 text-right font-semibold tabular-nums text-[#0F2C59]">$6.25M</td>
-                  </tr>
-                  <tr class="bg-[#0F2C59] text-white">
-                    <td class="py-4 pr-2 font-semibold rounded-bl-xl" colspan="6">Total estimated funding — 10-year period</td>
-                    <td class="py-4 text-right font-semibold text-lg tabular-nums rounded-br-xl">$52.50M</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="mt-6 grid sm:grid-cols-3 gap-3 text-xs">
-              <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">2 years to win</div>
-                <p class="text-slate-600 mt-1">Each victory is budgeted as two full campaign years before the law passes — realistic for state legislative cycles.</p>
-              </div>
-              <div class="p-4 rounded-2xl bg-slate-50 border">
-                <div class="font-semibold text-[#0F2C59]">$1.25M × concurrent offices</div>
-                <p class="text-slate-600 mt-1">Annual cost = number of campaign + implementation offices × $1.25M. No artificial annual cap.</p>
-              </div>
-              <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200">
-                <div class="font-semibold text-[#0F2C59]">$52.5M over 10 years</div>
-                <p class="text-slate-600 mt-1">Sum of the annual column above — the decade investment to cycle offices through ~15 state victories.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 9. FUNDRAISING -->
-        <section id="fundraising" class="scroll-mt-28">
-          <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">How We Raise It</div>
-          <h2 class="section-header heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">A multi-channel strategy for sustainable growth.</h2>
-
-          <div class="mt-8 grid sm:grid-cols-2 gap-4">
-            <div class="bg-white border rounded-2xl p-6">
-              <div class="w-10 h-10 rounded-xl bg-sky-100 text-[#0F2C59] flex items-center justify-center mb-3"><i class="fa-solid fa-building-columns"></i></div>
-              <h3 class="font-semibold text-[#0F2C59]">Corporate foundations &amp; grants</h3>
-              <p class="mt-2 text-sm text-slate-600">Target companies and foundations that support foster youth, education equity, and low-income opportunity.</p>
-            </div>
-            <div class="bg-white border rounded-2xl p-6">
-              <div class="w-10 h-10 rounded-xl bg-sky-100 text-[#0F2C59] flex items-center justify-center mb-3"><i class="fa-solid fa-user-tie"></i></div>
-              <h3 class="font-semibold text-[#0F2C59]">Major individual donors</h3>
-              <p class="mt-2 text-sm text-slate-600">High-net-worth individuals in tech, finance, and hedge funds — personal outreach with this Case for Support.</p>
-            </div>
-            <div class="bg-white border rounded-2xl p-6">
-              <div class="w-10 h-10 rounded-xl bg-sky-100 text-[#0F2C59] flex items-center justify-center mb-3"><i class="fa-solid fa-landmark-dome"></i></div>
-              <h3 class="font-semibold text-[#0F2C59]">Government grants</h3>
-              <p class="mt-2 text-sm text-slate-600">Local, state, and federal opportunities — plus elected champions with a track record on foster care.</p>
-            </div>
-            <div class="bg-white border rounded-2xl p-6">
-              <div class="w-10 h-10 rounded-xl bg-sky-100 text-[#0F2C59] flex items-center justify-center mb-3"><i class="fa-solid fa-handshake"></i></div>
-              <h3 class="font-semibold text-[#0F2C59]">Coalition partners</h3>
-              <p class="mt-2 text-sm text-slate-600">Adjacent organizations and national/state coalitions for joint proposals, shared campaigns, and introductions.</p>
-            </div>
-          </div>
-          <p class="mt-6 text-sm text-slate-600 bg-sky-50 border border-sky-100 rounded-2xl p-5">
-            <strong class="text-[#0F2C59]">Outreach standard:</strong> Every priority prospect receives email, phone, and physical correspondence requesting a meeting to present this Case for Support — turning interest into partnership.
-          </p>
-        </section>
-
-        <!-- 10. CONCLUSION / JOIN -->
-        <section id="join" class="scroll-mt-28">
-          <div class="rounded-3xl overflow-hidden relative">
-            <img src="assets/graduation-hope.jpg" alt="Hopeful path forward for young people" class="w-full h-72 md:h-80 object-cover">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59] via-[#0F2C59]/85 to-[#0F2C59]/40 flex items-end">
-              <div class="p-8 md:p-10 text-white max-w-3xl">
-                <div class="uppercase text-xs tracking-[2px] text-sky-300 font-medium">Looking to 2026 and beyond</div>
-                <h2 class="heading-serif text-3xl md:text-4xl font-semibold mt-2 tracking-tight">Every state should have a tuition waiver for foster youth.</h2>
-                <p class="mt-4 text-sky-100/95 text-sm md:text-base leading-relaxed">
-                  The empirically supported benefits of education — higher earnings, lower justice involvement, stronger mental health, and fuller civic life — are not privileges for the fortunate. They are what a just society extends to the young people it has already removed from their homes. Your investment does not merely fund programs. It funds the chance that a manila envelope becomes a degree, a home, and a future.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-8 grid md:grid-cols-3 gap-4">
-            <a href="donate.html" class="bg-[#0F2C59] hover:bg-[#1a3a6e] text-white rounded-3xl p-6 transition group">
-              <i class="fa-solid fa-heart text-sky-300 text-xl"></i>
-              <div class="font-semibold text-lg mt-3">Donate</div>
-              <p class="text-sm text-sky-100/80 mt-1">Secure giving via Zeffy — 100% to the mission.</p>
-              <div class="mt-4 text-sm font-medium text-sky-300 group-hover:underline">Give now →</div>
-            </a>
-            <a href="get-involved.html" class="bg-white border-2 border-slate-200 hover:border-sky-300 rounded-3xl p-6 transition group">
-              <i class="fa-solid fa-users text-sky-600 text-xl"></i>
-              <div class="font-semibold text-lg mt-3 text-[#0F2C59]">Partner or volunteer</div>
-              <p class="text-sm text-slate-600 mt-1">Coalitions, skills, and introductions that open doors.</p>
-              <div class="mt-4 text-sm font-medium text-sky-700 group-hover:underline">Get involved →</div>
-            </a>
-            <a href="mailto:info@americanfosterfutures.org?subject=Case%20for%20Support%20Meeting" class="bg-white border-2 border-slate-200 hover:border-sky-300 rounded-3xl p-6 transition group">
-              <i class="fa-solid fa-envelope text-sky-600 text-xl"></i>
-              <div class="font-semibold text-lg mt-3 text-[#0F2C59]">Request a presentation</div>
-              <p class="text-sm text-slate-600 mt-1">Foundations, corporates, and major donors — let’s talk.</p>
-              <div class="mt-4 text-sm font-medium text-sky-700 group-hover:underline">Email the team →</div>
-            </a>
-          </div>
-
-          <div class="mt-10 text-center bg-white border rounded-3xl p-8">
-            <p class="heading-serif text-2xl text-[#0F2C59] font-semibold">American Foster Futures</p>
-            <p class="text-sm text-slate-500 mt-2">National nonprofit · Irving, TX 75060</p>
-            <a href="mailto:info@americanfosterfutures.org" class="text-sm text-sky-700 hover:underline">info@americanfosterfutures.org</a>
-            <p class="text-xs text-slate-400 mt-4">Case for Support · July 2026 · For donor and partner use</p>
-          </div>
-        </section>
-
-      </main>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Create account</button>
+        </form>
+      </div>
+      <p class="text-xs text-slate-500 text-center">Questions? <a href="mailto:info@americanfosterfutures.org" class="text-sky-700 underline">info@americanfosterfutures.org</a></p>
     </div>
-  </div>
 
-  <!-- Sticky mobile CTA -->
-  <div class="sticky-cta fixed bottom-0 inset-x-0 lg:hidden z-40 p-3 bg-white/95 backdrop-blur border-t shadow-lg">
-    <a href="donate.html" class="flex items-center justify-center gap-2 w-full bg-[#0F2C59] text-white font-semibold py-3 rounded-xl text-sm">
-      <i class="fa-solid fa-heart"></i> Support foster youth futures
-    </a>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-[#0F2C59] mt-8 lg:mt-16 text-sky-100/80 pb-20 lg:pb-0">
-    <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-8 text-sm">
-      <div class="md:col-span-5">
-        <div class="flex items-center gap-x-3 mb-3">
-          <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white"><span class="font-bold">AFF</span></div>
-          <div class="font-semibold text-white text-lg tracking-tighter">American Foster Futures</div>
+    <!-- Request access -->
+    <div id="view-request" class="hidden">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="font-semibold text-[#0F2C59] text-lg">Request access</h2>
+            <p class="text-sm text-slate-600 mt-1">Signed in as <span id="req-email" class="font-medium"></span></p>
+          </div>
+          <button type="button" id="btn-logout" class="text-xs text-slate-500 underline">Sign out</button>
         </div>
-        <p class="text-xs max-w-xs">A national nonprofit (CA incorporated). 501(c)(3) pending.</p>
+        <form id="form-request" class="mt-5 space-y-3">
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Organization (optional)</label>
+            <input id="req-org" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="Foundation, firm, or affiliation" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Why do you need the Case for Support?</label>
+            <textarea id="req-reason" required minlength="10" rows="4" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="e.g. Considering a grant partnership / major gift review"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Submit request</button>
+        </form>
       </div>
-      <div class="md:col-span-3">
-        <div class="font-semibold text-white mb-3">Navigate</div>
-        <div class="space-y-1 text-sm">
-          <a href="index.html" class="footer-link block">Home</a>
-          <a href="about.html" class="footer-link block">About Us</a>
-          <a href="case-for-support.html" class="footer-link block">Case for Support</a>
-          <a href="board-of-directors.html" class="footer-link block">Board of Directors</a>
-          <a href="financials.html" class="footer-link block">Financials</a>
-          <a href="national-campaign.html" class="footer-link block">Programs</a>
-          <a href="get-involved.html" class="footer-link block">Get Involved</a>
-                    <a href="donate.html" class="footer-link block">Donate</a>
+    </div>
+
+    <!-- Pending -->
+    <div id="view-pending" class="hidden">
+      <div class="bg-white border border-amber-200 rounded-2xl p-6 shadow-sm text-center">
+        <div class="w-12 h-12 mx-auto rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-clock"></i>
         </div>
-      </div>
-      <div class="md:col-span-4">
-        <div class="font-semibold text-white mb-3">Contact</div>
-        <div>Irving, TX 75060</div>
-        <a href="mailto:info@americanfosterfutures.org" class="block mt-1 hover:text-white">info@americanfosterfutures.org</a>
-        <a href="donate.html" class="mt-5 inline-block bg-white/10 hover:bg-white/15 px-5 py-2 rounded-2xl text-sm font-medium">Support our work</a>
+        <h2 class="font-semibold text-[#0F2C59] text-lg mt-3">Request pending</h2>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          Your access request is with the AFF team. You’ll be able to open the Case for Support here once it is approved.
+        </p>
+        <p class="text-xs text-slate-500 mt-3">Signed in as <span id="pending-email" class="font-medium"></span></p>
+        <button type="button" id="btn-refresh-pending" class="mt-5 text-sm font-semibold text-sky-700 underline">Check status again</button>
+        <button type="button" id="btn-logout-pending" class="mt-3 block mx-auto text-xs text-slate-500 underline">Sign out</button>
       </div>
     </div>
-    <div class="border-t border-white/10 py-4 text-xs text-center text-sky-100/60">
-      © <span id="year"></span> American Foster Futures. All rights reserved.
+
+    <!-- Denied -->
+    <div id="view-denied" class="hidden">
+      <div class="bg-white border border-red-200 rounded-2xl p-6 shadow-sm text-center">
+        <div class="w-12 h-12 mx-auto rounded-full bg-red-50 text-red-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-ban"></i>
+        </div>
+        <h2 class="font-semibold text-[#0F2C59] text-lg mt-3">Access not approved</h2>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          This request was not approved. You may submit a new request with more detail, or contact us.
+        </p>
+        <p id="denied-note" class="hidden text-xs text-slate-500 mt-2"></p>
+        <button type="button" id="btn-request-again" class="mt-5 w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm">Request again</button>
+        <a href="mailto:info@americanfosterfutures.org" class="mt-3 block text-sm text-sky-700 font-medium">Email AFF →</a>
+        <button type="button" id="btn-logout-denied" class="mt-3 block mx-auto text-xs text-slate-500 underline">Sign out</button>
+      </div>
     </div>
-  </footer>
+
+    <!-- Approved -->
+    <div id="view-approved" class="hidden">
+      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm text-center">
+        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-unlock"></i>
+        </div>
+        <h2 class="font-semibold text-[#0F2C59] text-lg mt-3">Access approved</h2>
+        <p class="text-sm text-slate-600 mt-2">You can open the full Case for Support document.</p>
+        <button type="button" id="btn-open-doc" class="mt-5 w-full bg-[#0F2C59] text-white font-semibold py-3 rounded-xl text-sm hover:bg-[#1a3a6e]">
+          <i class="fa-solid fa-file-lines mr-2"></i>Open Case for Support
+        </button>
+        <p class="text-xs text-slate-500 mt-3">Signed in as <span id="approved-email" class="font-medium"></span></p>
+        <button type="button" id="btn-logout-approved" class="mt-3 block mx-auto text-xs text-slate-500 underline">Sign out</button>
+      </div>
+    </div>
+  </main>
 
   <script>
-    // Mobile menu
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        const icon = btn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+    (function () {
+      var TOKEN_KEY = 'aff_cfs_token';
+      var API_BASE =
+        (window.AFF_API_URL ||
+          (location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+            ? 'http://localhost:8787'
+            : 'https://aff-futures-api.onrender.com')).replace(/\/$/, '');
+
+      var US_STATES = [
+        'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
+        'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
+        'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'
+      ];
+
+      var $ = function (id) { return document.getElementById(id); };
+
+      function token() { return localStorage.getItem(TOKEN_KEY) || ''; }
+      function setToken(t) {
+        if (t) localStorage.setItem(TOKEN_KEY, t);
+        else localStorage.removeItem(TOKEN_KEY);
+      }
+
+      function showAlert(msg, kind) {
+        var el = $('alert');
+        if (!msg) {
+          el.classList.add('hidden');
+          return;
+        }
+        el.classList.remove('hidden', 'bg-red-50', 'border-red-200', 'text-red-800', 'bg-emerald-50', 'border-emerald-200', 'text-emerald-800', 'bg-sky-50', 'border-sky-200', 'text-sky-800');
+        if (kind === 'ok') el.classList.add('bg-emerald-50', 'border-emerald-200', 'text-emerald-800');
+        else if (kind === 'info') el.classList.add('bg-sky-50', 'border-sky-200', 'text-sky-800');
+        else el.classList.add('bg-red-50', 'border-red-200', 'text-red-800');
+        el.textContent = msg;
+      }
+
+      function hideViews() {
+        ['view-loading', 'view-auth', 'view-request', 'view-pending', 'view-denied', 'view-approved'].forEach(function (id) {
+          $(id).classList.add('hidden');
+        });
+      }
+
+      async function api(path, opts) {
+        opts = opts || {};
+        var headers = Object.assign({ 'Content-Type': 'application/json' }, opts.headers || {});
+        if (token()) headers.Authorization = 'Bearer ' + token();
+        var res = await fetch(API_BASE + path, Object.assign({}, opts, { headers: headers }));
+        var ct = res.headers.get('content-type') || '';
+        if (ct.indexOf('text/html') !== -1) {
+          if (!res.ok) {
+            var errText = await res.text();
+            throw new Error(errText || res.statusText);
+          }
+          return res.text();
+        }
+        var data = await res.json().catch(function () { return {}; });
+        if (!res.ok) throw new Error(data.error || res.statusText);
+        return data;
+      }
+
+      function fillStates() {
+        var sel = $('reg-state');
+        US_STATES.forEach(function (code) {
+          var o = document.createElement('option');
+          o.value = code;
+          o.textContent = code;
+          sel.appendChild(o);
+        });
+      }
+
+      function setAuthTab(tab) {
+        document.querySelectorAll('.auth-tab').forEach(function (btn) {
+          var on = btn.getAttribute('data-auth-tab') === tab;
+          btn.className = on
+            ? 'auth-tab flex-1 py-2 rounded-xl text-sm font-semibold bg-[#0F2C59] text-white'
+            : 'auth-tab flex-1 py-2 rounded-xl text-sm font-semibold border bg-white text-slate-700';
+        });
+        $('form-login').classList.toggle('hidden', tab !== 'login');
+        $('form-register').classList.toggle('hidden', tab !== 'register');
+      }
+
+      document.querySelectorAll('.auth-tab').forEach(function (btn) {
+        btn.onclick = function () { setAuthTab(btn.getAttribute('data-auth-tab')); };
       });
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // TOC active state
-    const sections = document.querySelectorAll('main section[id]');
-    const tocLinks = document.querySelectorAll('#toc .toc-link');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tocLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector('#toc a[href="#' + entry.target.id + '"]');
-          if (active) active.classList.add('active');
-        }
+      function logout() {
+        setToken('');
+        showAlert('');
+        hideViews();
+        $('view-auth').classList.remove('hidden');
+      }
+
+      ['btn-logout', 'btn-logout-pending', 'btn-logout-denied', 'btn-logout-approved'].forEach(function (id) {
+        var el = $(id);
+        if (el) el.onclick = logout;
       });
-    }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
-    sections.forEach(s => obs.observe(s));
 
-    // Charts
-    const brand = {
-      navy: '#0F2C59',
-      blue: '#1E88E5',
-      sky: '#4FC3F7',
-      slate: '#94a3b8',
-      dark: '#1e293b',
-      light: '#e2e8f0'
-    };
+      async function refreshStatus() {
+        hideViews();
+        $('view-loading').classList.remove('hidden');
+        showAlert('');
 
-    // Outcomes comparison
-    new Chart(document.getElementById('outcomesChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Homelessness\n(after care)', 'College\ncompletion*', 'Justice\ninvolvement*'],
-        datasets: [
-          {
-            label: 'Foster youth (approx.)',
-            data: [20, 10, 25],
-            backgroundColor: brand.navy,
-            borderRadius: 6,
-            barPercentage: 0.7
-          },
-          {
-            label: 'General peers (approx.)',
-            data: [4, 35, 5],
-            backgroundColor: brand.blue,
-            borderRadius: 6,
-            barPercentage: 0.7
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => ctx.dataset.label + ': ~' + ctx.parsed.y + '%'
+        if (!token()) {
+          hideViews();
+          $('view-auth').classList.remove('hidden');
+          return;
+        }
+
+        try {
+          var me = await api('/api/auth/me');
+          var st = await api('/api/case-support/status');
+          hideViews();
+          var email = (me.user && me.user.email) || '';
+
+          if (st.status === 'approved') {
+            $('approved-email').textContent = email;
+            $('view-approved').classList.remove('hidden');
+          } else if (st.status === 'pending') {
+            $('pending-email').textContent = email;
+            $('view-pending').classList.remove('hidden');
+          } else if (st.status === 'denied') {
+            $('view-denied').classList.remove('hidden');
+            var note = st.request && st.request.adminNote;
+            if (note) {
+              $('denied-note').textContent = 'Note: ' + note;
+              $('denied-note').classList.remove('hidden');
+            } else {
+              $('denied-note').classList.add('hidden');
             }
+          } else {
+            $('req-email').textContent = email;
+            $('view-request').classList.remove('hidden');
           }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 40,
-            ticks: { callback: (v) => v + '%', font: { size: 11 } },
-            grid: { color: brand.light }
-          },
-          x: {
-            ticks: { font: { size: 10 } },
-            grid: { display: false }
-          }
+        } catch (e) {
+          setToken('');
+          hideViews();
+          $('view-auth').classList.remove('hidden');
+          showAlert(e.message || 'Session expired — please sign in again.');
         }
       }
-    });
 
-    // Needs priority doughnut
-    new Chart(document.getElementById('needsChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Tuition waivers', 'Housing 18–23', 'Education navigation', 'Advocacy & vision programs'],
-        datasets: [{
-          data: [40, 30, 20, 10],
-          backgroundColor: [brand.navy, brand.blue, brand.sky, brand.slate],
-          borderWidth: 0,
-          hoverOffset: 6
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '58%',
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => ' ' + ctx.label + ': ' + ctx.parsed + '% priority weight'
-            }
-          }
+      $('form-login').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+        try {
+          var data = await api('/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({
+              email: $('login-email').value.trim(),
+              password: $('login-password').value,
+            }),
+          });
+          setToken(data.token);
+          await refreshStatus();
+        } catch (err) {
+          showAlert(err.message || 'Sign-in failed');
         }
-      }
-    });
+      };
 
-    // Rolling capacity: concurrent offices vs cumulative wins (10 years)
-    new Chart(document.getElementById('growthChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6', 'Y7', 'Y8', 'Y9', 'Y10'],
-        datasets: [
-          {
-            type: 'bar',
-            label: 'Concurrent funded offices (campaign + implementation)',
-            data: [2, 3, 4, 4, 5, 4, 5, 5, 5, 5],
-            backgroundColor: brand.sky,
-            borderRadius: 4,
-            yAxisID: 'y',
-            order: 2
-          },
-          {
-            type: 'line',
-            label: 'Cumulative states with new/expanded waivers',
-            data: [0, 2, 3, 5, 6, 8, 10, 12, 14, 15],
-            borderColor: brand.navy,
-            backgroundColor: brand.navy,
-            tension: 0.3,
-            pointRadius: 4,
-            borderWidth: 3,
-            yAxisID: 'y1',
-            order: 1
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
-        },
-        scales: {
-          y: {
-            type: 'linear',
-            position: 'left',
-            beginAtZero: true,
-            max: 8,
-            title: { display: true, text: 'Funded offices', font: { size: 11 } },
-            grid: { color: brand.light }
-          },
-          y1: {
-            type: 'linear',
-            position: 'right',
-            beginAtZero: true,
-            max: 18,
-            title: { display: true, text: 'Cumulative waiver wins', font: { size: 11 } },
-            grid: { drawOnChartArea: false }
-          },
-          x: { grid: { display: false } }
+      $('form-register').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+        try {
+          var data = await api('/api/auth/register', {
+            method: 'POST',
+            body: JSON.stringify({
+              firstName: $('reg-first').value.trim(),
+              lastName: $('reg-last').value.trim(),
+              email: $('reg-email').value.trim(),
+              password: $('reg-password').value,
+              stateCode: $('reg-state').value,
+            }),
+          });
+          setToken(data.token);
+          showAlert('Account created. Next, request access.', 'ok');
+          await refreshStatus();
+        } catch (err) {
+          showAlert(err.message || 'Registration failed');
         }
-      }
-    });
+      };
 
-    // Medium office cost breakdown ($84,900)
-    new Chart(document.getElementById('officeCostChart'), {
-      type: 'doughnut',
-      data: {
-        labels: [
-          'Rent ($50.4k)',
-          'Utilities ($9.6k)',
-          'Internet & phone ($6.6k)',
-          'Insurance ($12k)',
-          'Janitorial & security ($6.3k)'
-        ],
-        datasets: [{
-          data: [50400, 9600, 6600, 12000, 6300],
-          backgroundColor: [brand.navy, brand.blue, brand.sky, '#64748b', brand.slate],
-          borderWidth: 2,
-          borderColor: '#fff'
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '48%',
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: { boxWidth: 10, font: { size: 10 }, padding: 10 }
-          },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => {
-                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                const pct = Math.round((ctx.parsed / total) * 100);
-                return ' $' + ctx.parsed.toLocaleString() + ' (' + pct + '%)';
-              }
-            }
-          }
+      $('form-request').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+        try {
+          await api('/api/case-support/request', {
+            method: 'POST',
+            body: JSON.stringify({
+              organization: $('req-org').value.trim(),
+              reason: $('req-reason').value.trim(),
+            }),
+          });
+          showAlert('Request submitted. An administrator will review it.', 'ok');
+          await refreshStatus();
+        } catch (err) {
+          showAlert(err.message || 'Could not submit request');
         }
-      }
-    });
+      };
 
-    // Full $1.25M budget — personnel salaries rolled into Program & campaign
-    // Program & campaign = $614,400 salaries/benefits + $271,000 direct program lines = $885,400
-    new Chart(document.getElementById('budgetChart'), {
-      type: 'doughnut',
-      data: {
-        labels: [
-          'Program & campaign incl. salaries ($885.4k)',
-          'Office rent & bills ($84.9k)',
-          'Tech & supplies ($30k)',
-          'Admin & contingency ($249.7k)'
-        ],
-        datasets: [{
-          data: [885400, 84900, 30000, 249700],
-          backgroundColor: [brand.navy, brand.blue, brand.sky, brand.slate],
-          borderWidth: 2,
-          borderColor: '#fff'
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '50%',
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: { boxWidth: 10, font: { size: 10 }, padding: 10 }
-          },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => {
-                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                const pct = Math.round((ctx.parsed / total) * 100);
-                return ' $' + ctx.parsed.toLocaleString() + ' · ' + pct + '%';
-              }
-            }
-          }
+      $('btn-refresh-pending').onclick = function () { refreshStatus(); };
+
+      $('btn-request-again').onclick = async function () {
+        // Denied users can request again by creating a new pending request
+        hideViews();
+        try {
+          var me = await api('/api/auth/me');
+          $('req-email').textContent = (me.user && me.user.email) || '';
+          $('view-request').classList.remove('hidden');
+        } catch (e) {
+          logout();
         }
-      }
-    });
+      };
 
-    // 10-year national waiver impact: first-time college enrollments + graduates
-    const years = ['Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6', 'Y7', 'Y8', 'Y9', 'Y10'];
-    const firstTimeCollege = [400, 1200, 2200, 3800, 5200, 7200, 9200, 11200, 12800, 14200];
-    const graduates = [40, 100, 280, 550, 1000, 1600, 2400, 3200, 3900, 4500];
-    const gradRates = [12, 13, 15, 17, 19, 22, 26, 29, 32, 34];
-
-    new Chart(document.getElementById('waiverImpactChart'), {
-      type: 'line',
-      data: {
-        labels: years,
-        datasets: [
-          {
-            label: 'First-time college enrollments (foster youth)',
-            data: firstTimeCollege,
-            borderColor: brand.navy,
-            backgroundColor: 'rgba(15, 44, 89, 0.08)',
-            fill: true,
-            tension: 0.35,
-            pointRadius: 4,
-            pointBackgroundColor: brand.navy,
-            borderWidth: 3,
-            yAxisID: 'y'
-          },
-          {
-            label: 'Estimated college graduates (annual)',
-            data: graduates,
-            borderColor: brand.blue,
-            backgroundColor: 'rgba(30, 136, 229, 0.08)',
-            fill: true,
-            tension: 0.35,
-            pointRadius: 4,
-            pointBackgroundColor: brand.blue,
-            borderWidth: 3,
-            yAxisID: 'y'
+      $('btn-open-doc').onclick = async function () {
+        showAlert('Loading document…', 'info');
+        try {
+          var html = await api('/api/case-support/document');
+          var w = window.open('', '_blank');
+          if (!w) {
+            showAlert('Please allow pop-ups to view the document, or try again.');
+            return;
           }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 }, padding: 12 } },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => ' ' + ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString()
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            title: { display: true, text: 'Campaign year', font: { size: 11 } }
-          },
-          y: {
-            beginAtZero: true,
-            title: { display: true, text: 'Youth (annual count)', font: { size: 11 } },
-            ticks: {
-              callback: (v) => v >= 1000 ? (v / 1000) + 'k' : v,
-              font: { size: 11 }
-            },
-            grid: { color: brand.light }
-          }
+          w.document.open();
+          w.document.write(html);
+          w.document.close();
+          showAlert('');
+        } catch (e) {
+          showAlert(e.message || 'Could not open document');
+          await refreshStatus();
         }
-      }
-    });
+      };
 
-    // Graduation rate line over 10 years
-    new Chart(document.getElementById('gradRateChart'), {
-      type: 'line',
-      data: {
-        labels: years,
-        datasets: [
-          {
-            label: 'Est. 6-year graduation rate (waiver-state foster youth)',
-            data: gradRates,
-            borderColor: brand.navy,
-            backgroundColor: 'rgba(30, 136, 229, 0.12)',
-            fill: true,
-            tension: 0.35,
-            pointRadius: 5,
-            pointBackgroundColor: brand.blue,
-            borderWidth: 3
-          },
-          {
-            label: 'Illustrative baseline without comprehensive waiver (~12%)',
-            data: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
-            borderColor: brand.slate,
-            borderDash: [6, 4],
-            fill: false,
-            tension: 0,
-            pointRadius: 0,
-            borderWidth: 2
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 }, padding: 12 } },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => ' ' + ctx.dataset.label + ': ' + ctx.parsed.y + '%'
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { display: false },
-            title: { display: true, text: 'Campaign year', font: { size: 11 } }
-          },
-          y: {
-            beginAtZero: true,
-            max: 45,
-            title: { display: true, text: 'Graduation rate', font: { size: 11 } },
-            ticks: {
-              callback: (v) => v + '%',
-              font: { size: 11 }
-            },
-            grid: { color: brand.light }
-          }
-        }
-      }
-    });
+      fillStates();
+      refreshStatus();
+    })();
   </script>
 </body>
 </html>
