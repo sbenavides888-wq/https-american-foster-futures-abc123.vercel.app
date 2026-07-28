@@ -175,17 +175,21 @@
     <!-- Interactive US Map -->
     <div id="map" class="mt-12">
       <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">National Tuition Waiver Map</h2>
-      <p class="text-sm text-slate-600 mb-4 max-w-3xl">Same map as the AFF Action app. Grey states already have coverage or are not campaign targets — they stay selectable for details. Campaign targets use three organizing tiers. Hover a state for details.</p>
+      <p class="text-sm text-slate-600 mb-4 max-w-3xl">
+        <strong>Grey (Tier 0)</strong> — not targeted: Texas-style or similar law that covers <strong>100% of tuition</strong> for eligible foster youth.
+        <strong class="text-red-600">Red (Tier 1)</strong> — campaign priorities: no waiver of any kind and/or predominantly ETV-reliant.
+        <strong class="text-orange-600">Orange (Tier 2)</strong> — improvement possible: multilayered aid that does <strong>not</strong> guarantee 100% tuition coverage.
+        Hover a state for details.
+      </p>
 
       <div class="map-container border rounded-3xl p-4 sm:p-6">
-        <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map showing foster youth tuition waiver status by campaign tier"></div>
+        <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map of foster youth tuition waiver campaign tiers"></div>
         <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600 justify-center sm:justify-start">
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#6B7280"></span> Non-target — has coverage / not a campaign focus (still selectable)</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#DC2626"></span> Tier 1 — Priority</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#F97316"></span> Tier 2 — Improvements Possible</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#EAB308"></span> Tier 3 — Under Review</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#6B7280"></span> Tier 0 — Not targeted (100% tuition covered)</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#DC2626"></span> Tier 1 — Campaign priorities (no waiver / ETV-reliant)</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#F97316"></span> Tier 2 — Improvement possible (multilayered, not 100%)</span>
         </div>
-        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Map data is shared with the AFF Action mobile app. Programs vary by state — confirm eligibility with official sources.</p>
+        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Classification based on AFF research, Foster Action Ohio 2025 tuition-waiver survey, state statutes, and program rules. <strong>Tiebreak:</strong> if a state overlaps tiers or is hard to classify, it is placed in the tier that opens the <em>most</em> organizing opportunity (Tier&nbsp;1 &gt; Tier&nbsp;2 &gt; Tier&nbsp;0). Confirm eligibility with official sources — programs change.</p>
       </div>
     </div>
 
@@ -206,10 +210,10 @@
       </p>
     </section>
 
-    <!-- Focus States by tier (rendered by script so map + list stay in sync) -->
+    <!-- Focus States (rendered by script so map + list stay in sync) -->
     <div id="focus-states" class="mt-12">
       <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">Campaign targets by tier</h2>
-      <p class="text-sm text-slate-500 mb-6">Organize first in Tier 1, then Tier 2, then Tier 3. Same list as the AFF Action app.</p>
+      <p class="text-sm text-slate-500 mb-6">Tier 1 first (no waiver / ETV-reliant), then Tier 2 (multilayered but not guaranteed 100% tuition). Grey states on the map are Tier 0 — not campaign targets.</p>
       <div id="tier-lists" class="space-y-10"></div>
     </div>
 
@@ -258,85 +262,119 @@
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <script>
     /**
-     * Shared campaign map — must match AFF Action app (data/states.ts)
-     * and API defaultCampaign.js
+     * Campaign map classification (website)
+     *
+     * Tier 0 (grey) — Not targeted
+     *   Clear Texas-style (or similar) legislation covering 100% of tuition for eligible foster youth.
+     *
+     * Tier 1 (red) — Campaign priorities
+     *   No waiver of any kind and/or predominantly reliant on Chafee ETV only
+     *   (includes severely capped, selective, or grant-only systems that leave most youth without a sure waiver).
+     *
+     * Tier 2 (orange) — Improvement possible
+     *   Multilayered grants/scholarships/last-dollar stacks that do not guarantee 100% tuition
+     *   (or waivers with material restrictions/conditions short of a clean Texas-style entitlement).
+     *
+     * FINAL TIEBREAK (when overlap or hard to decide):
+     *   Choose the tier that increases organizing opportunity the most:
+     *   Tier 1 (most) > Tier 2 > Tier 0 (least / not targeted).
+     *
+     * Sources: Foster Action Ohio 2025; state statutes & program pages; JBAY/field surveys; AFF desks.
      */
     const MAP_COLORS = {
-      /** Non-targets greyed out but still selectable */
-      coverage: '#6B7280',
+      tier0: '#6B7280',
       model: '#6B7280',
       tier1: '#DC2626',
       tier2: '#F97316',
-      tier3: '#EAB308',
-    };
-
-    /** name -> { tier: 0|1|2|3, blurb } — tier 0 = has coverage */
-    const STATE_META = {
-      // Tier 1 — Priority
-      'Alabama': { tier: 1, blurb: 'Scholarship-style aid; upgrade to automatic Texas-style waiver.' },
-      'Arkansas': { tier: 1, blurb: 'Limited strong statewide waiver; high-need South.' },
-      'Georgia': { tier: 1, blurb: 'Waiver exists with restrictions; expand eligibility & access.' },
-      'Louisiana': { tier: 1, blurb: 'AFF phase-1 desk · Senate Education Chair outreach.' },
-      'Mississippi': { tier: 1, blurb: 'Recent free-tuition law; strengthen durability & utilization.' },
-      'New Mexico': { tier: 1, blurb: 'AFF phase-1 desk · Senate Education Chair outreach.' },
-      'Oklahoma': { tier: 1, blurb: 'AFF phase-1 desk · incomplete vs Texas model.' },
-      'South Carolina': { tier: 1, blurb: 'Priority #1 · S.824 currently moving + Senate Education Chair.' },
-      // Tier 2
-      'Colorado': { tier: 2, blurb: 'Growing state; incomplete supports vs Texas.' },
-      'Kentucky': { tier: 2, blurb: 'Limited benefits; strengthen toward full waiver.' },
-      'Missouri': { tier: 2, blurb: 'Scholarships exist; not a full Texas-style waiver.' },
-      'Nevada': { tier: 2, blurb: 'High foster mobility; bipartisan growth-state opportunity.' },
-      'Pennsylvania': { tier: 2, blurb: 'Fostering Independence waiver; expand eligibility & awareness.' },
-      // Tier 3
-      'Alaska': { tier: 3, blurb: 'No comprehensive waiver; often ETV-reliant.' },
-      'Hawaii': { tier: 3, blurb: 'No dedicated statewide program.' },
-      'Idaho': { tier: 3, blurb: 'Mountain West; easier legislative model opportunity.' },
-      'Kansas': { tier: 3, blurb: 'No statewide waiver program.' },
-      'Montana': { tier: 3, blurb: 'Mountain West model opportunity.' },
-      'North Dakota': { tier: 3, blurb: 'Smaller state; ETV-heavy historically.' },
-      'Nebraska': { tier: 3, blurb: 'No comprehensive foster youth waiver.' },
-      'New Hampshire': { tier: 3, blurb: 'No comprehensive tuition waiver.' },
-      'South Dakota': { tier: 3, blurb: 'Mountain West / plains model opportunity.' },
-      'Utah': { tier: 3, blurb: 'Limited programs; no full waiver.' },
-      'Vermont': { tier: 3, blurb: 'No statewide tuition waiver for foster youth.' },
-      'West Virginia': { tier: 3, blurb: 'No comprehensive program.' },
-      'Wyoming': { tier: 3, blurb: 'Mountain West model opportunity.' },
-      // Model
-      'Texas': { tier: 0, model: true, blurb: 'Model comprehensive program. Defend access; support other states.' },
+      unclassified: '#CBD5E1',
     };
 
     const TIER_TITLES = {
-      1: { title: 'Tier 1 — Priority', color: MAP_COLORS.tier1 },
-      2: { title: 'Tier 2 — Improvements Possible', color: MAP_COLORS.tier2 },
-      3: { title: 'Tier 3 — Under Review', color: MAP_COLORS.tier3 },
+      0: { title: 'Tier 0 — Not targeted (100% tuition covered)', color: MAP_COLORS.tier0 },
+      1: { title: 'Tier 1 — Campaign priorities (no waiver / ETV-reliant)', color: MAP_COLORS.tier1 },
+      2: { title: 'Tier 2 — Improvement possible (multilayered, not 100%)', color: MAP_COLORS.tier2 },
+    };
+
+    /** name -> { tier: 0|1|2, blurb, model? } */
+    const STATE_META = {
+      // ── Tier 0 — clear 100% tuition statutes (not targeted) ──
+      'Delaware': { tier: 0, blurb: 'Clear public-institution tuition and mandatory fee waiver for eligible foster youth.' },
+      'Florida': { tier: 0, blurb: 'Statutory tuition and fee exemption for eligible current/former foster youth at public colleges.' },
+      'Kansas': { tier: 0, blurb: 'Foster Child Educational Assistance — tuition and fees waived at public universities, colleges, and vocational schools.' },
+      'Kentucky': { tier: 0, blurb: 'Foster or Adopted Children Tuition Waiver — tuition and fees at public Kentucky institutions.' },
+      'Maryland': { tier: 0, blurb: 'Tuition Waiver for Foster Care Recipients — tuition and fees at public MD colleges and universities.' },
+      'Massachusetts': { tier: 0, blurb: 'DCF Foster / Adopted Child Tuition Waiver — 100% of undergraduate tuition and fees for eligible youth.' },
+      'Nevada': { tier: 0, blurb: 'NSHE Foster Youth Fee Waiver — registration/tuition-related fees waived across Nevada public higher education.' },
+      'New Mexico': { tier: 0, blurb: 'Free College for Former Foster Youth — public institutions prohibited from charging tuition and fees (SB 206).' },
+      'Pennsylvania': { tier: 0, blurb: 'Fostering Independence (FosterEd) — waives tuition and mandatory fees at most PA postsecondary institutions.' },
+      'Texas': { tier: 0, model: true, blurb: 'Model program — full tuition and fee waiver at public colleges/universities for eligible foster youth (TEC § 54.366).' },
+      'Utah': { tier: 0, blurb: 'Tuition Waivers for Children in Long-Term Foster Care — tuition and fees at public institutions.' },
+      'Virginia': { tier: 0, blurb: 'Virginia Foster Care Tuition Grant — public institutions required to cover tuition and fees for eligible youth.' },
+      'Washington': { tier: 0, blurb: 'Passport to College tuition waiver — tuition and fees for eligible aged-out foster youth.' },
+      'West Virginia': { tier: 0, blurb: 'Foster Care Tuition Waiver — tuition and fees at public WV colleges/universities.' },
+
+      // ── Tier 1 — no waiver / ETV-reliant / limited-selective (max organizing) ──
+      'Alabama': { tier: 1, blurb: 'Fostering Hope is scholarship-based, not an automatic 100% waiver for all eligible youth — organize for a durable Texas-style entitlement. (Tiebreak → Tier 1.)' },
+      'Alaska': { tier: 1, blurb: 'Only ~15 Presidential Foster Youth Tuition Waivers statewide — most youth rely on ETV.' },
+      'Arkansas': { tier: 1, blurb: 'No comprehensive statewide 100% tuition waiver; primarily ETV and limited aid.' },
+      'Colorado': { tier: 1, blurb: 'FosterEd/related aid is incomplete vs Texas-style entitlement — organize to lock in full automatic coverage. (Tiebreak → Tier 1.)' },
+      'Hawaii': { tier: 1, blurb: 'No dedicated statewide foster tuition waiver; predominantly ETV-reliant.' },
+      'Idaho': { tier: 1, blurb: 'No comprehensive foster tuition waiver; ETV is the main specialized tool.' },
+      'Illinois': { tier: 1, blurb: 'DCFS Scholarship is selective (statutory minimum cohort) — most eligible youth are not guaranteed coverage. (Tiebreak → Tier 1.)' },
+      'Indiana': { tier: 1, blurb: '21st Century Scholars is not a foster-specific automatic 100% waiver — organize for a true foster tuition entitlement. (Tiebreak → Tier 1.)' },
+      'Iowa': { tier: 1, blurb: 'Opportunity Foster Care Grant is dollar-capped ($2k–$8k typical), not guaranteed full tuition — predominantly stack/ETV. (Tiebreak → Tier 1.)' },
+      'Louisiana': { tier: 1, blurb: 'No Texas-style statewide waiver; campaign priority · ETV-reliant.' },
+      'Maine': { tier: 1, blurb: 'Waiver slots are limited and first-come, first-served — many youth remain without coverage. (Tiebreak → Tier 1.)' },
+      'Michigan': { tier: 1, blurb: 'Fostering Futures / campus scholarships are not a statewide automatic 100% waiver — organize for entitlement coverage. (Tiebreak → Tier 1.)' },
+      'Montana': { tier: 1, blurb: 'No comprehensive statewide foster tuition waiver; ETV-reliant.' },
+      'Nebraska': { tier: 1, blurb: 'No comprehensive foster youth tuition waiver; predominantly ETV.' },
+      'New Hampshire': { tier: 1, blurb: 'Severely capped program (~35 vouchers / few schools) — most youth remain ETV-reliant.' },
+      'New York': { tier: 1, blurb: 'Foster Youth College Success is limited to participating campuses/slots — most youth lack a universal 100% waiver. (Tiebreak → Tier 1.)' },
+      'North Dakota': { tier: 1, blurb: 'Historically ETV-heavy; no full automatic statewide tuition waiver.' },
+      'Ohio': { tier: 1, blurb: 'ETG and stacked grants — no statutory 100% tuition waiver for all eligible foster youth. (Tiebreak → Tier 1.)' },
+      'Oklahoma': { tier: 1, blurb: 'Resident-tuition-only waiver plus scholarships — incomplete vs Texas model; organize for full fees + entitlement. (Tiebreak → Tier 1.)' },
+      'Rhode Island': { tier: 1, blurb: 'Incentive grant supplements other aid with conditions — not a full automatic tuition waiver. (Tiebreak → Tier 1.)' },
+      'South Carolina': { tier: 1, blurb: 'No state waiver today · ETV-reliant · S.824 / H.5008 Fostering Futures Act would create one.' },
+      'South Dakota': { tier: 1, blurb: 'No comprehensive statewide foster tuition waiver; ETV-reliant.' },
+      'Vermont': { tier: 1, blurb: 'No statewide 100% tuition waiver for foster youth; ETV-reliant.' },
+      'Wisconsin': { tier: 1, blurb: 'No comprehensive statewide foster tuition waiver; predominantly ETV and general aid.' },
+      'Wyoming': { tier: 1, blurb: 'No comprehensive statewide foster tuition waiver; ETV-reliant.' },
+
+      // ── Tier 2 — multilayered / restricted waivers (improvement possible) ──
+      'Arizona': { tier: 2, blurb: 'Tuition waiver scholarship after other aid — last-dollar structure; strengthen toward a clean automatic Texas-style entitlement. (Tiebreak from Tier 0 → Tier 2.)' },
+      'California': { tier: 2, blurb: 'Strong multilayered aid (Chafee, Promise, Cal Grant, campus programs) but not a single Texas-style 100% public tuition waiver statewide.' },
+      'Connecticut': { tier: 2, blurb: 'Tuition waiver exists but with material conditions (e.g. enrollment rules, caseworker discretion risks) — improve toward unrestricted Texas-style access. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Georgia': { tier: 2, blurb: 'Tuition waiver plus newer COA scholarship — eligibility/access gaps remain; organize to expand and harden coverage. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Minnesota': { tier: 2, blurb: 'Fostering Independence Grant is last-dollar / multilayered — strong when funded, not a pure automatic institution waiver. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Mississippi': { tier: 2, blurb: 'FAITH Scholarship can cover remaining COA but is a scholarship stack, not a pure Texas-style institutional entitlement. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Missouri': { tier: 2, blurb: 'Missouri Reach covers tuition/fees with service and other conditions — improve toward simpler automatic coverage. (Tiebreak from Tier 0 → Tier 2.)' },
+      'New Jersey': { tier: 2, blurb: 'NJ Foster Care Scholars — multilayered package after other grants; strengthen toward automatic 100% tuition entitlement.' },
+      'North Carolina': { tier: 2, blurb: 'NC Reach + institutional no-tuition pathway is multilayered; expand awareness and simplify to full Texas-style certainty. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Oregon': { tier: 2, blurb: 'Tuition/fee waiver with community-service and other conditions — improve toward cleaner automatic entitlement. (Tiebreak from Tier 0 → Tier 2.)' },
+      'Tennessee': { tier: 2, blurb: 'HOPE Foster Child Tuition Grant is last-dollar after other aid — multilayered, not a standalone automatic waiver. (Tiebreak from Tier 0 → Tier 2.)' },
     };
 
     function getStateStatus(name) {
       const meta = STATE_META[name];
-      if (meta && meta.model) {
+      if (!meta) {
         return {
-          fill: MAP_COLORS.model,
-          label: 'Texas — model program (non-target; selectable for details)',
-          className: 'is-nontarget',
-          tier: 0,
-          blurb: meta.blurb,
-        };
-      }
-      if (meta && meta.tier >= 1) {
-        return {
-          fill: meta.tier === 1 ? MAP_COLORS.tier1 : meta.tier === 2 ? MAP_COLORS.tier2 : MAP_COLORS.tier3,
-          label: TIER_TITLES[meta.tier].title,
+          fill: MAP_COLORS.unclassified,
+          label: 'Unclassified',
           className: '',
-          tier: meta.tier,
-          blurb: meta.blurb,
+          tier: null,
+          blurb: '',
         };
       }
+      const title = TIER_TITLES[meta.tier] ? TIER_TITLES[meta.tier].title : ('Tier ' + meta.tier);
+      const fill = meta.model
+        ? MAP_COLORS.model
+        : (MAP_COLORS['tier' + meta.tier] || MAP_COLORS.unclassified);
       return {
-        fill: MAP_COLORS.coverage,
-        label: 'Non-target — has tuition coverage (selectable for details)',
-        className: 'is-nontarget',
-        tier: 0,
-        blurb: '',
+        fill: fill,
+        label: meta.model ? 'Texas — model (Tier 0)' : title,
+        className: meta.tier === 0 ? 'is-nontarget' : '',
+        tier: meta.tier,
+        blurb: meta.blurb || '',
       };
     }
 
@@ -344,15 +382,22 @@
       const root = document.getElementById('tier-lists');
       if (!root) return;
       root.innerHTML = '';
-      [1, 2, 3].forEach((tier) => {
+
+      // Show campaign tiers only (1 and 2); Tier 0 is "not targeted"
+      [1, 2].forEach((tier) => {
         const entries = Object.entries(STATE_META)
           .filter(([, m]) => m.tier === tier)
           .sort((a, b) => a[0].localeCompare(b[0]));
+        if (!entries.length) return;
+
+        const color = TIER_TITLES[tier].color;
+        const title = TIER_TITLES[tier].title;
         const section = document.createElement('div');
         section.innerHTML = `
-          <h3 class="text-lg font-semibold mb-3 flex items-center gap-2" style="color:${TIER_TITLES[tier].color}">
-            <span class="inline-block w-3 h-3 rounded" style="background:${TIER_TITLES[tier].color}"></span>
-            ${TIER_TITLES[tier].title}
+          <h3 class="text-lg font-semibold mb-3 flex items-center gap-2" style="color:${color}">
+            <span class="inline-block w-3 h-3 rounded" style="background:${color}"></span>
+            ${title}
+            <span class="text-sm font-normal text-slate-500">(${entries.length} states)</span>
           </h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" data-tier-grid="${tier}"></div>
         `;
@@ -361,8 +406,8 @@
           const card = document.createElement('div');
           card.className = 'state-card bg-white border rounded-2xl p-4';
           card.innerHTML = `
-            <div class="font-semibold" style="color:${TIER_TITLES[tier].color}">${name}</div>
-            <div class="text-xs text-slate-500 mt-1">${m.blurb}</div>
+            <div class="font-semibold" style="color:${color}">${name}</div>
+            <div class="text-xs text-slate-500 mt-1">${m.blurb || ''}</div>
             <a href="get-involved.html" class="text-xs text-sky-600 hover:underline mt-2 inline-block">Support the campaign →</a>
           `;
           grid.appendChild(card);
@@ -453,5 +498,6 @@
 
     init();
   </script>
+  <script src="assets/app-promo.js" defer></script>
 </body>
 </html>
