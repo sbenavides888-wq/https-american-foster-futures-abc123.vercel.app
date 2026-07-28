@@ -1,8 +1,10 @@
 /**
- * AFF Action app download / register promo modal (iOS only for now)
- * Include on public pages: <script src="assets/app-promo.js" defer></script>
+ * AFF Action app download / register promo modal (iOS only)
  *
- * Set iosUrl when the App Store listing goes live.
+ * STATUS: Disabled until the app is live on the Apple App Store.
+ * To re-enable, add before </body> on public pages:
+ *   <script src="assets/app-promo.js" defer></script>
+ * Set iosUrl to the App Store listing URL when ready.
  */
 (function () {
   'use strict';
