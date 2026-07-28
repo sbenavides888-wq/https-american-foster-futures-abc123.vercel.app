@@ -175,21 +175,49 @@
     <!-- Interactive US Map -->
     <div id="map" class="mt-12">
       <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">National Tuition Waiver Map</h2>
-      <p class="text-sm text-slate-600 mb-4 max-w-3xl">
-        <strong>Grey (Tier 0)</strong> — not targeted: Texas-style or similar law that covers <strong>100% of tuition</strong> for eligible foster youth.
-        <strong class="text-red-600">Red (Tier 1)</strong> — campaign priorities: no waiver of any kind and/or predominantly ETV-reliant.
-        <strong class="text-orange-600">Orange (Tier 2)</strong> — improvement possible: multilayered aid that does <strong>not</strong> guarantee 100% tuition coverage.
-        Hover a state for details.
-      </p>
+      <p class="text-sm text-slate-600 mb-5 max-w-2xl">How we classify each state. Hover a state on the map for its status and notes.</p>
+
+      <div class="grid sm:grid-cols-3 gap-3 mb-6">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3.5 h-3.5 rounded-full flex-shrink-0 shadow-sm ring-2 ring-white" style="background:#6B7280" aria-hidden="true"></span>
+            <div>
+              <div class="text-[10px] font-bold uppercase tracking-[1.5px] text-slate-400">Tier 0 · Grey</div>
+              <div class="text-sm font-semibold text-[#0F2C59]">Not targeted</div>
+            </div>
+          </div>
+          <p class="mt-2.5 text-xs text-slate-600 leading-relaxed">Texas-style or similar law covering <strong class="text-slate-800">100% of tuition</strong> for eligible foster youth at public colleges statewide.</p>
+        </div>
+        <div class="rounded-2xl border border-red-100 bg-red-50/40 p-4 shadow-sm">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3.5 h-3.5 rounded-full flex-shrink-0 shadow-sm ring-2 ring-white" style="background:#DC2626" aria-hidden="true"></span>
+            <div>
+              <div class="text-[10px] font-bold uppercase tracking-[1.5px] text-red-400">Tier 1 · Red</div>
+              <div class="text-sm font-semibold text-red-700">Campaign priorities</div>
+            </div>
+          </div>
+          <p class="mt-2.5 text-xs text-slate-600 leading-relaxed">No waiver of any kind, and/or youth are predominantly reliant on federal <strong class="text-slate-800">Chafee ETV</strong> grants only.</p>
+        </div>
+        <div class="rounded-2xl border border-orange-100 bg-orange-50/40 p-4 shadow-sm">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3.5 h-3.5 rounded-full flex-shrink-0 shadow-sm ring-2 ring-white" style="background:#F97316" aria-hidden="true"></span>
+            <div>
+              <div class="text-[10px] font-bold uppercase tracking-[1.5px] text-orange-400">Tier 2 · Orange</div>
+              <div class="text-sm font-semibold text-orange-700">Improvement possible</div>
+            </div>
+          </div>
+          <p class="mt-2.5 text-xs text-slate-600 leading-relaxed">Multilayered or limited aid that does <strong class="text-slate-800">not</strong> guarantee 100% tuition coverage for every eligible youth.</p>
+        </div>
+      </div>
 
       <div class="map-container border rounded-3xl p-4 sm:p-6">
         <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map of foster youth tuition waiver campaign tiers"></div>
-        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600 justify-center sm:justify-start">
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#6B7280"></span> Tier 0 — Not targeted (100% tuition covered)</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#DC2626"></span> Tier 1 — Campaign priorities (no waiver / ETV-reliant)</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#F97316"></span> Tier 2 — Improvement possible (multilayered, not 100%)</span>
+        <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-500 justify-center sm:justify-start">
+          <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:#6B7280"></span> Tier 0</span>
+          <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:#DC2626"></span> Tier 1</span>
+          <span class="inline-flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:#F97316"></span> Tier 2</span>
         </div>
-        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Classification based on AFF research, Foster Action Ohio 2025 tuition-waiver survey, state statutes, and program rules. <strong>Tiebreak:</strong> if a state overlaps tiers or is hard to classify, it is placed in the tier that opens the <em>most</em> organizing opportunity (Tier&nbsp;1 &gt; Tier&nbsp;2 &gt; Tier&nbsp;0). Confirm eligibility with official sources — programs change.</p>
+        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left leading-relaxed">Based on AFF research, Foster Action Ohio 2025 survey, and state statutes. When classification is unclear, states go to the tier with the greatest organizing opportunity (1 &gt; 2 &gt; 0). Confirm eligibility with official sources — programs change.</p>
       </div>
     </div>
 
