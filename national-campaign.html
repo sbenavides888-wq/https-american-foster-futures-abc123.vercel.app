@@ -37,7 +37,8 @@
     #waiver-map svg { width: 100%; height: auto; display: block; }
     #waiver-map path { stroke: #fff; stroke-width: 0.75; cursor: pointer; transition: opacity 0.15s ease; }
     #waiver-map path:hover { opacity: 0.85; }
-    #waiver-map path.is-texas { stroke: #0F2C59; stroke-width: 1.5; }
+    #waiver-map path.is-nontarget { opacity: 0.72; }
+    #waiver-map path.is-nontarget:hover { opacity: 0.9; }
     #map-tooltip {
       position: fixed;
       pointer-events: none;
@@ -174,144 +175,42 @@
     <!-- Interactive US Map -->
     <div id="map" class="mt-12">
       <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">National Tuition Waiver Map</h2>
-      <p class="text-sm text-slate-600 mb-4 max-w-3xl">This map shows which states have a tuition waiver or comparable structure to help foster youth pay for college — and which states still lack a Texas-style comprehensive program. Hover a state for details. See the list below for state-by-state clarification.</p>
+      <p class="text-sm text-slate-600 mb-4 max-w-3xl">Same map as the AFF Action app. Grey states already have coverage or are not campaign targets — they stay selectable for details. Campaign targets use three organizing tiers. Hover a state for details.</p>
 
       <div class="map-container border rounded-3xl p-4 sm:p-6">
-        <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map showing foster youth tuition waiver status by state"></div>
+        <div id="waiver-map" class="bg-white rounded-2xl border p-2 sm:p-4" role="img" aria-label="United States map showing foster youth tuition waiver status by campaign tier"></div>
         <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-600 justify-center sm:justify-start">
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-emerald-500 border border-white shadow-sm"></span> Waiver or comparable college support</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-red-500 border border-white shadow-sm"></span> No Texas-style comprehensive waiver (campaign focus)</span>
-          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-emerald-600 ring-2 ring-[#0F2C59] border border-white shadow-sm"></span> Texas (model program)</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#6B7280"></span> Non-target — has coverage / not a campaign focus (still selectable)</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#DC2626"></span> Tier 1 — Priority</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#F97316"></span> Tier 2 — Improvements Possible</span>
+          <span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded border border-white shadow-sm" style="background:#EAB308"></span> Tier 3 — Under Review</span>
         </div>
-        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Map data reflects AFF’s campaign research. Programs vary by state — use the detailed list below and official state resources to confirm eligibility.</p>
+        <p class="text-xs text-slate-500 mt-3 text-center sm:text-left">Map data is shared with the AFF Action mobile app. Programs vary by state — confirm eligibility with official sources.</p>
       </div>
     </div>
 
     <div id="map-tooltip" aria-hidden="true"></div>
 
-    <!-- Focus States List -->
-    <div id="focus-states" class="mt-12">
-      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-6">States Without a Texas-Style Tuition Waiver</h2>
-      <p class="text-sm text-slate-500 mb-4">The <strong>red states on the map above</strong> currently do not have a comprehensive, statewide tuition waiver program for foster youth similar to Texas. Our campaign will focus here first. This list provides state-by-state clarification.</p>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- States list -->
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Alabama</div>
-          <div class="text-xs text-slate-500">No statewide waiver. Limited institutional aid only.</div>
-          <a href="https://www.ache.edu/" target="_blank" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Learn more →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Alaska</div>
-          <div class="text-xs text-slate-500">No comprehensive waiver program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Arkansas</div>
-          <div class="text-xs text-slate-500">No statewide foster youth tuition waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Hawaii</div>
-          <div class="text-xs text-slate-500">No dedicated statewide program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Idaho</div>
-          <div class="text-xs text-slate-500">No comprehensive tuition waiver for foster youth.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Kansas</div>
-          <div class="text-xs text-slate-500">No statewide waiver program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Kentucky</div>
-          <div class="text-xs text-slate-500">Limited benefits; no full Texas-style waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Louisiana</div>
-          <div class="text-xs text-slate-500">No comprehensive statewide program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Mississippi</div>
-          <div class="text-xs text-slate-500">No dedicated tuition waiver for foster youth.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Missouri</div>
-          <div class="text-xs text-slate-500">Scholarships exist but no full waiver like Texas.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Montana</div>
-          <div class="text-xs text-slate-500">No statewide tuition waiver program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Nebraska</div>
-          <div class="text-xs text-slate-500">No comprehensive foster youth waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Nevada</div>
-          <div class="text-xs text-slate-500">No dedicated statewide program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">New Hampshire</div>
-          <div class="text-xs text-slate-500">No comprehensive tuition waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">New Mexico</div>
-          <div class="text-xs text-slate-500">Limited aid; no Texas-style waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">North Dakota</div>
-          <div class="text-xs text-slate-500">No statewide program for foster youth.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Oklahoma</div>
-          <div class="text-xs text-slate-500">Some benefits but not a full waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">South Carolina</div>
-          <div class="text-xs text-slate-500">No comprehensive waiver program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">South Dakota</div>
-          <div class="text-xs text-slate-500">No dedicated foster youth tuition waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Utah</div>
-          <div class="text-xs text-slate-500">Limited programs; no full waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Vermont</div>
-          <div class="text-xs text-slate-500">No statewide tuition waiver for foster youth.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">West Virginia</div>
-          <div class="text-xs text-slate-500">No comprehensive program.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
-        <div class="state-card bg-white border rounded-2xl p-4">
-          <div class="font-semibold text-red-600">Wyoming</div>
-          <div class="text-xs text-slate-500">No dedicated foster youth waiver.</div>
-          <a href="#" class="text-xs text-sky-600 hover:underline mt-1 inline-block">Support the campaign →</a>
-        </div>
+    <!-- Why waivers over Chafee -->
+    <section id="why-waivers" class="mt-12 max-w-4xl">
+      <div class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">Policy case</div>
+      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mt-2">Why Texas-style tuition waivers outperform the federal Chafee grant</h2>
+      <div class="mt-5 space-y-4 text-[15px] leading-relaxed text-slate-600">
+        <p>Texas-style tuition and fee waivers give foster youth a stronger path through higher education than the federal Chafee Education and Training Voucher alone. Chafee tops out at $5,000 a year—an amount that has not kept pace with college costs and is often reduced, delayed, or unavailable when state funding runs short. Many states also prioritize students already receiving the voucher or already enrolled, so first-time applicants can wait in line. By contrast, a Texas-style waiver eliminates <strong class="text-slate-800">100% of tuition and required fees</strong> at public institutions for eligible current and former foster youth. It is a clear statutory benefit, not a competitive grant that can run out mid-year.</p>
+        <p>Removing the largest fixed educational cost gives students real predictability and lets other aid—Pell Grants, state grants, and Chafee when available—stretch further for housing, books, and living expenses. For young people who already face housing instability and interrupted schooling, a full tuition waiver is more powerful than a limited federal voucher. Chafee remains a useful <strong class="text-slate-800">supplement</strong>; it should not be the primary foundation. States serious about college outcomes for foster youth should put robust tuition and fee waivers first—and use improved Chafee funding only to fill remaining gaps.</p>
       </div>
+      <p class="mt-4 text-sm">
+        <a href="texas-tuition-waiver.html" class="text-sky-700 font-medium hover:underline">How the Texas model works →</a>
+        <span class="text-slate-400 mx-2">·</span>
+        <a href="financial-aid.html" class="text-sky-700 font-medium hover:underline">Federal &amp; state financial aid overview →</a>
+      </p>
+    </section>
+
+    <!-- Focus States by tier (rendered by script so map + list stay in sync) -->
+    <div id="focus-states" class="mt-12">
+      <h2 class="text-2xl font-semibold tracking-tight text-[#0F2C59] mb-2">Campaign targets by tier</h2>
+      <p class="text-sm text-slate-500 mb-6">Organize first in Tier 1, then Tier 2, then Tier 3. Same list as the AFF Action app.</p>
+      <div id="tier-lists" class="space-y-10"></div>
     </div>
 
     <div class="mt-8 text-center">
@@ -358,21 +257,118 @@
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <script>
-    const NO_WAIVER_STATES = new Set([
-      'Alabama', 'Alaska', 'Arkansas', 'Hawaii', 'Idaho', 'Kansas', 'Kentucky',
-      'Louisiana', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada',
-      'New Hampshire', 'New Mexico', 'North Dakota', 'Oklahoma', 'South Carolina',
-      'South Dakota', 'Utah', 'Vermont', 'West Virginia', 'Wyoming'
-    ]);
+    /**
+     * Shared campaign map — must match AFF Action app (data/states.ts)
+     * and API defaultCampaign.js
+     */
+    const MAP_COLORS = {
+      /** Non-targets greyed out but still selectable */
+      coverage: '#6B7280',
+      model: '#6B7280',
+      tier1: '#DC2626',
+      tier2: '#F97316',
+      tier3: '#EAB308',
+    };
+
+    /** name -> { tier: 0|1|2|3, blurb } — tier 0 = has coverage */
+    const STATE_META = {
+      // Tier 1 — Priority
+      'Alabama': { tier: 1, blurb: 'Scholarship-style aid; upgrade to automatic Texas-style waiver.' },
+      'Arkansas': { tier: 1, blurb: 'Limited strong statewide waiver; high-need South.' },
+      'Georgia': { tier: 1, blurb: 'Waiver exists with restrictions; expand eligibility & access.' },
+      'Louisiana': { tier: 1, blurb: 'AFF phase-1 desk · Senate Education Chair outreach.' },
+      'Mississippi': { tier: 1, blurb: 'Recent free-tuition law; strengthen durability & utilization.' },
+      'New Mexico': { tier: 1, blurb: 'AFF phase-1 desk · Senate Education Chair outreach.' },
+      'Oklahoma': { tier: 1, blurb: 'AFF phase-1 desk · incomplete vs Texas model.' },
+      'South Carolina': { tier: 1, blurb: 'Priority #1 · S.824 currently moving + Senate Education Chair.' },
+      // Tier 2
+      'Colorado': { tier: 2, blurb: 'Growing state; incomplete supports vs Texas.' },
+      'Kentucky': { tier: 2, blurb: 'Limited benefits; strengthen toward full waiver.' },
+      'Missouri': { tier: 2, blurb: 'Scholarships exist; not a full Texas-style waiver.' },
+      'Nevada': { tier: 2, blurb: 'High foster mobility; bipartisan growth-state opportunity.' },
+      'Pennsylvania': { tier: 2, blurb: 'Fostering Independence waiver; expand eligibility & awareness.' },
+      // Tier 3
+      'Alaska': { tier: 3, blurb: 'No comprehensive waiver; often ETV-reliant.' },
+      'Hawaii': { tier: 3, blurb: 'No dedicated statewide program.' },
+      'Idaho': { tier: 3, blurb: 'Mountain West; easier legislative model opportunity.' },
+      'Kansas': { tier: 3, blurb: 'No statewide waiver program.' },
+      'Montana': { tier: 3, blurb: 'Mountain West model opportunity.' },
+      'North Dakota': { tier: 3, blurb: 'Smaller state; ETV-heavy historically.' },
+      'Nebraska': { tier: 3, blurb: 'No comprehensive foster youth waiver.' },
+      'New Hampshire': { tier: 3, blurb: 'No comprehensive tuition waiver.' },
+      'South Dakota': { tier: 3, blurb: 'Mountain West / plains model opportunity.' },
+      'Utah': { tier: 3, blurb: 'Limited programs; no full waiver.' },
+      'Vermont': { tier: 3, blurb: 'No statewide tuition waiver for foster youth.' },
+      'West Virginia': { tier: 3, blurb: 'No comprehensive program.' },
+      'Wyoming': { tier: 3, blurb: 'Mountain West model opportunity.' },
+      // Model
+      'Texas': { tier: 0, model: true, blurb: 'Model comprehensive program. Defend access; support other states.' },
+    };
+
+    const TIER_TITLES = {
+      1: { title: 'Tier 1 — Priority', color: MAP_COLORS.tier1 },
+      2: { title: 'Tier 2 — Improvements Possible', color: MAP_COLORS.tier2 },
+      3: { title: 'Tier 3 — Under Review', color: MAP_COLORS.tier3 },
+    };
 
     function getStateStatus(name) {
-      if (name === 'Texas') {
-        return { fill: '#059669', label: 'Texas — model tuition waiver program', className: 'is-texas' };
+      const meta = STATE_META[name];
+      if (meta && meta.model) {
+        return {
+          fill: MAP_COLORS.model,
+          label: 'Texas — model program (non-target; selectable for details)',
+          className: 'is-nontarget',
+          tier: 0,
+          blurb: meta.blurb,
+        };
       }
-      if (NO_WAIVER_STATES.has(name)) {
-        return { fill: '#ef4444', label: 'No Texas-style comprehensive waiver — campaign focus', className: '' };
+      if (meta && meta.tier >= 1) {
+        return {
+          fill: meta.tier === 1 ? MAP_COLORS.tier1 : meta.tier === 2 ? MAP_COLORS.tier2 : MAP_COLORS.tier3,
+          label: TIER_TITLES[meta.tier].title,
+          className: '',
+          tier: meta.tier,
+          blurb: meta.blurb,
+        };
       }
-      return { fill: '#22c55e', label: 'Tuition waiver or comparable college support in place', className: '' };
+      return {
+        fill: MAP_COLORS.coverage,
+        label: 'Non-target — has tuition coverage (selectable for details)',
+        className: 'is-nontarget',
+        tier: 0,
+        blurb: '',
+      };
+    }
+
+    function renderTierLists() {
+      const root = document.getElementById('tier-lists');
+      if (!root) return;
+      root.innerHTML = '';
+      [1, 2, 3].forEach((tier) => {
+        const entries = Object.entries(STATE_META)
+          .filter(([, m]) => m.tier === tier)
+          .sort((a, b) => a[0].localeCompare(b[0]));
+        const section = document.createElement('div');
+        section.innerHTML = `
+          <h3 class="text-lg font-semibold mb-3 flex items-center gap-2" style="color:${TIER_TITLES[tier].color}">
+            <span class="inline-block w-3 h-3 rounded" style="background:${TIER_TITLES[tier].color}"></span>
+            ${TIER_TITLES[tier].title}
+          </h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" data-tier-grid="${tier}"></div>
+        `;
+        const grid = section.querySelector(`[data-tier-grid="${tier}"]`);
+        entries.forEach(([name, m]) => {
+          const card = document.createElement('div');
+          card.className = 'state-card bg-white border rounded-2xl p-4';
+          card.innerHTML = `
+            <div class="font-semibold" style="color:${TIER_TITLES[tier].color}">${name}</div>
+            <div class="text-xs text-slate-500 mt-1">${m.blurb}</div>
+            <a href="get-involved.html" class="text-xs text-sky-600 hover:underline mt-2 inline-block">Support the campaign →</a>
+          `;
+          grid.appendChild(card);
+        });
+        root.appendChild(section);
+      });
     }
 
     async function renderWaiverMap() {
@@ -410,7 +406,7 @@
           .on('mousemove', (event, d) => {
             const status = getStateStatus(d.properties.name);
             tooltip.style.display = 'block';
-            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}`;
+            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}${status.blurb ? '<br><span style="opacity:.85">' + status.blurb + '</span>' : ''}`;
             tooltip.style.left = `${event.clientX + 12}px`;
             tooltip.style.top = `${event.clientY + 12}px`;
           })
@@ -451,6 +447,7 @@
     function init() {
       setupMobileMenu();
       setCurrentYear();
+      renderTierLists();
       renderWaiverMap();
     }
 
