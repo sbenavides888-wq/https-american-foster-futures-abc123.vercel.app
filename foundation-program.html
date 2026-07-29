@@ -4,50 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Foundation Program | American Foster Futures</title>
-  <meta name="description" content="The Foundation Program — inspired by Isaac Asimov's Foundation series — prepares foster and disadvantaged youth for leadership in AI, space exploration, and advancing technology, with a long-term goal of sending a foster youth to space.">
+  <meta name="description" content="The Foundation Program prepares foster and disadvantaged youth for leadership in AI, modular microgreens, and space exploration — with a long-term goal of sending a foster youth to space.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
     .tail-container { font-family: 'Inter', system_ui, sans-serif; }
     .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
-    .nav-link { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
     .nav-link:hover { color: #1E88E5; }
     .nav-active { color: #1E88E5; font-weight: 600; }
-    .footer-link { transition: color 0.2s ease; }
     .footer-link:hover { color: #4FC3F7; }
     .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      top: 100%;
-      left: 0;
-      margin-top: 0;
+    .dropdown-menu { display: none; top: 100%; left: 0; margin-top: 0; }
+    .dropdown-menu::before { content: ''; position: absolute; top: -0.75rem; left: 0; right: 0; height: 0.75rem; }
+    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
     }
-    .dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -0.75rem;
-      left: 0;
-      right: 0;
-      height: 0.75rem;
-    }
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu { display: block; }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
   <div class="bg-[#0F2C59] text-white text-sm py-2">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <div class="flex items-center gap-x-4 text-xs sm:text-sm">
-        <div>Irving, TX</div>
-        <div class="hidden sm:block">|</div>
-        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
-      </div>
-      <div class="flex gap-x-3 text-xs">
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
+      <a href="mailto:info@americanfosterfutures.org" class="hover:underline text-xs sm:text-sm">info@americanfosterfutures.org</a>
+      <a href="donate.html" class="hidden sm:block hover:underline font-medium text-xs">Give Today →</a>
     </div>
   </div>
 
@@ -55,11 +37,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <a href="index.html" class="flex items-center gap-x-3 group">
-          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
-            <rect width="44" height="44" rx="8" fill="#0F2C59"/>
-            <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
-            <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
-          </svg>
+          <div class="w-11 h-11 bg-[#0F2C59] rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition">AFF</div>
           <div>
             <div class="font-semibold tracking-tight text-xl text-[#0F2C59]">American Foster Futures</div>
             <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
@@ -79,10 +57,10 @@
           </div>
           <div class="dropdown relative group">
             <a href="national-campaign.html" class="nav-link flex items-center gap-x-1 nav-active">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
-            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-56 z-50">
+            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-64 z-50">
               <a href="national-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Campaign</a>
               <a href="reciprocity-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Tuition Waiver Reciprocity Campaign</a>
-              <a href="foundation-program.html" class="block px-4 py-2 text-sm hover:bg-slate-100">The Foundation Program</a>
+              <a href="foundation-program.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">The Foundation Program</a>
               <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
               <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
             </div>
@@ -99,68 +77,182 @@
           <a href="case-for-support.html" class="nav-link">Case for Support</a>
           <a href="donate.html" class="nav-link">Donate</a>
         </div>
-        <div class="hidden md:flex items-center gap-x-3">
-          <a href="donate.html" class="px-5 py-2.5 bg-[#0F2C59] hover:bg-[#1a3a6e] text-white text-sm font-semibold rounded-xl">Donate</a>
-        </div>
-        <button id="mobile-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700 hover:bg-slate-100 rounded-xl" aria-label="Toggle menu"><i class="fa-solid fa-bars text-xl"></i></button>
+        <a href="donate.html" class="hidden md:inline-flex px-5 py-2.5 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl hover:bg-[#1a3a6e]">Donate</a>
+        <button id="mobile-btn" class="md:hidden p-2" aria-label="Menu"><i class="fa-solid fa-bars text-xl"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm font-medium flex flex-col gap-y-1">
-      <a href="national-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Programs</a>
-      <a href="foundation-program.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm font-semibold">— The Foundation Program</a>
-      <a href="get-involved.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Get Involved</a>
-      <a href="case-for-support.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Case for Support</a>
-      <a href="donate.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Donate</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm space-y-1">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="national-campaign.html" class="block py-2">Programs</a>
+      <a href="foundation-program.html" class="block py-2 pl-4 font-semibold">— Foundation Program</a>
+      <a href="get-involved.html" class="block py-2">Get Involved</a>
+      <a href="case-for-support.html" class="block py-2">Case for Support</a>
+      <a href="donate.html" class="block py-2">Donate</a>
     </div>
   </nav>
 
-  <div class="bg-[#0F2C59] text-white py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl">
-        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">STEM · AI · Space Exploration</div>
-        <h1 class="heading-serif text-5xl tracking-tighter font-semibold mt-1">The Foundation Program</h1>
-        <p class="mt-3 text-lg text-sky-100">Inspired by Isaac Asimov’s <em>Foundation</em> series — building leaders in AI and space exploration, with a long-term goal of sending a foster youth to space.</p>
+  <!-- Cinematic hero -->
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/foundation/rocket-launch.jpg" alt="High-profile commercial rocket launch at night" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+          STEM · AI · Microgreens · Space
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
+          The Foundation Program
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">
+          Inspired by Asimov’s <em>Foundation</em> — building leaders who code, grow, and reach for the stars. Our north star: <strong class="text-white">a foster youth in space</strong>.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">
+            Apply or volunteer <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="#pillars" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">
+            Explore the pillars
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="max-w-7xl mx-auto px-6 py-12">
+  <main class="max-w-7xl mx-auto px-6 py-14">
     <div class="max-w-3xl">
-      <p class="text-slate-600">The Foundation Program builds a pipeline for young people who have experienced foster care or other forms of disadvantage. We connect curiosity in AI and space exploration with real skills — including hands-on AI and modular microgreens — plus mentors and a path through college into meaningful careers.</p>
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+        The Foundation Program is AFF’s pipeline for young people who have experienced foster care or other disadvantage. We pair <strong class="text-slate-800">hands-on AI coding</strong>, <strong class="text-slate-800">modular microgreens</strong> (life-support skills for the future), and college-to-career pathways — same pillars as the AFF Action app.
+      </p>
+    </div>
 
-      <div class="mt-8 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8">
-        <h2 class="text-2xl font-semibold text-[#0F2C59]">Why “Foundation”?</h2>
-        <p class="mt-4 text-sm text-slate-600 leading-relaxed">The program takes its name and spirit from Isaac Asimov’s <em>Foundation</em> series — a story about preserving knowledge, building for the long term, and shaping the future through science and leadership. Like Asimov’s Foundation, we are investing in young people today so they can guide tomorrow.</p>
-        <p class="mt-4 text-sm text-slate-600 leading-relaxed">Our north star is ambitious and concrete: <strong>we hope to send a foster youth or former foster youth to space</strong>. Along the way, we focus on <strong>advancing technology</strong> — especially artificial intelligence and space exploration — and on making sure that those who have been least likely, historically, to hold power and influence are prepared to <strong>play a leadership role in the future</strong>.</p>
-        <ul class="mt-6 space-y-3 text-sm text-slate-600">
-          <li class="flex gap-3"><i class="fa-solid fa-book-open text-sky-600 mt-0.5"></i><span><strong>Inspired by Asimov</strong> — long-term thinking, scientific progress, and building institutions that outlast any single generation.</span></li>
-          <li class="flex gap-3"><i class="fa-solid fa-shuttle-space text-sky-600 mt-0.5"></i><span><strong>A foster youth in space</strong> — a defining goal that motivates rigorous STEM preparation, mentorship, and career pathways.</span></li>
-          <li class="flex gap-3"><i class="fa-solid fa-microchip text-sky-600 mt-0.5"></i><span><strong>Advancing technology</strong> — hands-on training in AI and emerging fields so participants help shape what comes next.</span></li>
-          <li class="flex gap-3"><i class="fa-solid fa-seedling text-sky-600 mt-0.5"></i><span><strong>Life-support skills</strong> — modular microgreen systems teach compact food production relevant to space farming and sustainability.</span></li>
-          <li class="flex gap-3"><i class="fa-solid fa-crown text-sky-600 mt-0.5"></i><span><strong>Leadership for the overlooked</strong> — equipping young people who have faced foster care and disadvantage to lead in industries and communities that have too often excluded them.</span></li>
+    <!-- Three visual pillars -->
+    <section id="pillars" class="mt-12 scroll-mt-28">
+      <div class="flex items-end justify-between gap-4 mb-6">
+        <div>
+          <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Three frontiers</div>
+          <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Code. Grow. Launch.</h2>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/foundation/ai-coding.jpg" alt="Hands-on coding and AI development workspace" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">AI &amp; coding</div>
+              <h3 class="font-semibold text-lg">Hands-on AI training</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Practical experience with modern AI tools and agents — build, problem-solve, and create. The same energy as AI-assisted development environments used by builders and engineers worldwide.
+          </p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/foundation/microgreens.jpg" alt="Modular indoor microgreen grow systems under LED lights" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-200">Foundation Farms</div>
+              <h3 class="font-semibold text-lg">Modular microgreens</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Hands-on indoor grow work with modular microgreen systems — compact food production skills relevant to life-support and farming concepts for space travel, developed through Foundation Farms (Dallas, TX).
+          </p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/foundation/rocket-launch.jpg" alt="Commercial rocket launch into the night sky" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-orange-200">Space exploration</div>
+              <h3 class="font-semibold text-lg">Reach for the stars</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            STEM career exposure and mentorship aimed at technology and space exploration — with an ambitious long-term goal of sending a foster youth or former foster youth to space.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why Foundation -->
+    <section class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 order-2 lg:order-1">
+        <img src="assets/foundation/rocket-launch.jpg" alt="" class="w-full h-72 object-cover" aria-hidden="true">
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Why “Foundation”?</div>
+        <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Build for the long term</h2>
+        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+          Named for Isaac Asimov’s <em>Foundation</em> series — preserving knowledge, building for generations, and shaping the future through science and leadership. We invest in young people today so they can guide tomorrow.
+        </p>
+        <ul class="mt-5 space-y-3 text-sm text-slate-600">
+          <li class="flex gap-3"><i class="fa-solid fa-book-open text-sky-600 mt-0.5"></i><span><strong class="text-slate-800">Inspired by Asimov</strong> — institutions and skills that outlast any single generation.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-shuttle-space text-sky-600 mt-0.5"></i><span><strong class="text-slate-800">A foster youth in space</strong> — a defining goal that motivates rigorous STEM preparation.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-microchip text-sky-600 mt-0.5"></i><span><strong class="text-slate-800">Advancing technology</strong> — AI and emerging fields so participants help shape what comes next.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-seedling text-sky-600 mt-0.5"></i><span><strong class="text-slate-800">Life-support skills</strong> — modular microgreens for sustainability and space farming concepts.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-crown text-sky-600 mt-0.5"></i><span><strong class="text-slate-800">Leadership for the overlooked</strong> — equipping youth who have faced foster care to lead.</span></li>
         </ul>
       </div>
+    </section>
 
-      <h2 class="mt-10 text-2xl font-semibold text-[#0F2C59]">What Participants Receive</h2>
-      <p class="mt-2 text-xs text-slate-500">Same core benefits as listed in the AFF Action app.</p>
-      <ul class="mt-4 space-y-4 text-sm text-slate-600">
-        <li class="flex gap-3"><i class="fa-solid fa-robot text-sky-600 mt-0.5"></i><span><strong>Hands-on AI training</strong> — practical experience with modern AI tools and agents to learn how to build, problem-solve, and create with AI.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-seedling text-sky-600 mt-0.5"></i><span><strong>Modular microgreens</strong> — hands-on indoor grow work with modular microgreen systems — compact food production skills relevant to life-support and farming concepts for space travel.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-university text-sky-600 mt-0.5"></i><span><strong>College navigation</strong> — support applying to strong universities, securing financial aid, and choosing STEM pathways. See our <a href="resources.html" class="text-sky-700 hover:underline">resources</a>.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-briefcase text-sky-600 mt-0.5"></i><span><strong>Post-graduation placement</strong> — résumé coaching, internships, and job search support to land roles in AI, tech, and space exploration.</span></li>
-      </ul>
-      <p class="mt-4 text-sm text-slate-600">Participants also gain STEM career exposure and mentorship from professionals in technology, research, and the space exploration industry.</p>
-
-      <h2 class="mt-10 text-2xl font-semibold text-[#0F2C59]">Who It’s For</h2>
-      <p class="mt-3 text-sm text-slate-600">Current and former foster youth and other disadvantaged young people ages 14–24 who are interested in STEM, especially artificial intelligence and space exploration. No prior coding experience required — curiosity and commitment matter most.</p>
-
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="get-involved.html" class="inline-block px-6 py-3 bg-[#0F2C59] text-white font-semibold rounded-2xl text-sm hover:bg-[#1a3a6e]">Apply or Volunteer</a>
+    <!-- Receive -->
+    <section class="mt-16">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">What you receive</div>
+      <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Same core benefits as the AFF Action app</h2>
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-robot"></i></div>
+          <div>
+            <h3 class="font-semibold text-[#0F2C59]">Hands-on AI training</h3>
+            <p class="text-sm text-slate-600 mt-1 leading-relaxed">Practical experience with modern AI tools and agents to learn how to build, problem-solve, and create with AI.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-seedling"></i></div>
+          <div>
+            <h3 class="font-semibold text-[#0F2C59]">Modular microgreens</h3>
+            <p class="text-sm text-slate-600 mt-1 leading-relaxed">Indoor grow work with modular systems — compact food production skills for life-support and space farming concepts.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-university"></i></div>
+          <div>
+            <h3 class="font-semibold text-[#0F2C59]">College navigation</h3>
+            <p class="text-sm text-slate-600 mt-1 leading-relaxed">Support applying to strong universities, securing financial aid, and choosing STEM pathways. See <a href="resources.html" class="text-sky-700 underline">resources</a>.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 flex gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-briefcase"></i></div>
+          <div>
+            <h3 class="font-semibold text-[#0F2C59]">Post-graduation placement</h3>
+            <p class="text-sm text-slate-600 mt-1 leading-relaxed">Résumé coaching, internships, and job search support for roles in AI, tech, and space exploration.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <p class="mt-4 text-sm text-slate-500">Participants also gain STEM career exposure and mentorship from professionals in technology, research, and the space industry.</p>
+    </section>
 
-  <footer class="bg-[#0F2C59] mt-16 text-sky-100/80">
+    <!-- Who + CTA band -->
+    <section class="mt-16 rounded-3xl overflow-hidden relative">
+      <img src="assets/foundation/microgreens.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#0F2C59]/90"></div>
+      <div class="relative px-6 py-12 md:px-12 md:py-14 text-white max-w-3xl">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-300">Who it’s for</div>
+        <h2 class="heading-serif text-3xl font-semibold mt-2 tracking-tight">Ages 14–24 · STEM curious · No experience required</h2>
+        <p class="mt-4 text-sky-50/95 text-sm md:text-base leading-relaxed">
+          Current and former foster youth and other disadvantaged young people interested in STEM — especially AI and space exploration. Curiosity and commitment matter most.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm hover:bg-sky-50">Get involved →</a>
+          <a href="history.html" class="inline-flex px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10">See Foundation Farms on our timeline →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80 mt-16">
     <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-8 text-sm">
       <div class="md:col-span-5">
         <div class="font-semibold text-white text-lg tracking-tighter mb-2">American Foster Futures</div>
@@ -168,11 +260,9 @@
       </div>
       <div class="md:col-span-3">
         <div class="font-semibold text-white mb-3">Navigate</div>
-        <div class="space-y-1 text-sm">
-          <a href="index.html" class="footer-link block">Home</a>
-          <a href="national-campaign.html" class="footer-link block">Programs</a>
-          <a href="get-involved.html" class="footer-link block">Get Involved</a>
-        </div>
+        <a href="index.html" class="footer-link block">Home</a>
+        <a href="national-campaign.html" class="footer-link block">Programs</a>
+        <a href="get-involved.html" class="footer-link block">Get Involved</a>
       </div>
       <div class="md:col-span-4">
         <div class="font-semibold text-white mb-3">Contact</div>
@@ -184,10 +274,10 @@
   </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
     const btn = document.getElementById('mobile-btn');
     const menu = document.getElementById('mobile-menu');
     if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
