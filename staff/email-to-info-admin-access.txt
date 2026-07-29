@@ -1,0 +1,161 @@
+﻿To: info@americanfosterfutures.org
+Subject: AFF staff guide: Case for Support access, accounts, contacts & database
+
+# American Foster Futures â€” Staff access guide  
+**For:** info@americanfosterfutures.org  
+**Subject:** How to access accounts, Case for Support requests, contacts & database info  
+
+---
+
+## 1. Staff dashboard (primary tool)
+
+**Production URL:**  
+https://aff-futures-api.onrender.com/admin  
+
+**Local (if the API is running on your PC):**  
+http://localhost:8787/admin  
+
+### Sign in
+1. Open the dashboard URL above.  
+2. Enter the **Admin API key** (`ADMIN_API_KEY` from the server environment).  
+   - **Production:** Render â†’ your `aff-futures-api` service â†’ **Environment** â†’ `ADMIN_API_KEY`  
+   - **Local:** value in `aff-futures-api/.env` (never commit or email this key publicly)  
+3. Click **Open dashboard**.
+
+Only trusted staff should have this key. Treat it like a password.
+
+---
+
+## 2. Case for Support â€” approve or deny access
+
+Public page (visitors):  
+https://www.americanfosterfutures.org/case-for-support.html  
+*(or your Vercel site URL + `/case-for-support.html`)*
+
+### What visitors do
+1. Create an account or sign in.  
+2. Submit an access request (organization optional + reason required).  
+3. Wait until staff **Grant** access.  
+4. Once approved, they click **Open Case for Support** to view the document.
+
+### What staff do
+1. Sign into **https://aff-futures-api.onrender.com/admin**  
+2. Open the **Case for Support** tab (amber badge = pending count).  
+3. Review name, email, organization, and reason.  
+4. Click **Grant** or **Deny** (optional note).  
+5. Filter: Pending / Approved / Denied.
+
+**Notify yourself of new requests (optional):**  
+On the API host, set environment variable:
+
+- `ADMIN_NOTIFY_WEBHOOK` = a Slack/Discord/Zapier webhook URL  
+
+New requests are also logged on the server and appended to  
+`data/case-support-notify-log.jsonl` (when using the file backend).
+
+---
+
+## 3. Created user accounts
+
+Accounts are created when people register via:
+
+- The Case for Support access page, or  
+- The mobile app (optional account / vault features)
+
+### View account contacts (API)
+
+Staff can list registered users (name, email, state â€” **no passwords**) with the admin key:
+
+```http
+GET https://aff-futures-api.onrender.com/api/admin/contacts
+Header: x-admin-key: YOUR_ADMIN_API_KEY
+```
+
+Optional filter by state:
+
+```http
+GET https://aff-futures-api.onrender.com/api/admin/contacts?state=TX
+Header: x-admin-key: YOUR_ADMIN_API_KEY
+```
+
+**Example (PowerShell):**
+
+```powershell
+$headers = @{ "x-admin-key" = "PASTE_ADMIN_API_KEY_HERE" }
+Invoke-RestMethod -Uri "https://aff-futures-api.onrender.com/api/admin/contacts" -Headers $headers
+```
+
+**Note:** The web dashboard does not yet have a â€œContactsâ€ tab UI; use the API call above, or ask a developer to add a Contacts tab.
+
+---
+
+## 4. Other data available to staff
+
+### A. Help & volunteer submissions
+- **Dashboard tab:** Submissions  
+- Filter by type, status, search  
+- Open a row â†’ update status / staff notes â†’ Save  
+- **Export CSV** from the same tab  
+
+### B. Campaign map & bills
+- **Dashboard tab:** Campaign Â· bills & map  
+- Edit tracked bills  
+- Edit national waiver map status / focus / notes  
+
+### C. Case for Support document (approved users only)
+- Stored on the API as `content/case-for-support.html`  
+- Served only via authenticated + **approved** access:  
+  `GET /api/case-support/document` with `Authorization: Bearer <user token>`  
+
+### D. Health check (no key required)
+https://aff-futures-api.onrender.com/api/health  
+
+Shows whether the service and database are up.
+
+---
+
+## 5. Where the database lives
+
+| Environment | Storage |
+|-------------|---------|
+| **Production (Render)** | PostgreSQL via `DATABASE_URL` (users, submissions, bills, case-support access, vault ciphertext metadata, etc.) |
+| **Local / fallback** | JSON files under `aff-futures-api/data/` (e.g. `users.json`, `submissions.json`, `case-support-access.json`) â€” **not** for production secrets |
+
+**To inspect production Postgres:**  
+Render â†’ Postgres instance â†’ **Connect** / **PSQL** / external tools using the connection string from Render (keep private).
+
+Useful tables (when using Postgres):
+
+| Table | Contents |
+|-------|----------|
+| `users` | Accounts (email, name, state; password is hashed) |
+| `submissions` | Help / volunteer forms |
+| `case_support_access` | Case for Support requests (pending / approved / denied) |
+| `bills` / waiver map tables | Campaign tracking |
+| `vault_items` | Encrypted vault blobs only (zero-knowledge â€” not readable as plain text) |
+
+---
+
+## 6. Security reminders
+
+1. Never post `ADMIN_API_KEY` or `DATABASE_URL` in public Slack/GitHub.  
+2. Prefer sharing the **dashboard URL + key** only over secure channels.  
+3. Case for Support and contact lists are sensitive â€” grant access only to legitimate donors/partners.  
+4. Rotate `ADMIN_API_KEY` if it may have been exposed.
+
+---
+
+## 7. Quick links
+
+| Resource | URL |
+|----------|-----|
+| Staff dashboard | https://aff-futures-api.onrender.com/admin |
+| API health | https://aff-futures-api.onrender.com/api/health |
+| Case for Support (public gate) | Website â†’ Case for Support |
+| Render env / keys | https://dashboard.render.com |
+
+---
+
+*American Foster Futures â€” internal staff instructions*  
+*If something fails, check Render logs and `/api/health` first.*
+
