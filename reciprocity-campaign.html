@@ -19,7 +19,7 @@
     .dropdown-menu::before { content: ''; position: absolute; top: -0.75rem; left: 0; right: 0; height: 0.75rem; }
     .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
     .hero-overlay {
-      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
+      background: linear-gradient(120deg, rgba(15,44,89,0.78) 0%, rgba(15,44,89,0.42) 50%, rgba(15,44,89,0.22) 100%);
     }
   </style>
 </head>
@@ -91,18 +91,23 @@
     </div>
   </nav>
 
-  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
-    <img src="assets/interstate-compact-handshake.jpg" alt="Two people shaking hands over agreement documents, symbolizing interstate compact cooperation" class="absolute inset-0 w-full h-full object-cover object-center">
+  <!-- Handshake photo hero (replaces solid blue header) -->
+  <header class="relative min-h-[26rem] md:min-h-[32rem] flex items-end overflow-hidden">
+    <img
+      src="assets/interstate-compact-handshake.jpg"
+      alt="Two people shaking hands over agreement documents, symbolizing interstate compact cooperation"
+      class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+    >
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
-      <div class="max-w-3xl text-white">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+      <div class="max-w-3xl text-white drop-shadow-sm">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/25 border border-white/25 text-[10px] font-bold tracking-[2px] uppercase text-sky-100 backdrop-blur-sm">
           Priority campaign · Business plan
         </div>
         <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
           Tuition Waiver Reciprocity Campaign
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">
+        <p class="mt-4 text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl">
           Allow an individual with a tuition waiver in one state to access the benefits of a similar waiver in another state.
         </p>
       </div>
