@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | American Foster Futures</title>
-  <meta name="description" content="Meet the board of American Foster Futures. Learn about our mission, values, history, and commitment to foster youth.">
+  <meta name="description" content="American Foster Futures empowers foster youth through tuition-waiver advocacy, housing, education, and transition support nationwide.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
     .tail-container { font-family: 'Inter', system_ui, sans-serif; }
     .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
     .nav-link { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -33,6 +33,12 @@
     }
     .dropdown:hover .dropdown-menu,
     .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(115deg, rgba(15,44,89,0.94) 0%, rgba(15,44,89,0.62) 48%, rgba(15,44,89,0.28) 100%);
+    }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
+    .stat-glow { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 40px -10px rgba(15,44,89,0.35); }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -40,7 +46,7 @@
   <div class="bg-[#0F2C59] text-white text-sm py-2">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
       <div class="flex items-center gap-x-4 text-xs sm:text-sm">
-        <div>Irving, TX</div>
+        <div>North Hollywood, CA</div>
         <div class="hidden sm:block">|</div>
         <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
       </div>
@@ -60,7 +66,6 @@
           <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition">
             <rect width="44" height="44" rx="8" fill="#0F2C59"/>
             <text x="22" y="27" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="-0.5">AFF</text>
-            <!-- Modern accent: rising path symbolizing futures and growth -->
             <path d="M10 35 L16 30 L22 32 L28 27 L34 29" stroke="#4FC3F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
           </svg>
           <div>
@@ -74,7 +79,7 @@
           <div class="dropdown relative group">
             <a href="about.html" class="nav-link flex items-center gap-x-1 nav-active">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
             <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-56 z-50">
-              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">About Us</a>
               <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
               <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
               <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
@@ -114,14 +119,14 @@
     </div>
     <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm font-medium flex flex-col gap-y-1">
       <a href="index.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Home</a>
-      <a href="about.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">About</a>
+      <a href="about.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg font-semibold">About</a>
       <a href="board-of-directors.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Board of Directors</a>
       <a href="history.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our History</a>
       <a href="values.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Our Values</a>
       <a href="national-campaign.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Programs</a>
       <a href="resources.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Resources</a>
       <a href="texas-tuition-waiver.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Waiver</a>
-        <a href="texas-aging-out-checklist.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Aging Out Checklist</a>
+      <a href="texas-aging-out-checklist.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg pl-4 text-sm">— Texas Aging Out Checklist</a>
       <a href="get-involved.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Get Involved</a>
       <a href="case-for-support.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Case for Support</a>
       <a href="donate.html" class="py-2.5 px-3 hover:bg-slate-50 rounded-lg">Donate</a>
@@ -129,56 +134,224 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="bg-[#0F2C59] text-white py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl">
-        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">Who we are</div>
-        <h1 class="heading-serif text-5xl tracking-tighter font-semibold mt-1">Our story, our board, our mission.</h1>
+  <!-- Cinematic hero -->
+  <header class="relative min-h-[30rem] md:min-h-[36rem] flex items-end overflow-hidden">
+    <img src="assets/hero-youth.jpg" alt="Young people looking toward the future" class="absolute inset-0 w-full h-full object-cover object-center">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200 backdrop-blur-sm">
+          National · 501(c)(3) · Founded 2025
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
+          Every foster youth deserves a future worth fighting for.
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">
+          We change policy, open college doors, and walk alongside young people from care to independence.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="national-campaign.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">
+            Our national campaign <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="get-involved.html" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">
+            Get involved
+          </a>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="max-w-7xl mx-auto px-6 py-12">
-    <!-- Mission recap -->
-    <div class="max-w-3xl">
-      <h2 class="text-2xl font-semibold tracking-tight">Our Purpose</h2>
-      <p class="mt-4 text-[15px] text-slate-600">American Foster Futures (AFF) is a national nonprofit founded in Oakland, CA in 2025 dedicated to empowering foster youth by advocating for systemic improvements in state and federal policies and providing nationwide access to educational, housing and transitioning out of care services through virtual and community-based programs. Foster youth lack access to traditional family and social structures that create the foundation for achieving educational success by graduating from high school, college or trade school. Additionally, the combination of varying levels of traumatic experience, lack of stable living conditions and abusive or negative parental relationships results in higher rates of criminal conviction, homelessness, drug addiction and mental health issues than those youth not in foster care. Through its Texas Plan to replicate successful tuition waiver models state-by-state, a Reciprocity Campaign to allow cross-state use of waivers, and direct services including housing assistance, employment support, mental health resources and financial literacy, AFF seeks to break the cycle of disadvantage, equipping foster youth with the tools to achieve independence and thrive.</p>
-      <p class="mt-3 text-[15px] text-slate-600">We are organized exclusively for charitable and educational purposes under Section 501(c)(3) of the Internal Revenue Code.</p>
+  <!-- Impact strip -->
+  <section class="bg-[#0F2C59] text-white border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid sm:grid-cols-3 gap-6">
+      <div class="stat-glow rounded-2xl bg-white/5 px-5 py-4">
+        <div class="text-3xl font-bold tracking-tight text-sky-300">50</div>
+        <div class="text-sm text-sky-100/90 mt-1">States in our tuition-waiver vision</div>
+      </div>
+      <div class="stat-glow rounded-2xl bg-white/5 px-5 py-4">
+        <div class="text-3xl font-bold tracking-tight text-sky-300">1</div>
+        <div class="text-sm text-sky-100/90 mt-1">National movement for foster youth higher ed</div>
+      </div>
+      <div class="stat-glow rounded-2xl bg-white/5 px-5 py-4">
+        <div class="text-3xl font-bold tracking-tight text-sky-300">∞</div>
+        <div class="text-sm text-sky-100/90 mt-1">Potential unlocked when barriers fall</div>
+      </div>
     </div>
+  </section>
 
-    <!-- Subpage Links -->
-    <div class="mt-12 grid md:grid-cols-2 gap-6">
-      <a href="board-of-directors.html" class="block p-6 border bg-white rounded-2xl hover:border-sky-200 transition">
-        <div class="font-semibold text-xl text-[#0F2C59]">Board of Directors</div>
-        <p class="mt-2 text-sm text-slate-600">Meet our leadership team committed to advancing opportunities for foster youth.</p>
-        <div class="mt-3 text-sm font-medium text-sky-700">Learn more →</div>
-      </a>
-      <a href="history.html" class="block p-6 border bg-white rounded-2xl hover:border-sky-200 transition">
-        <div class="font-semibold text-xl text-[#0F2C59]">Our History</div>
-        <p class="mt-2 text-sm text-slate-600">From our founding in 2025 to building a national movement.</p>
-        <div class="mt-3 text-sm font-medium text-sky-700">Learn more →</div>
-      </a>
-      <a href="values.html" class="block p-6 border bg-white rounded-2xl hover:border-sky-200 transition">
-        <div class="font-semibold text-xl text-[#0F2C59]">Our Values</div>
-        <p class="mt-2 text-sm text-slate-600">The principles of Integrity, Compassion, Collaboration, and Community that guide everything we do.</p>
-        <div class="mt-3 text-sm font-medium text-sky-700">Learn more →</div>
-      </a>
-      <a href="case-for-support.html" class="block p-6 border-2 border-sky-200 bg-gradient-to-br from-sky-50 to-white rounded-2xl hover:border-sky-400 transition md:col-span-2">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <div class="text-xs font-semibold tracking-[2px] uppercase text-sky-600">For donors &amp; partners</div>
-            <div class="font-semibold text-xl text-[#0F2C59] mt-1">Case for Support</div>
-            <p class="mt-2 text-sm text-slate-600 max-w-xl">Our full investment case — the story, the need, the programs, the budget, and how your gift expands tuition waivers nationwide.</p>
-            <div class="mt-3 text-sm font-medium text-sky-700">Read the Case for Support →</div>
+  <main class="max-w-7xl mx-auto px-6 py-14">
+    <!-- Mission with image -->
+    <section class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Our purpose</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Who we are</h2>
+        <p class="mt-5 text-slate-600 leading-relaxed">
+          American Foster Futures (AFF) is a national nonprofit founded in Oakland, CA in 2025 dedicated to empowering foster youth by advocating for systemic improvements in state and federal policies and providing nationwide access to educational, housing and transitioning out of care services through virtual and community-based programs.
+        </p>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          Foster youth lack access to traditional family and social structures that create the foundation for achieving educational success by graduating from high school, college or trade school. The combination of trauma, unstable living conditions, and fractured support systems leaves too many facing higher rates of homelessness, justice involvement, addiction, and mental health challenges.
+        </p>
+        <p class="mt-4 text-sm text-slate-500">
+          We are organized exclusively for charitable and educational purposes under Section 501(c)(3) of the Internal Revenue Code.
+        </p>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+          <img src="assets/students-group.jpg" alt="Diverse young people together with hope and purpose" class="w-full h-72 sm:h-96 object-cover">
+        </div>
+        <div class="absolute -bottom-4 -left-2 sm:-left-4 bg-white border border-slate-200 shadow-lg rounded-2xl px-4 py-3 max-w-[16rem]">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-sky-600">The work</div>
+          <div class="text-sm font-semibold text-[#0F2C59] mt-0.5">Policy + programs that open real doors</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we change lives -->
+    <section class="mt-20">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">How we show up</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Three ways we break the cycle</h2>
+        <p class="mt-3 text-slate-600 text-sm md:text-base">From statehouses to STEM labs — advocacy and direct support, side by side.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-44 overflow-hidden">
+            <img src="assets/programs/campaign-campus.jpg" alt="College campus and tuition access" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">Texas Plan</div>
+              <h3 class="font-semibold text-lg">Tuition waivers</h3>
+            </div>
           </div>
-          <div class="hidden sm:flex w-12 h-12 rounded-2xl bg-[#0F2C59] text-white items-center justify-center flex-shrink-0">
-            <i class="fa-solid fa-file-lines text-lg"></i>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Replicate successful foster youth tuition-waiver models state by state so public college is within reach — not a lottery of zip codes.
+          </p>
+          <a href="national-campaign.html" class="block px-5 pb-5 text-sm font-semibold text-sky-700 hover:underline">National Campaign →</a>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-44 overflow-hidden">
+            <img src="assets/interstate-compact-handshake.jpg" alt="Interstate reciprocity agreement handshake" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">Portable benefits</div>
+              <h3 class="font-semibold text-lg">Reciprocity</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            An interstate compact so a waiver earned in one state can unlock similar benefits where a youth is accepted to college in another.
+          </p>
+          <a href="reciprocity-campaign.html" class="block px-5 pb-5 text-sm font-semibold text-sky-700 hover:underline">Reciprocity Campaign →</a>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-44 overflow-hidden">
+            <img src="assets/foundation/rocket-launch.jpg" alt="Foundation Program STEM ambition" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-orange-200">Direct services</div>
+              <h3 class="font-semibold text-lg">Programs that equip</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Housing navigation, employment support, education coaching, mental health resources, financial literacy — and a STEM pipeline through The Foundation Program.
+          </p>
+          <a href="foundation-program.html" class="block px-5 pb-5 text-sm font-semibold text-sky-700 hover:underline">Foundation Program →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Values band -->
+    <section class="mt-20 rounded-3xl bg-[#0F2C59] text-white overflow-hidden relative">
+      <div class="absolute inset-0 opacity-20">
+        <img src="assets/graduation-hope.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+      </div>
+      <div class="relative px-6 py-12 md:px-12 md:py-14">
+        <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="text-xs font-bold tracking-[2px] uppercase text-sky-300">What guides us</div>
+            <h2 class="heading-serif text-3xl md:text-4xl font-semibold mt-2 tracking-tight">Values that keep us honest</h2>
+          </div>
+          <a href="values.html" class="text-sm font-semibold text-sky-200 hover:text-white">Full values page →</a>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-200 flex items-center justify-center mb-3"><i class="fa-solid fa-scale-balanced"></i></div>
+            <div class="font-semibold text-lg">Integrity</div>
+            <p class="text-sm text-sky-100/85 mt-2 leading-relaxed">Honesty, transparency, and accountability in every action.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-200 flex items-center justify-center mb-3"><i class="fa-solid fa-heart"></i></div>
+            <div class="font-semibold text-lg">Compassion</div>
+            <p class="text-sm text-sky-100/85 mt-2 leading-relaxed">We meet every individual with empathy and honor their potential.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-200 flex items-center justify-center mb-3"><i class="fa-solid fa-handshake"></i></div>
+            <div class="font-semibold text-lg">Collaboration</div>
+            <p class="text-sm text-sky-100/85 mt-2 leading-relaxed">Partnerships that multiply reach and impact.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 border border-white/15 p-5 backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-xl bg-sky-400/20 text-sky-200 flex items-center justify-center mb-3"><i class="fa-solid fa-people-group"></i></div>
+            <div class="font-semibold text-lg">Community</div>
+            <p class="text-sm text-sky-100/85 mt-2 leading-relaxed">Belonging, resilience, and opportunity for those we serve.</p>
           </div>
         </div>
-      </a>
-    </div>
-  </div>
+      </div>
+    </section>
+
+    <!-- Explore more -->
+    <section class="mt-20">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Go deeper</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Explore our story</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="board-of-directors.html" class="feature-card group block bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-40 overflow-hidden">
+            <img src="assets/mentorship.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/75 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 text-white font-semibold text-lg">Board of Directors</div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">Meet the leadership committed to advancing opportunity for foster youth.</p>
+          <div class="px-5 pb-5 text-sm font-semibold text-sky-700">Meet the board →</div>
+        </a>
+        <a href="history.html" class="feature-card group block bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-40 overflow-hidden">
+            <img src="assets/programs/campaign-advocacy.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/75 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 text-white font-semibold text-lg">Our History</div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">From our founding in 2025 to building a national movement — milestones that matter.</p>
+          <div class="px-5 pb-5 text-sm font-semibold text-sky-700">See the timeline →</div>
+        </a>
+        <a href="case-for-support.html" class="feature-card group block bg-white border-2 border-sky-200 rounded-3xl overflow-hidden sm:col-span-2 lg:col-span-1">
+          <div class="relative h-40 overflow-hidden">
+            <img src="assets/graduation-hope.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 text-white">
+              <div class="text-[10px] font-bold tracking-wider uppercase text-sky-200">For donors &amp; partners</div>
+              <div class="font-semibold text-lg">Case for Support</div>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">The full investment case — need, programs, budget, and how your gift expands tuition waivers nationwide.</p>
+          <div class="px-5 pb-5 text-sm font-semibold text-sky-700">Read the case →</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 rounded-3xl overflow-hidden relative">
+      <img src="assets/young-adult-study.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#0F2C59]/90"></div>
+      <div class="relative px-6 py-12 md:px-12 md:py-14 text-white max-w-3xl">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-300">Join the movement</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold mt-2 tracking-tight">Ready to help open the next door?</h2>
+        <p class="mt-4 text-sky-50/95 text-sm md:text-base leading-relaxed">
+          Donate, volunteer, partner, or share our campaign. Foster youth deserve tuition-free public college pathways and the support to thrive after care.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="donate.html" class="inline-flex px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm hover:bg-sky-50">Donate</a>
+          <a href="get-involved.html" class="inline-flex px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10">Get involved</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-[#0F2C59] mt-16 text-sky-100/80">
@@ -188,7 +361,7 @@
           <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white"><span class="font-bold">AFF</span></div>
           <div class="font-semibold text-white text-lg tracking-tighter">American Foster Futures</div>
         </div>
-        <p class="text-xs max-w-xs">A national nonprofit (CA incorporated). 501(c)(3) pending.</p>
+        <p class="text-xs max-w-xs">A national 501(c)(3) nonprofit. Principal office: North Hollywood, CA.</p>
       </div>
       <div class="md:col-span-3">
         <div class="font-semibold text-white mb-3">Navigate</div>
@@ -201,12 +374,12 @@
           <a href="case-for-support.html" class="footer-link block">Case for Support</a>
           <a href="national-campaign.html" class="footer-link block">Programs</a>
           <a href="get-involved.html" class="footer-link block">Get Involved</a>
-                    <a href="donate.html" class="footer-link block">Donate</a>
+          <a href="donate.html" class="footer-link block">Donate</a>
         </div>
       </div>
       <div class="md:col-span-4">
         <div class="font-semibold text-white mb-3">Contact</div>
-        <div>Irving, TX 75060</div>
+        <div>North Hollywood, CA</div>
         <a href="mailto:info@americanfosterfutures.org" class="block mt-1 hover:text-white">info@americanfosterfutures.org</a>
         <a href="donate.html" class="mt-5 inline-block bg-white/10 hover:bg-white/15 px-5 py-2 rounded-2xl text-sm font-medium">Support our work</a>
       </div>
@@ -217,7 +390,6 @@
   </footer>
 
   <script>
-    // Mobile menu
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     if (btn && menu) {
