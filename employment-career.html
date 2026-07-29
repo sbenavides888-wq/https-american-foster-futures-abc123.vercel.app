@@ -33,6 +33,11 @@
     }
     .dropdown:hover .dropdown-menu,
     .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
+    }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -131,31 +136,65 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="bg-[#0F2C59] text-white py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl">
-        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">National Programs</div>
-        <h1 class="heading-serif text-5xl tracking-tighter font-semibold mt-1">Employment &amp; Career</h1>
-        <p class="mt-2 text-lg text-sky-100">Job readiness training, interview coaching, placement partnerships, and financial literacy programs.</p>
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/programs/employment-career.jpg" alt="Young professional in a modern workplace career setting" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+          National Programs
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">Employment &amp; Career</h1>
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">Job readiness training, interview coaching, placement partnerships, and financial literacy programs.</p>
+        <div class="mt-8">
+          <a href="get-involved.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">Get Involved or Donate</a>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="max-w-7xl mx-auto px-6 py-12">
+  <div class="max-w-7xl mx-auto px-6 py-14">
     <div class="max-w-3xl">
-      <p class="text-lg text-slate-600">Job readiness training, interview coaching, placement partnerships, and financial literacy programs. We connect youth with meaningful work and career pathways.</p>
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed">Job readiness training, interview coaching, placement partnerships, and financial literacy programs. We connect youth with meaningful work and career pathways.</p>
+    </div>
 
-      <h3 class="mt-8 text-xl font-semibold text-[#0F2C59]">Why It's Needed</h3>
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+        <div class="relative h-48 overflow-hidden">
+          <img src="assets/programs/employment-workshop.jpg" alt="Job readiness and resume coaching workshop" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">Job readiness</div>
+            <h3 class="font-semibold text-lg">Training &amp; coaching</h3>
+          </div>
+        </div>
+        <p class="p-5 text-sm text-slate-600 leading-relaxed">Interview practice, résumé coaching, and financial literacy so youth enter the workforce with confidence and practical skills.</p>
+      </article>
+      <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+        <div class="relative h-48 overflow-hidden">
+          <img src="assets/programs/employment-career.jpg" alt="Young adult starting a professional career opportunity" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">Pathways</div>
+            <h3 class="font-semibold text-lg">Placement partnerships</h3>
+          </div>
+        </div>
+        <p class="p-5 text-sm text-slate-600 leading-relaxed">Connections to employers and career networks that open doors when family networks and work experience are limited.</p>
+      </article>
+    </div>
+
+    <div class="mt-12 max-w-3xl">
+      <h3 class="text-xl font-semibold text-[#0F2C59]">Why It's Needed</h3>
       <ul class="mt-3 space-y-2 text-slate-600">
         <li><strong>Fact:</strong> Young adults who aged out of foster care face unemployment rates nearly double the national average.</li>
         <li><strong>Fact:</strong> Lack of family networks and work experience leaves many without the skills or connections needed for stable careers.</li>
       </ul>
 
       <h3 class="mt-8 text-xl font-semibold text-[#0F2C59]">How We Help</h3>
-      <div class="mt-4 flex gap-2 text-sm">
-        <div class="px-3 py-1 bg-slate-100 rounded">Employer network</div>
-        <div class="px-3 py-1 bg-slate-100 rounded">Financial coaching</div>
+      <div class="mt-4 flex flex-wrap gap-2 text-sm">
+        <div class="px-3 py-1.5 bg-white border border-slate-200 rounded-full">Employer network</div>
+        <div class="px-3 py-1.5 bg-white border border-slate-200 rounded-full">Financial coaching</div>
+        <div class="px-3 py-1.5 bg-white border border-slate-200 rounded-full">Interview practice</div>
       </div>
 
       <div class="mt-8">

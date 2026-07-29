@@ -18,6 +18,9 @@
     .dropdown-menu { display: none; top: 100%; left: 0; margin-top: 0; }
     .dropdown-menu::before { content: ''; position: absolute; top: -0.75rem; left: 0; right: 0; height: 0.75rem; }
     .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
+    }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -88,27 +91,26 @@
     </div>
   </nav>
 
-  <div class="bg-[#0F2C59] text-white py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl">
-        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">Priority campaign · Business plan</div>
-        <h1 class="heading-serif text-4xl sm:text-5xl tracking-tighter font-semibold mt-1">Tuition Waiver Reciprocity Campaign</h1>
-        <p class="mt-3 text-lg text-sky-100 leading-relaxed">
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/interstate-compact-handshake.jpg" alt="Two people shaking hands over agreement documents, symbolizing interstate compact cooperation" class="absolute inset-0 w-full h-full object-cover object-center">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+          Priority campaign · Business plan
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
+          Tuition Waiver Reciprocity Campaign
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">
           Allow an individual with a tuition waiver in one state to access the benefits of a similar waiver in another state.
         </p>
       </div>
     </div>
-  </div>
+  </header>
 
   <div class="max-w-7xl mx-auto px-6 py-12">
     <div class="max-w-3xl space-y-6 text-sm text-slate-600 leading-relaxed">
-      <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
-        <img src="assets/interstate-compact-handshake.jpg" alt="Two people shaking hands over agreement documents, symbolizing interstate compact cooperation" class="w-full h-56 sm:h-72 object-cover object-center">
-        <figcaption class="px-4 py-3 bg-white text-xs text-slate-500 border-t border-slate-100">
-          An interstate reciprocity compact would let foster youth use a home-state tuition waiver at colleges in other states with similar programs.
-        </figcaption>
-      </figure>
-
       <p>
         Alongside the <a href="national-campaign.html" class="text-sky-700 font-medium hover:underline">National Campaign for Foster Youth Tuition Waivers</a>, American Foster Futures advances a dedicated <strong class="text-slate-800">Reciprocity Waiver Campaign</strong>. Drawn from AFF’s final business plan, this work is a core part of our policy agenda.
       </p>
@@ -119,6 +121,13 @@
           As foster care tuition waivers come online in every state in the U.S., the next step is tying them all together through an interstate reciprocity compact. Put simply, if a foster youth receives a waiver in their home state and is accepted to a college or university in a different state with a similar waiver, the individual shall have access to the waiver in the other state. State-by-state reciprocity in the application of foster youth tuition waivers will vastly increase the total number of educational opportunities, while increasing the quality of those outcomes for foster youth by allowing those seeking specialization in a field of study to attend a college of their choice.
         </p>
       </div>
+
+      <figure class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
+        <img src="assets/programs/reciprocity-campus.jpg" alt="College student walking across a university campus" class="w-full h-56 sm:h-72 object-cover object-center">
+        <figcaption class="px-4 py-3 bg-white text-xs text-slate-500 border-t border-slate-100">
+          Reciprocity expands where a foster youth can use a home-state tuition waiver — including colleges and specialized programs out of state.
+        </figcaption>
+      </figure>
 
       <h2 class="text-xl font-semibold text-[#0F2C59]">Why reciprocity matters</h2>
       <ul class="space-y-3">

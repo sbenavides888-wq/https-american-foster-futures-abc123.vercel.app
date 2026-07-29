@@ -33,6 +33,11 @@
     }
     .dropdown:hover .dropdown-menu,
     .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
+    }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
@@ -131,23 +136,60 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <div class="bg-[#0F2C59] text-white py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-2xl">
-        <div class="uppercase text-sky-300 tracking-[2px] text-sm font-medium">National Programs</div>
-        <h1 class="heading-serif text-5xl tracking-tighter font-semibold mt-1">National Housing Campaign</h1>
-        <p class="mt-2 text-lg text-sky-100">Providing navigation, rental support, and stability planning for youth transitioning out of care nationwide.</p>
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/programs/housing-keys.jpg" alt="Young adult with keys at the door of a first apartment" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+          National Programs
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">National Housing Campaign</h1>
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">Providing navigation, rental support, and stability planning for youth transitioning out of care nationwide.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">Get Help or Volunteer</a>
+          <a href="texas-aging-out-checklist.html" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">Texas Aging Out Checklist</a>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="max-w-7xl mx-auto px-6 py-12">
-    <div class="max-w-3xl">
-      <h2 class="text-2xl font-semibold text-[#0F2C59]">Stable housing changes everything</h2>
-      <p class="mt-4 text-slate-600">One in five youth who age out of foster care experience homelessness within their first year. Without a safe place to live, college and career goals become nearly impossible.</p>
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold tracking-tight text-[#0F2C59]">Stable housing changes everything</h2>
+        <p class="mt-4 text-slate-600 leading-relaxed">One in five youth who age out of foster care experience homelessness within their first year. Without a safe place to live, college and career goals become nearly impossible.</p>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+        <img src="assets/programs/housing-apartment.jpg" alt="Mentor helping a young adult settle into a first apartment" class="w-full h-64 sm:h-80 object-cover">
+      </div>
+    </div>
 
-      <h3 class="mt-8 text-xl font-semibold text-[#0F2C59]">What AFF Provides</h3>
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+        <div class="relative h-40 overflow-hidden">
+          <img src="assets/programs/housing-keys.jpg" alt="Keys to stable housing" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <h3 class="font-semibold text-lg">Housing navigation</h3>
+          </div>
+        </div>
+        <p class="p-5 text-sm text-slate-600 leading-relaxed">Helping youth find apartments, roommates, and transitional programs — plus rental support for deposits, applications, and landlord communication.</p>
+      </article>
+      <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+        <div class="relative h-40 overflow-hidden">
+          <img src="assets/programs/housing-apartment.jpg" alt="Stable first apartment support" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/80 to-transparent"></div>
+          <div class="absolute bottom-3 left-4 right-4 text-white">
+            <h3 class="font-semibold text-lg">Partnerships &amp; virtual coaching</h3>
+          </div>
+        </div>
+        <p class="p-5 text-sm text-slate-600 leading-relaxed">Community partnerships with local housing organizations nationwide, plus remote coaching and planning for youth in any state.</p>
+      </article>
+    </div>
+
+    <div class="mt-12 max-w-3xl">
+      <h3 class="text-xl font-semibold text-[#0F2C59]">What AFF Provides</h3>
       <ul class="mt-3 space-y-3 text-sm text-slate-600">
         <li class="flex gap-3"><i class="fa-solid fa-compass text-sky-600 mt-0.5"></i><span><strong>Housing navigation</strong> — helping youth find apartments, roommates, and transitional programs.</span></li>
         <li class="flex gap-3"><i class="fa-solid fa-key text-sky-600 mt-0.5"></i><span><strong>Rental support</strong> — assistance with deposits, applications, and landlord communication.</span></li>
