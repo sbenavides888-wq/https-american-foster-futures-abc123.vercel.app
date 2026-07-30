@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Sign Up | American Foster Futures</title>
+  <meta name="description" content="Create an account and sign up to volunteer with American Foster Futures — mentoring, events, research, outreach, and more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    body { font-family: Inter, system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+  <header class="bg-[#0F2C59] text-white">
+    <div class="max-w-lg mx-auto px-5 py-6">
+      <a href="get-involved.html" class="text-sky-300 text-xs font-semibold hover:underline">← Back to Get Involved</a>
+      <div class="uppercase text-[10px] tracking-[2px] text-sky-300 font-bold mt-3">American Foster Futures</div>
+      <h1 class="heading-serif text-3xl font-semibold mt-1 tracking-tight">Volunteer with AFF</h1>
+      <p class="text-sky-100/90 text-sm mt-2 leading-relaxed">
+        Create an account (or sign in), then complete a short volunteer application. Our team reviews signups and will follow up by email.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-lg mx-auto px-5 py-8">
+    <div id="alert" class="hidden mb-4 rounded-xl border px-4 py-3 text-sm"></div>
+
+    <!-- Loading -->
+    <div id="view-loading" class="text-center text-sm text-slate-500 py-12">
+      <i class="fa-solid fa-spinner fa-spin text-2xl text-[#0F2C59]"></i>
+      <p class="mt-3">Loading…</p>
+    </div>
+
+    <!-- Auth: login / register -->
+    <div id="view-auth" class="hidden space-y-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex gap-2 mb-5">
+          <button type="button" data-auth-tab="login" class="auth-tab flex-1 py-2 rounded-xl text-sm font-semibold bg-[#0F2C59] text-white">Sign in</button>
+          <button type="button" data-auth-tab="register" class="auth-tab flex-1 py-2 rounded-xl text-sm font-semibold border bg-white text-slate-700">Create account</button>
+        </div>
+
+        <form id="form-login" class="space-y-3">
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Email</label>
+            <input id="login-email" type="email" required autocomplete="email" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Password</label>
+            <input id="login-password" type="password" required autocomplete="current-password" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Sign in</button>
+        </form>
+
+        <form id="form-register" class="hidden space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-500">First name</label>
+              <input id="reg-first" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-500">Last name</label>
+              <input id="reg-last" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Email</label>
+            <input id="reg-email" type="email" required autocomplete="email" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Password (min 8 characters)</label>
+            <input id="reg-password" type="password" required minlength="8" autocomplete="new-password" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">State (US)</label>
+            <select id="reg-state" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm">
+              <option value="">Select state…</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Create account</button>
+        </form>
+      </div>
+      <p class="text-xs text-slate-500 text-center">Questions? <a href="mailto:info@americanfosterfutures.org" class="text-sky-700 underline">info@americanfosterfutures.org</a></p>
+    </div>
+
+    <!-- Volunteer application -->
+    <div id="view-apply" class="hidden">
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="font-semibold text-[#0F2C59] text-lg">Volunteer application</h2>
+            <p class="text-sm text-slate-600 mt-1">Signed in as <span id="apply-email" class="font-medium"></span></p>
+          </div>
+          <button type="button" id="btn-logout" class="text-xs text-slate-500 underline">Sign out</button>
+        </div>
+
+        <form id="form-volunteer" class="mt-5 space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="text-xs font-semibold text-slate-500">First name</label>
+              <input id="vol-first" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-slate-500">Last name</label>
+              <input id="vol-last" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Phone (optional)</label>
+            <input id="vol-phone" type="tel" autocomplete="tel" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="(555) 555-5555" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">City / region</label>
+            <input id="vol-city" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="City or metro area" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">State</label>
+            <select id="vol-state" required class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm">
+              <option value="">Select state…</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">How would you like to help? (select all that apply)</label>
+            <div class="mt-2 space-y-2 text-sm">
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Mentoring" class="mt-1 rounded border-slate-300"> Mentoring a young person</label>
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Events" class="mt-1 rounded border-slate-300"> Events and outreach</label>
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Policy / research support" class="mt-1 rounded border-slate-300"> Policy / research support</label>
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Phone bank / campaign" class="mt-1 rounded border-slate-300"> Phone bank / campaign volunteer</label>
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Administrative / comms" class="mt-1 rounded border-slate-300"> Administrative / communications</label>
+              <label class="flex items-start gap-2"><input type="checkbox" name="role" value="Other" class="mt-1 rounded border-slate-300"> Other</label>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Availability</label>
+            <input id="vol-availability" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="e.g. Evenings and weekends" />
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-slate-500">Why do you want to volunteer? Skills or experience?</label>
+            <textarea id="vol-notes" required minlength="10" rows="4" class="mt-1 w-full border rounded-xl px-3 py-2.5 text-sm" placeholder="Tell us a bit about yourself and how you’d like to contribute."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Submit volunteer application</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div id="view-success" class="hidden">
+      <div class="bg-white border border-emerald-200 rounded-2xl p-6 shadow-sm text-center">
+        <div class="w-12 h-12 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h2 class="font-semibold text-[#0F2C59] text-lg mt-3">Application submitted</h2>
+        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+          Thank you for offering your time. The AFF team will review your application and contact you by email within about 5 business days.
+        </p>
+        <p class="text-xs text-slate-500 mt-3">Signed in as <span id="success-email" class="font-medium"></span></p>
+        <a href="get-involved.html" class="mt-5 inline-block w-full bg-[#0F2C59] text-white font-semibold py-2.5 rounded-xl text-sm hover:bg-[#1a3a6e]">Back to Get Involved</a>
+        <button type="button" id="btn-logout-success" class="mt-3 block mx-auto text-xs text-slate-500 underline">Sign out</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var TOKEN_KEY = 'aff_auth_token';
+      var TOKEN_KEY_LEGACY = 'aff_cfs_token';
+      var API_BASE =
+        (window.AFF_API_URL ||
+          (location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+            ? 'http://localhost:8787'
+            : 'https://aff-futures-api.onrender.com')).replace(/\/$/, '');
+
+      var US_STATES = [
+        'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
+        'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
+        'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'
+      ];
+
+      var STATE_NAMES = {
+        AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California', CO: 'Colorado',
+        CT: 'Connecticut', DE: 'Delaware', FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho',
+        IL: 'Illinois', IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana',
+        ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota', MS: 'Mississippi',
+        MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada', NH: 'New Hampshire', NJ: 'New Jersey',
+        NM: 'New Mexico', NY: 'New York', NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma',
+        OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota',
+        TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington',
+        WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming', DC: 'District of Columbia'
+      };
+
+      var currentUser = null;
+      var $ = function (id) { return document.getElementById(id); };
+
+      function token() {
+        return localStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY_LEGACY) || '';
+      }
+      function setToken(t) {
+        if (t) {
+          localStorage.setItem(TOKEN_KEY, t);
+          localStorage.setItem(TOKEN_KEY_LEGACY, t);
+        } else {
+          localStorage.removeItem(TOKEN_KEY);
+          localStorage.removeItem(TOKEN_KEY_LEGACY);
+        }
+      }
+
+      function showAlert(msg, kind) {
+        var el = $('alert');
+        if (!msg) {
+          el.classList.add('hidden');
+          return;
+        }
+        el.classList.remove('hidden', 'bg-red-50', 'border-red-200', 'text-red-800', 'bg-emerald-50', 'border-emerald-200', 'text-emerald-800', 'bg-sky-50', 'border-sky-200', 'text-sky-800');
+        if (kind === 'ok') el.classList.add('bg-emerald-50', 'border-emerald-200', 'text-emerald-800');
+        else if (kind === 'info') el.classList.add('bg-sky-50', 'border-sky-200', 'text-sky-800');
+        else el.classList.add('bg-red-50', 'border-red-200', 'text-red-800');
+        el.textContent = msg;
+      }
+
+      function hideViews() {
+        ['view-loading', 'view-auth', 'view-apply', 'view-success'].forEach(function (id) {
+          $(id).classList.add('hidden');
+        });
+      }
+
+      async function api(path, opts) {
+        opts = opts || {};
+        var headers = Object.assign({ 'Content-Type': 'application/json' }, opts.headers || {});
+        if (token()) headers.Authorization = 'Bearer ' + token();
+        var res = await fetch(API_BASE + path, Object.assign({}, opts, { headers: headers }));
+        var data = await res.json().catch(function () { return {}; });
+        if (!res.ok) throw new Error(data.error || res.statusText);
+        return data;
+      }
+
+      function fillStates(selectId) {
+        var sel = $(selectId);
+        US_STATES.forEach(function (code) {
+          var o = document.createElement('option');
+          o.value = code;
+          o.textContent = code + ' — ' + (STATE_NAMES[code] || code);
+          sel.appendChild(o);
+        });
+      }
+
+      function setAuthTab(tab) {
+        document.querySelectorAll('.auth-tab').forEach(function (btn) {
+          var on = btn.getAttribute('data-auth-tab') === tab;
+          btn.className = on
+            ? 'auth-tab flex-1 py-2 rounded-xl text-sm font-semibold bg-[#0F2C59] text-white'
+            : 'auth-tab flex-1 py-2 rounded-xl text-sm font-semibold border bg-white text-slate-700';
+        });
+        $('form-login').classList.toggle('hidden', tab !== 'login');
+        $('form-register').classList.toggle('hidden', tab !== 'register');
+      }
+
+      document.querySelectorAll('.auth-tab').forEach(function (btn) {
+        btn.onclick = function () { setAuthTab(btn.getAttribute('data-auth-tab')); };
+      });
+
+      function logout() {
+        setToken('');
+        currentUser = null;
+        showAlert('');
+        hideViews();
+        $('view-auth').classList.remove('hidden');
+      }
+
+      ['btn-logout', 'btn-logout-success'].forEach(function (id) {
+        var el = $(id);
+        if (el) el.onclick = logout;
+      });
+
+      function showApplyForm(user) {
+        currentUser = user;
+        hideViews();
+        $('apply-email').textContent = user.email || '';
+        $('vol-first').value = user.firstName || user.first_name || '';
+        $('vol-last').value = user.lastName || user.last_name || '';
+        var sc = user.stateCode || user.state_code || '';
+        if (sc) $('vol-state').value = sc;
+        $('view-apply').classList.remove('hidden');
+      }
+
+      async function refresh() {
+        hideViews();
+        $('view-loading').classList.remove('hidden');
+        showAlert('');
+
+        if (!token()) {
+          hideViews();
+          $('view-auth').classList.remove('hidden');
+          return;
+        }
+
+        try {
+          var me = await api('/api/auth/me');
+          showApplyForm(me.user || {});
+        } catch (e) {
+          setToken('');
+          hideViews();
+          $('view-auth').classList.remove('hidden');
+          showAlert(e.message || 'Session expired — please sign in again.');
+        }
+      }
+
+      $('form-login').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+        try {
+          var data = await api('/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({
+              email: $('login-email').value.trim(),
+              password: $('login-password').value,
+            }),
+          });
+          setToken(data.token);
+          await refresh();
+        } catch (err) {
+          showAlert(err.message || 'Sign-in failed');
+        }
+      };
+
+      $('form-register').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+        try {
+          var data = await api('/api/auth/register', {
+            method: 'POST',
+            body: JSON.stringify({
+              firstName: $('reg-first').value.trim(),
+              lastName: $('reg-last').value.trim(),
+              email: $('reg-email').value.trim(),
+              password: $('reg-password').value,
+              stateCode: $('reg-state').value,
+            }),
+          });
+          setToken(data.token);
+          showAlert('Account created. Complete your volunteer application below.', 'ok');
+          await refresh();
+        } catch (err) {
+          showAlert(err.message || 'Registration failed');
+        }
+      };
+
+      $('form-volunteer').onsubmit = async function (e) {
+        e.preventDefault();
+        showAlert('');
+
+        var roles = Array.prototype.slice.call(document.querySelectorAll('input[name="role"]:checked')).map(function (el) {
+          return el.value;
+        });
+        if (!roles.length) {
+          showAlert('Please select at least one way you’d like to help.');
+          return;
+        }
+
+        var first = $('vol-first').value.trim();
+        var last = $('vol-last').value.trim();
+        var email = (currentUser && currentUser.email) || '';
+        var stateCode = $('vol-state').value;
+        var availability = $('vol-availability').value.trim();
+        var notes = $('vol-notes').value.trim();
+        if (availability) {
+          notes = (notes ? notes + '\n\n' : '') + 'Availability: ' + availability;
+        }
+
+        try {
+          await api('/api/submissions', {
+            method: 'POST',
+            body: JSON.stringify({
+              type: 'volunteer',
+              stateCode: stateCode,
+              stateName: STATE_NAMES[stateCode] || stateCode,
+              source: 'website',
+              payload: {
+                name: (first + ' ' + last).trim(),
+                firstName: first,
+                lastName: last,
+                email: email,
+                phone: $('vol-phone').value.trim() || undefined,
+                city: $('vol-city').value.trim() || undefined,
+                roles: roles,
+                notes: notes,
+                userId: currentUser && (currentUser.id || currentUser.userId) || undefined,
+              },
+            }),
+          });
+          hideViews();
+          $('success-email').textContent = email;
+          $('view-success').classList.remove('hidden');
+          showAlert('');
+        } catch (err) {
+          showAlert(err.message || 'Could not submit application');
+        }
+      };
+
+      fillStates('reg-state');
+      fillStates('vol-state');
+      refresh();
+    })();
+  </script>
+</body>
+</html>
