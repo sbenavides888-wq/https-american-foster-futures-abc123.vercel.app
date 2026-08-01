@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foster Youth Vehicle Access (Texas) | American Foster Futures</title>
-  <meta name="description" content="AFF campaign to prioritize Texas surplus vehicles for foster youth, based on Louisiana House Bill 575 priority access for surplus state vehicles.">
+  <meta name="description" content="How Texas surplus vehicle access for foster youth would work — process steps, agencies, and the Louisiana HB 575 model. American Foster Futures campaign.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
     .tail-container { font-family: 'Inter', system_ui, sans-serif; }
     .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
     .nav-link:hover { color: #1E88E5; }
@@ -19,16 +19,21 @@
     .dropdown-menu::before { content: ''; position: absolute; top: -0.75rem; left: 0; right: 0; height: 0.75rem; }
     .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
     .hero-overlay {
-      background: linear-gradient(120deg, rgba(15,44,89,0.88) 0%, rgba(15,44,89,0.55) 50%, rgba(15,44,89,0.28) 100%);
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(15,44,89,0.35) 100%);
+    }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
+    .step-num {
+      width: 2.25rem; height: 2.25rem; border-radius: 9999px;
+      background: #0F2C59; color: #fff; font-weight: 700; font-size: 0.875rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
   </style>
 </head>
 <body class="tail-container bg-slate-50 text-slate-800">
   <div class="bg-[#0F2C59] text-white text-sm py-2">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <div class="flex items-center gap-x-4 text-xs sm:text-sm">
-        <a href="mailto:info@americanfosterfutures.org" class="hover:underline">info@americanfosterfutures.org</a>
-      </div>
+      <a href="mailto:info@americanfosterfutures.org" class="hover:underline text-xs sm:text-sm">info@americanfosterfutures.org</a>
       <a href="donate.html" class="hidden sm:block hover:underline font-medium text-xs">Give Today →</a>
     </div>
   </div>
@@ -36,8 +41,8 @@
   <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-x-3">
-          <div class="w-11 h-11 bg-[#0F2C59] rounded-xl flex items-center justify-center text-white font-bold">AFF</div>
+        <a href="index.html" class="flex items-center gap-x-3 group">
+          <div class="w-11 h-11 bg-[#0F2C59] rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition">AFF</div>
           <div>
             <div class="font-semibold tracking-tight text-xl text-[#0F2C59]">American Foster Futures</div>
             <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
@@ -77,111 +82,335 @@
           <a href="case-for-support.html" class="nav-link">Case for Support</a>
           <a href="donate.html" class="nav-link">Donate</a>
         </div>
-        <a href="donate.html" class="hidden md:inline-flex px-5 py-2.5 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl">Donate</a>
+        <a href="donate.html" class="hidden md:inline-flex px-5 py-2.5 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl hover:bg-[#1a3a6e]">Donate</a>
         <button id="mobile-btn" class="md:hidden p-2" aria-label="Menu"><i class="fa-solid fa-bars text-xl"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t px-6 py-4 text-sm space-y-1">
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm space-y-1">
       <a href="index.html" class="block py-2">Home</a>
       <a href="national-campaign.html" class="block py-2">Programs</a>
       <a href="foster-youth-vehicle-access-texas.html" class="block py-2 pl-4 text-sm font-semibold">— Foster Youth Vehicle Access (Texas)</a>
       <a href="reciprocity-campaign.html" class="block py-2 pl-4 text-sm">— Reciprocity Campaign</a>
-      <a href="resources.html" class="block py-2">Resources</a>
       <a href="get-involved.html" class="block py-2">Get Involved</a>
-      <a href="case-for-support.html" class="block py-2">Case for Support</a>
       <a href="donate.html" class="block py-2">Donate</a>
     </div>
   </nav>
 
-  <header class="relative min-h-[26rem] md:min-h-[32rem] flex items-end overflow-hidden">
-    <img
-      src="assets/programs/vehicle-access-texas.jpg"
-      alt="Reliable vehicle representing transportation access for young adults"
-      class="absolute inset-0 w-full h-full object-cover object-center"
-    >
+  <!-- Cinematic hero -->
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/programs/vehicle-keys.jpg" alt="Young adult with keys beside a reliable vehicle" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
-      <div class="max-w-3xl text-white drop-shadow-sm">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/25 border border-white/25 text-[10px] font-bold tracking-[2px] uppercase text-sky-100 backdrop-blur-sm">
-          Priority campaign · Texas
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-sky-200">
+          Priority campaign · Texas · Modeled on LA HB 575
         </div>
         <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
           Foster Youth Vehicle Access (Texas)
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl">
-          Prioritizing Texas surplus vehicles for foster youth — modeled on Louisiana House Bill 575.
+        <p class="mt-4 text-lg md:text-xl text-sky-50/95 leading-relaxed max-w-2xl">
+          Prioritize surplus state vehicles for foster youth who need reliable transportation to school, work, and independence — and build a clear pathway from eligibility to keys in hand.
         </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#how-it-works" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">
+            See how it works <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="#agencies" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">
+            Agencies involved
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <div class="max-w-7xl mx-auto px-6 py-12">
-    <div class="max-w-3xl space-y-6 text-sm text-slate-600 leading-relaxed">
-      <p>
-        Reliable transportation is essential for aging out of care successfully — getting to class, keeping a job, attending appointments, and building a stable adult life. American Foster Futures is advancing a dedicated Texas campaign to prioritize <strong class="text-slate-800">state surplus vehicles</strong> for foster youth who need affordable access to a car.
+  <main class="max-w-7xl mx-auto px-6 py-14">
+    <!-- Intro -->
+    <div class="max-w-3xl">
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+        Reliable transportation is a practical foundation for life after care. This campaign advances a Texas program — based on <strong class="text-slate-800">Louisiana House Bill 575</strong> — that gives foster youth <strong class="text-slate-800">priority status</strong> when surplus state vehicles become available.
       </p>
+    </div>
 
-      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8">
-        <h2 class="text-xl font-semibold text-[#0F2C59]">Objective</h2>
-        <p class="mt-3">
-          Prioritize Texas surplus vehicles for foster youth. When the state retires or redistributes surplus vehicles, eligible foster youth should have a clear, fair pathway to obtain safe, reliable transportation — reducing a major barrier to education, employment, and independence.
-        </p>
+    <!-- Three pillars -->
+    <section class="mt-12">
+      <div class="mb-6">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">The opportunity</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Policy. Process. Pathways.</h2>
       </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/programs/vehicle-capitol.jpg" alt="State capitol representing legislative advocacy" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-sky-200">Legislation</div>
+              <h3 class="font-semibold text-lg">Pass priority law</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Secure Texas statute or administrative rules that put eligible foster youth first for surplus state fleet vehicles — following the Louisiana HB 575 model.
+          </p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/programs/vehicle-fleet.jpg" alt="State surplus vehicle fleet inventory" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-200">Surplus fleet</div>
+              <h3 class="font-semibold text-lg">Use public assets</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            State agencies already retire and redistribute vehicles. Priority for foster youth turns an existing public inventory into a second-chance tool for independence.
+          </p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl overflow-hidden">
+          <div class="relative h-48 overflow-hidden">
+            <img src="assets/programs/vehicle-keys.jpg" alt="Keys representing vehicle access for independence" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2C59]/85 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 right-4 text-white">
+              <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-orange-200">Youth outcome</div>
+              <h3 class="font-semibold text-lg">Keys to independence</h3>
+            </div>
+          </div>
+          <p class="p-5 text-sm text-slate-600 leading-relaxed">
+            Eligible youth get a real pathway to safe, reliable transportation for college, work, medical appointments, and aging out of care successfully.
+          </p>
+        </article>
+      </div>
+    </section>
 
-      <div class="bg-sky-50 border-2 border-sky-200 rounded-3xl p-6 sm:p-8">
+    <!-- Model: LA HB 575 -->
+    <section class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 order-2 lg:order-1">
+        <img src="assets/programs/vehicle-capitol.jpg" alt="Capitol building — policy and legislation" class="w-full h-72 object-cover">
+      </div>
+      <div class="order-1 lg:order-2">
         <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Model legislation</div>
-        <h2 class="text-xl font-semibold text-[#0F2C59] mt-1">Based on Louisiana House Bill 575</h2>
-        <p class="mt-3">
-          This campaign is based on <strong class="text-slate-800">Louisiana House Bill 575</strong> (2026 Regular Session), which establishes a <strong class="text-slate-800">priority status for the acquisition of surplus state vehicles</strong> for youths in the extended foster care program.
+        <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Based on Louisiana HB 575</h2>
+        <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+          <strong class="text-slate-800">Louisiana House Bill 575</strong> (2026 Regular Session) establishes a <strong class="text-slate-800">priority status for the acquisition of surplus state vehicles</strong> for youths participating in the extended foster care program.
         </p>
-        <p class="mt-3">
-          AFF seeks to bring a similar approach to Texas: put foster youth first when surplus state fleet vehicles become available, so transportation is not another barrier after care.
-        </p>
-        <a href="https://legis.la.gov/legis/BillInfo.aspx?i=250437" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-sky-700 hover:underline">
+        <ul class="mt-5 space-y-3 text-sm text-slate-600">
+          <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i><span>Creates a first-priority preference for extended foster care participants when surplus state vehicles are available for purchase or acquisition.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i><span>Uses existing public property systems — not a brand-new vehicle giveaway program from scratch.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i><span>Gives Texas a proven template: pass law, define eligibility, coordinate surplus and child-welfare agencies, connect youth to the process.</span></li>
+        </ul>
+        <a href="https://legis.la.gov/legis/BillInfo.aspx?i=250437" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-sky-700 hover:underline">
           View Louisiana HB 575 <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
         </a>
       </div>
+    </section>
 
-      <h2 class="text-xl font-semibold text-[#0F2C59]">Why vehicle access matters</h2>
-      <ul class="space-y-3">
-        <li class="flex gap-3"><i class="fa-solid fa-car text-sky-600 mt-0.5"></i><span>Many foster youth leave care without family cars, co-signers, or credit history that make buying and insuring a vehicle realistic.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-briefcase text-sky-600 mt-0.5"></i><span>Without transportation, work shifts, college classes, and medical or court appointments become harder — or impossible — to keep.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-landmark text-sky-600 mt-0.5"></i><span>State surplus fleets already exist; priority status for foster youth — as Louisiana HB 575 demonstrates — turns public assets into tools for independence.</span></li>
-      </ul>
+    <!-- How it works -->
+    <section id="how-it-works" class="mt-20 scroll-mt-28">
+      <div class="max-w-3xl">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">How the process would work</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">From surplus lot to youth driveway</h2>
+        <p class="mt-3 text-slate-600 text-sm md:text-base leading-relaxed">
+          Exact rules would be set in Texas law and agency procedure. Below is the operational model AFF is advocating for — adapted from Louisiana’s surplus-vehicle priority approach.
+        </p>
+      </div>
 
-      <h2 class="text-xl font-semibold text-[#0F2C59]">How we work</h2>
-      <ul class="space-y-3">
-        <li class="flex gap-3"><i class="fa-solid fa-scale-balanced text-sky-600 mt-0.5"></i><span><strong>Policy advocacy</strong> — engage Texas legislators, agencies, and partners to adopt surplus-vehicle priority pathways for foster youth, drawing on Louisiana HB 575.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-file-lines text-sky-600 mt-0.5"></i><span><strong>Program design</strong> — support clear rules for eligibility, safety, title/transfer, and follow-through so the pathway is usable in practice.</span></li>
-        <li class="flex gap-3"><i class="fa-solid fa-people-group text-sky-600 mt-0.5"></i><span><strong>Partners on the ground</strong> — work with youth, advocates, and organizations who can connect young people to opportunities when programs open.</span></li>
-      </ul>
-
-      <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
-        <img src="assets/programs/vehicle-access-texas.jpg" alt="Vehicle representing transportation for foster youth independence" class="w-full h-56 sm:h-72 object-cover">
-        <div class="px-4 py-3 bg-white text-xs text-slate-500 border-t border-slate-100">
-          Reliable transportation is a practical foundation for college, work, and life after care.
+      <div class="mt-10 space-y-4">
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">1</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Authorize priority in law</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Texas enacts legislation (or adopts equivalent rules) establishing priority preference for eligible foster youth — including those in extended foster care or aging-out pathways — when surplus state vehicles are offered for sale or transfer. This is the HB 575-style foundation.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">2</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Identify surplus vehicles</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              State fleet and surplus property systems list vehicles that agencies no longer need. Vehicles must meet safety and roadworthiness standards before they enter the priority pathway. Inventory is public-facing so eligible youth and advocates know what is available.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">3</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Verify youth eligibility</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Child welfare confirms the applicant meets eligibility (e.g., extended foster care participation, age, and residency as defined in the Texas program). Caseworkers and transition specialists help youth gather documentation without adding unnecessary barriers.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">4</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Priority claim &amp; purchase or transfer</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Eligible youth (or an approved supporting entity where allowed) exercise priority preference ahead of general surplus buyers. Terms for price, payment, title, and registration follow state surplus rules — designed so the path is affordable and usable for youth without family co-signers.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">5</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Title, insurance &amp; onboarding</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Youth complete title/registration steps, obtain required insurance, and receive practical orientation (maintenance basics, safe driving expectations, and where to get help). Partners can support wraparound needs so the vehicle stays an asset, not a crisis.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-7 flex gap-4 sm:gap-5">
+          <div class="step-num">6</div>
+          <div>
+            <h3 class="font-semibold text-lg text-[#0F2C59]">Track outcomes &amp; improve</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+              Agencies and advocates track how many vehicles reach foster youth, time-to-delivery, and barriers that still block access. Data informs annual improvements — just as other foster youth programs refine eligibility and outreach over time.
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="flex flex-wrap gap-3 pt-2">
-        <a href="texas-aging-out-checklist.html" class="inline-flex px-6 py-3 bg-[#0F2C59] text-white font-semibold rounded-2xl text-sm hover:bg-[#1a3a6e]">Texas aging-out checklist →</a>
-        <a href="get-involved.html" class="inline-flex px-6 py-3 border border-slate-300 font-semibold rounded-2xl text-sm hover:bg-white">Get involved →</a>
-        <a href="reciprocity-campaign.html" class="inline-flex px-6 py-3 border border-slate-300 font-semibold rounded-2xl text-sm hover:bg-white">Reciprocity campaign →</a>
+    <!-- Agencies -->
+    <section id="agencies" class="mt-20 scroll-mt-28">
+      <div class="mb-6">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Who would be involved</div>
+        <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Agencies &amp; partners</h2>
+        <p class="mt-3 text-slate-600 text-sm md:text-base max-w-3xl leading-relaxed">
+          A Texas program would require coordination across child welfare, surplus property, and legislative partners. Roles below reflect a practical Texas structure modeled on Louisiana’s surplus-vehicle priority concept.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center"><i class="fa-solid fa-landmark"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">Texas Legislature</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Pass enabling legislation establishing priority for surplus vehicles for foster youth / extended care participants; set statutory eligibility guardrails and reporting expectations.
+          </p>
+        </div>
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center"><i class="fa-solid fa-children"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">DFPS (Family &amp; Protective Services)</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Confirm foster care / extended foster care status, support transition planning, and help youth navigate documentation and referrals so priority status is usable in real life.
+          </p>
+        </div>
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center"><i class="fa-solid fa-warehouse"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">State surplus / fleet managers</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Identify and list surplus fleet vehicles; apply the priority queue; manage sale or transfer under public property rules; ensure vehicles meet roadworthiness standards before release.
+          </p>
+          <p class="mt-2 text-xs text-slate-500">In Texas, surplus and fleet functions typically sit with state property and fleet systems (e.g., Comptroller surplus programs and agency fleet offices — final owners set by statute).</p>
+        </div>
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center"><i class="fa-solid fa-car"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">TxDMV &amp; insurance pathway</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Support title and registration after transfer; youth still need lawful insurance and driver licensing. Program design should anticipate these steps so priority does not stall after the lot.
+          </p>
+        </div>
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-[#0F2C59] text-white flex items-center justify-center"><i class="fa-solid fa-building-columns"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">State agency fleet owners</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Agencies that declare vehicles surplus (various departments with fleet cars). Clear surplus timelines keep inventory flowing into the priority pathway instead of sitting unused.
+          </p>
+        </div>
+        <div class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center"><i class="fa-solid fa-hands-helping"></i></div>
+          <h3 class="font-semibold text-lg text-[#0F2C59] mt-4">AFF, nonprofits &amp; community partners</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Advocate for the law, educate youth and caseworkers, help with applications and wraparound support (insurance navigation, driving readiness, emergency repair funds where available).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Youth journey visual -->
+    <section class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">For youth</div>
+        <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">What a young person would do</h2>
+        <ul class="mt-5 space-y-3 text-sm text-slate-600">
+          <li class="flex gap-3"><i class="fa-solid fa-1 text-sky-600 mt-0.5 text-xs font-bold"></i><span>Talk with a caseworker or transition specialist about eligibility under the Texas program.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-2 text-sky-600 mt-0.5 text-xs font-bold"></i><span>Get eligibility confirmation and learn how to watch the surplus vehicle list.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-3 text-sky-600 mt-0.5 text-xs font-bold"></i><span>When a suitable vehicle is listed, submit a priority claim through the official process.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-4 text-sky-600 mt-0.5 text-xs font-bold"></i><span>Complete purchase/transfer, title, registration, and insurance with support as needed.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-5 text-sky-600 mt-0.5 text-xs font-bold"></i><span>Use reliable transportation for work, school, and independence — with partners for follow-up help.</span></li>
+        </ul>
+      </div>
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+        <img src="assets/programs/vehicle-casework.jpg" alt="Caseworker supporting a young adult with applications and planning" class="w-full h-72 sm:h-80 object-cover">
+      </div>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="mt-16">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-sky-600">Why this campaign exists</div>
+      <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Transportation is opportunity</h2>
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="bg-white border border-slate-200 rounded-2xl p-5">
+          <div class="text-2xl font-bold text-[#0F2C59]"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="font-semibold mt-3 text-[#0F2C59]">School &amp; training</div>
+          <p class="text-sm text-slate-600 mt-2">Classes, internships, and campuses are hard to reach without reliable transit — especially outside dense urban cores.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5">
+          <div class="text-2xl font-bold text-[#0F2C59]"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="font-semibold mt-3 text-[#0F2C59]">Work</div>
+          <p class="text-sm text-slate-600 mt-2">Shift jobs, early hours, and multi-site work often require a car. Missing transportation can mean missing paychecks.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-5">
+          <div class="text-2xl font-bold text-[#0F2C59]"><i class="fa-solid fa-house"></i></div>
+          <div class="font-semibold mt-3 text-[#0F2C59]">Independence</div>
+          <p class="text-sm text-slate-600 mt-2">Housing, medical care, and court or family obligations all depend on getting there — on time and safely.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="mt-16 rounded-3xl overflow-hidden relative">
+      <img src="assets/programs/vehicle-fleet.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+      <div class="absolute inset-0 bg-[#0F2C59]/90"></div>
+      <div class="relative px-6 py-12 md:px-12 md:py-14 text-white max-w-3xl">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-sky-300">Join the campaign</div>
+        <h2 class="heading-serif text-3xl font-semibold mt-2 tracking-tight">Help bring surplus vehicle priority to Texas</h2>
+        <p class="mt-4 text-sky-50/95 text-sm md:text-base leading-relaxed">
+          Louisiana HB 575 showed that surplus fleets can serve foster youth first. AFF is organizing advocacy, research, and partner outreach so Texas youth get the same practical chance at mobility.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm hover:bg-sky-50">Get involved →</a>
+          <a href="volunteer.html" class="inline-flex px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10">Volunteer →</a>
+          <a href="texas-aging-out-checklist.html" class="inline-flex px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10">Texas aging-out checklist →</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="mt-10 text-xs text-slate-500 max-w-3xl leading-relaxed border-t border-slate-200 pt-6">
+      This page describes AFF’s proposed Texas approach based on Louisiana House Bill 575 and publicly described surplus-vehicle priority concepts. Final agency names, eligibility, pricing, and procedures would be defined by Texas law and implementing agencies. Program details may evolve with legislation and capacity.
+    </p>
+  </main>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80 mt-16">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-8 text-sm">
+      <div class="md:col-span-5">
+        <div class="font-semibold text-white text-lg tracking-tighter mb-2">American Foster Futures</div>
+        <p class="text-xs max-w-xs">National 501(c)(3) nonprofit. Principal office: North Hollywood, CA.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-3">Navigate</div>
+        <a href="index.html" class="footer-link block">Home</a>
+        <a href="foster-youth-vehicle-access-texas.html" class="footer-link block">Vehicle Access (Texas)</a>
+        <a href="get-involved.html" class="footer-link block">Get Involved</a>
+        <a href="donate.html" class="footer-link block">Donate</a>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-semibold text-white mb-3">Contact</div>
+        <div>North Hollywood, CA</div>
+        <a href="mailto:info@americanfosterfutures.org" class="block mt-1 hover:text-white">info@americanfosterfutures.org</a>
       </div>
     </div>
-  </div>
-
-  <footer class="bg-[#0F2C59] text-sky-100/80 mt-12">
-    <div class="max-w-7xl mx-auto px-6 py-8 text-sm flex flex-wrap justify-between gap-4">
-      <div>
-        <div class="font-semibold text-white">American Foster Futures</div>
-        <p class="text-xs mt-1 max-w-xs">National 501(c)(3) nonprofit. Principal office: North Hollywood, CA.</p>
-      </div>
-      <div>
-        <a href="mailto:info@americanfosterfutures.org" class="hover:text-white">info@americanfosterfutures.org</a>
-      </div>
-    </div>
-    <div class="border-t border-white/10 py-3 text-xs text-center text-sky-100/60">© <span id="year"></span> American Foster Futures. All rights reserved.</div>
+    <div class="border-t border-white/10 py-4 text-xs text-center text-sky-100/60">© <span id="year"></span> American Foster Futures. All rights reserved.</div>
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
