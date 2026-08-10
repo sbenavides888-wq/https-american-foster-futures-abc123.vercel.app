@@ -426,6 +426,14 @@
       };
     }
 
+    function escHtml(v) {
+      return String(v ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
     function renderTierLists() {
       const root = document.getElementById('tier-lists');
       if (!root) return;
@@ -442,9 +450,9 @@
         const title = TIER_TITLES[tier].title;
         const section = document.createElement('div');
         section.innerHTML = `
-          <h3 class="text-lg font-semibold mb-3 flex items-center gap-2" style="color:${color}">
-            <span class="inline-block w-3 h-3 rounded" style="background:${color}"></span>
-            ${title}
+          <h3 class="text-lg font-semibold mb-3 flex items-center gap-2" style="color:${escHtml(color)}">
+            <span class="inline-block w-3 h-3 rounded" style="background:${escHtml(color)}"></span>
+            ${escHtml(title)}
             <span class="text-sm font-normal text-slate-500">(${entries.length} states)</span>
           </h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" data-tier-grid="${tier}"></div>
@@ -454,8 +462,8 @@
           const card = document.createElement('div');
           card.className = 'state-card bg-white border rounded-2xl p-4';
           card.innerHTML = `
-            <div class="font-semibold" style="color:${color}">${name}</div>
-            <div class="text-xs text-slate-500 mt-1">${m.blurb || ''}</div>
+            <div class="font-semibold" style="color:${escHtml(color)}">${escHtml(name)}</div>
+            <div class="text-xs text-slate-500 mt-1">${escHtml(m.blurb || '')}</div>
             <a href="get-involved.html" class="text-xs text-sky-600 hover:underline mt-2 inline-block">Support the campaign →</a>
           `;
           grid.appendChild(card);
@@ -499,7 +507,7 @@
           .on('mousemove', (event, d) => {
             const status = getStateStatus(d.properties.name);
             tooltip.style.display = 'block';
-            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}${status.blurb ? '<br><span style="opacity:.85">' + status.blurb + '</span>' : ''}`;
+            tooltip.innerHTML = `<strong>${escHtml(d.properties.name)}</strong><br>${escHtml(status.label)}${status.blurb ? '<br><span style="opacity:.85">' + escHtml(status.blurb) + '</span>' : ''}`;
             tooltip.style.left = `${event.clientX + 12}px`;
             tooltip.style.top = `${event.clientY + 12}px`;
           })
@@ -509,7 +517,7 @@
           .on('focus', function(event, d) {
             const status = getStateStatus(d.properties.name);
             tooltip.style.display = 'block';
-            tooltip.innerHTML = `<strong>${d.properties.name}</strong><br>${status.label}`;
+            tooltip.innerHTML = `<strong>${escHtml(d.properties.name)}</strong><br>${escHtml(status.label)}`;
             const rect = this.getBoundingClientRect();
             tooltip.style.left = `${rect.left + 12}px`;
             tooltip.style.top = `${rect.top + 12}px`;
