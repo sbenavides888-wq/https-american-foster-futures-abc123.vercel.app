@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow to Earn | Foundation Farms | American Foster Futures</title>
+  <meta name="description" content="Grow to Earn is paid vocational training in Dallas — an Education and Human Services program. Foundation Farms teaches current and former foster youth to farm, hires them, and sells microgreens to DFW restaurants. 100% of proceeds return to the nonprofit.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    .tail-container { font-family: 'Inter', system_ui, sans-serif; }
+    .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .nav-link:hover { color: #1E88E5; }
+    .nav-active { color: #1E88E5; font-weight: 600; }
+    .footer-link:hover { color: #4FC3F7; }
+    .dropdown { position: relative; }
+    .dropdown-menu { display: none; top: 100%; left: 0; margin-top: 0; }
+    .dropdown-menu::before { content: ''; position: absolute; top: -0.75rem; left: 0; right: 0; height: 0.75rem; }
+    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { display: block; }
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(15,44,89,0.92) 0%, rgba(15,44,89,0.55) 55%, rgba(6,78,59,0.45) 100%);
+    }
+    .feature-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgb(15 44 89 / 0.25); }
+  </style>
+</head>
+<body class="tail-container bg-slate-50 text-slate-800">
+  <div class="bg-[#0F2C59] text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="mailto:info@americanfosterfutures.org" class="hover:underline text-xs sm:text-sm">info@americanfosterfutures.org</a>
+      <a href="donate.html" class="hidden sm:block hover:underline font-medium text-xs">Give Today →</a>
+    </div>
+  </div>
+
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-x-3 group">
+          <div class="w-11 h-11 bg-[#0F2C59] rounded-xl flex items-center justify-center text-white font-bold group-hover:scale-105 transition">AFF</div>
+          <div>
+            <div class="font-semibold tracking-tight text-xl text-[#0F2C59]">American Foster Futures</div>
+            <div class="text-[10px] text-slate-500 -mt-1 font-medium">EMPOWERING FOSTER YOUTH</div>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-x-5 text-sm font-medium">
+          <a href="index.html" class="nav-link">Home</a>
+          <div class="dropdown relative group">
+            <a href="about.html" class="nav-link flex items-center gap-x-1">About <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-56 z-50">
+              <a href="about.html" class="block px-4 py-2 text-sm hover:bg-slate-100">About Us</a>
+              <a href="board-of-directors.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Board of Directors</a>
+              <a href="history.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our History</a>
+              <a href="values.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Our Values</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="national-campaign.html" class="nav-link flex items-center gap-x-1 nav-active">Programs <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-64 z-50">
+              <a href="national-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">National Campaign</a>
+              <a href="foster-youth-vehicle-access-texas.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Foster Youth Vehicle Access (Texas)</a>
+              <a href="reciprocity-campaign.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Tuition Waiver Reciprocity Campaign</a>
+              <a href="foundation-program.html" class="block px-4 py-2 text-sm hover:bg-slate-100">The Foundation Program</a>
+              <a href="foundation-microgreens.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Foundation Farms (Dallas)</a>
+              <a href="education-support.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Education Support</a>
+              <a href="employment-career.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Employment &amp; Career</a>
+            </div>
+          </div>
+          <div class="dropdown relative group">
+            <a href="resources.html" class="nav-link flex items-center gap-x-1">Resources <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-64 z-50">
+              <a href="resources.html" class="block px-4 py-2 text-sm hover:bg-slate-100 font-semibold">Resources Overview</a>
+              <a href="texas-tuition-waiver.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Tuition Waiver</a>
+              <a href="texas-aging-out-checklist.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Texas Aging Out Checklist</a>
+            </div>
+          </div>
+          <a href="get-involved.html" class="nav-link">Get Involved</a>
+          <a href="case-for-support.html" class="nav-link">Case for Support</a>
+          <div class="dropdown relative group">
+            <a href="media-center.html" class="nav-link flex items-center gap-x-1">Media Center <i class="fa-solid fa-chevron-down text-xs"></i></a>
+            <div class="dropdown-menu absolute top-full left-0 hidden group-hover:block bg-white border shadow-lg rounded-lg py-1 w-48 z-50">
+              <a href="media-press-releases.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Press Releases</a>
+              <a href="media-articles.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Articles</a>
+              <a href="media-videos.html" class="block px-4 py-2 text-sm hover:bg-slate-100">Videos</a>
+            </div>
+          </div>
+          <a href="donate.html" class="nav-link">Donate</a>
+        </div>
+        <a href="donate.html" class="hidden md:inline-flex px-5 py-2.5 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl hover:bg-[#1a3a6e]">Donate</a>
+        <button id="mobile-btn" class="md:hidden p-2" aria-label="Menu"><i class="fa-solid fa-bars text-xl"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-4 text-sm space-y-1">
+      <a href="index.html" class="block py-2">Home</a>
+      <a href="foundation-program.html" class="block py-2">Foundation Program</a>
+      <a href="foundation-microgreens.html" class="block py-2 pl-4 font-semibold">— Foundation Farms</a>
+      <a href="get-involved.html" class="block py-2">Get Involved</a>
+      <a href="donate.html" class="block py-2">Donate</a>
+    </div>
+  </nav>
+
+  <header class="relative min-h-[28rem] md:min-h-[34rem] flex items-end overflow-hidden">
+    <img src="assets/foundation/microgreens.jpg" alt="Modular indoor microgreen grow systems under LED lights at Foundation Farms in Dallas" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
+      <div class="max-w-3xl text-white">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-[2px] uppercase text-emerald-200">
+          Paid vocational training · Education · Human Services
+        </div>
+        <h1 class="heading-serif text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter mt-4 leading-[1.05]">
+          Grow to Earn
+        </h1>
+        <p class="mt-3 text-lg md:text-xl text-emerald-50/95 font-medium">Foundation Farms · Modular microgreens · Dallas, Texas</p>
+        <p class="mt-4 text-base md:text-lg text-sky-50/95 leading-relaxed max-w-2xl">
+          <strong class="text-white">Paid vocational training</strong> for current and former foster youth: we teach them how to farm, hire them to grow, and sell the harvest to restaurants and other buyers across Dallas–Fort Worth. <strong class="text-white">100% of proceeds return to the nonprofit</strong> — wages, training, and the next cohort.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm shadow-xl hover:bg-sky-50 transition">
+            Apply or get involved <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a href="mailto:info@americanfosterfutures.org?subject=Foundation%20Farms%20DFW%20buyer" class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10 transition">
+            Chefs: order microgreens
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-14">
+    <div class="max-w-3xl">
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed">
+        Grow to Earn is <strong class="text-slate-800">paid vocational training</strong> — a Dallas <strong class="text-slate-800">Education</strong> and <strong class="text-slate-800">Human Services</strong> program of American Foster Futures. Youth learn indoor farming on modular microgreen systems at Foundation Farms, then work paid production and delivery shifts. The farm is the classroom and the first job — a real product, real customers, and a paycheck.
+      </p>
+    </div>
+
+    <section id="funding-areas" class="mt-12 scroll-mt-28">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">Two program areas</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Education and Human Services</h2>
+      <p class="mt-3 max-w-2xl text-slate-600">Paid vocational training sits in both lanes: skills and credentials on one side, support for vulnerable Texas youth on the other.</p>
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <article class="bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="inline-flex items-center gap-2 text-[10px] font-bold tracking-[1.5px] uppercase text-sky-700 bg-sky-50 px-3 py-1 rounded-full">Education</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">Paid vocational training</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            A 12-week paid vocational curriculum in crop science, food safety, production, and restaurant delivery. Completers earn a Texas Food Handler certificate, documented work hours, and a pathway into DFW food jobs or further training — vocational education that connects to real labor demand.
+          </p>
+        </article>
+        <article class="bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="inline-flex items-center gap-2 text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full">Human Services</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">A first employer for foster youth</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Current and former foster youth ages 16–24 get paid vocational training, a first job, transportation help, and a workplace that will take the training risk. That is direct support for some of the most vulnerable young Texans — wages, stability, and a reason to stay housed and employed.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-12 grid sm:grid-cols-3 gap-4" aria-label="Program snapshot">
+      <div class="rounded-2xl bg-white border border-slate-200 px-5 py-5">
+        <div class="text-2xl font-bold text-[#0F2C59]">Dallas, TX</div>
+        <p class="mt-1 text-sm text-slate-600">Training and production at Foundation Farms. Sales stay in DFW.</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-200 px-5 py-5">
+        <div class="text-2xl font-bold text-[#0F2C59]">Ages 16–24</div>
+        <p class="mt-1 text-sm text-slate-600">Current and former foster youth. Paid from week one. No farm experience required.</p>
+      </div>
+      <div class="rounded-2xl bg-white border border-slate-200 px-5 py-5">
+        <div class="text-2xl font-bold text-emerald-700">100%</div>
+        <p class="mt-1 text-sm text-slate-600">Sales proceeds go back to AFF. No private owner takes a profit.</p>
+      </div>
+    </section>
+
+    <section id="model" class="mt-16 scroll-mt-28">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">How it works</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Teach. Hire. Sell. Reinvest.</h2>
+      <p class="mt-3 max-w-2xl text-slate-600">Four steps, one loop. Grant dollars start the first jobs. Restaurant sales help pay the next ones.</p>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold">1</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">Teach</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Paid vocational training: a 12-week course in crop science, food safety, harvest, packing, and restaurant delivery. Youth earn a Texas Food Handler certificate.</p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold">2</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">Hire</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Completers are hired as Foundation Farms associates — sowing, lighting, harvest, quality control, and DFW deliveries on a real production schedule.</p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold">3</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">Sell</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">We sell to restaurants, caterers, and other DFW buyers. Chefs get a consistent local product. Youth learn customer service, not just trays and lights.</p>
+        </article>
+        <article class="feature-card bg-white border border-slate-200 rounded-3xl p-6">
+          <div class="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold">4</div>
+          <h3 class="mt-4 font-semibold text-[#0F2C59] text-lg">Reinvest</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Every dollar of proceeds returns to American Foster Futures — youth wages, instructor time, certificates, and the next Dallas cohort.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">Why Dallas</div>
+        <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">A first job with a product people pay for</h2>
+        <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed">
+          Young people leaving foster care in Texas are far less likely to hold steady work by their early twenties. Many have never had a first employer who will take the training risk. Grow to Earn is that employer.
+        </p>
+        <ul class="mt-5 space-y-3 text-sm text-slate-600">
+          <li class="flex gap-3"><i class="fa-solid fa-location-dot text-emerald-700 mt-0.5"></i><span><strong class="text-slate-800">Place-based.</strong> Foundation Farms is in Dallas. Production, hiring, and buyers are all in the DFW metroplex.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-briefcase text-emerald-700 mt-0.5"></i><span><strong class="text-slate-800">Wages, not stipends-only.</strong> Trainees are paid from week one. Associates are employees of the farm program.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-certificate text-emerald-700 mt-0.5"></i><span><strong class="text-slate-800">A credential that travels.</strong> Texas Food Handler certification plus a production log, references, and a résumé with real hours.</span></li>
+          <li class="flex gap-3"><i class="fa-solid fa-utensils text-emerald-700 mt-0.5"></i><span><strong class="text-slate-800">A DFW labor market.</strong> Skills transfer to restaurants, commissaries, grocery produce, warehouses, and controlled-environment agriculture.</span></li>
+        </ul>
+      </div>
+      <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white">
+        <img src="assets/foundation/microgreens.jpg" alt="Harvest-ready microgreens grown on modular indoor racks" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Already growing</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Foundation Farms was established in Dallas in May 2026. The inaugural crop in June 2026 included red-veined sorrel, pea tendril, purple radish, Triton radish, cilantro, basil, and arugula.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum" class="mt-16 scroll-mt-28">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">Weeks 1–12</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Paid vocational training</h2>
+      <p class="mt-3 max-w-2xl text-slate-600">Twelve weeks, sixteen hours a week, paid. Completers who meet attendance and food-safety standards are offered a Farm Associate role.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 1</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Farm as a workplace</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Safety, clocks, hygiene, and what a restaurant kitchen expects from a grower.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 2</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Seed to tray</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Varieties we grow, seeding density, soak times, and a first tray of their own.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 3</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">The modular system</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Racks, LEDs, airflow, watering, and how a small room becomes a farm.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 4</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Crop science</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Light, water, mold, and yield. Read a tray the way a chef reads a plate.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 5</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Texas Food Handler</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">State food-safety certification required for anyone who packs food for restaurants.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 6</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Harvest and cold chain</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Cut, wash, dry, pack, label, and hold product at temperature until delivery.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 7</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Quality and yield</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Weigh, log, and reject. Chefs pay for consistency, not almost.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 8</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">The DFW buyer</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">How restaurants order, what a chef needs on a Thursday, and a first delivery ride-along.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 9</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Costing the crop</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Seed, labor, packaging, waste. Why 100% of proceeds can still fund the next trainee.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 10</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Shift lead skills</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Handoffs, checklists, talking to a coworker, and running a two-hour harvest window.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 11</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Where the job can go</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Restaurant line, produce, logistics, indoor farming, or a certificate program — with a résumé that has hours on it.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white px-5 py-5 min-h-[9rem] flex flex-col">
+          <div class="text-[10px] font-bold tracking-[1.5px] uppercase text-emerald-700">Week 12</div>
+          <p class="mt-2 text-base font-semibold text-[#0F2C59] leading-snug">Capstone production week</p>
+          <p class="mt-1.5 text-sm text-slate-500 leading-snug">Run a full cycle: seed through chef delivery. Completers are offered associate roles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="jobs" class="mt-16 scroll-mt-28">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">After training</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">Paid Farm Associates</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <article class="bg-white border border-slate-200 rounded-3xl p-6">
+          <h3 class="font-semibold text-[#0F2C59]">The job</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Sowing, lighting, irrigation, harvest, packing, labeling, and restaurant delivery. Associates work a set weekly schedule so the farm can promise chefs a standing order.</p>
+        </article>
+        <article class="bg-white border border-slate-200 rounded-3xl p-6">
+          <h3 class="font-semibold text-[#0F2C59]">The pay</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Training pay starts at $13 an hour. Farm Associates start at $15 an hour. Hours are real work hours, reported, with a pay stub youth can use for housing and benefits.</p>
+        </article>
+        <article class="bg-white border border-slate-200 rounded-3xl p-6">
+          <h3 class="font-semibold text-[#0F2C59]">The next step</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">After a production term, we help associates move into a DFW food employer, a certificate or college program, or a lead role on the farm. The point is a first job that leads somewhere.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sales" class="mt-16 scroll-mt-28">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">DFW sales</div>
+          <h2 class="heading-serif text-3xl font-semibold text-[#0F2C59] mt-2 tracking-tight">Restaurants buy. Youth get the hours.</h2>
+          <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed">
+            Microgreens are a standing garnish and salad crop for Dallas–Fort Worth kitchens. We grow to order on a short cycle, pack food-safe, and deliver on a restaurant schedule. Buyers are not donors. They are customers — which is the point of the job.
+          </p>
+          <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed">
+            <strong class="text-slate-800">100% of proceeds return to American Foster Futures.</strong> There is no private owner. After the cost of seed, supplies, and delivery, sales pay youth wages, training, certificates, and the next Dallas cohort.
+          </p>
+          <a href="mailto:info@americanfosterfutures.org?subject=Foundation%20Farms%20DFW%20buyer" class="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-emerald-700 text-white font-semibold rounded-2xl text-sm hover:bg-emerald-800">
+            Request a chef sample or standing order
+          </a>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-3xl p-6">
+          <h3 class="font-semibold text-[#0F2C59]">What we grow</h3>
+          <p class="mt-2 text-sm text-slate-500">From the inaugural Dallas crop, and expanding with chef demand:</p>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Red-veined sorrel</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Pea tendril</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Purple radish</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Triton radish</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Cilantro</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Basil</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Arugula</li>
+            <li class="rounded-xl bg-slate-50 px-3 py-2">Chef specials</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcomes" class="mt-16 scroll-mt-28">
+      <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-700">Year-one targets</div>
+      <h2 class="heading-serif text-3xl md:text-4xl font-semibold text-[#0F2C59] mt-1 tracking-tight">What we will count</h2>
+      <p class="mt-3 max-w-2xl text-slate-600">Funders and employers get numbers, not a story. These are the first-year Education and Human Services measures for this paid vocational training in Dallas: credentials and job placement on one side, wages and retention for foster youth on the other.</p>
+      <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left text-[#0F2C59]">
+            <tr>
+              <th class="px-5 py-3 font-semibold">Measure</th>
+              <th class="px-5 py-3 font-semibold">Year-one target</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600">
+            <tr>
+              <td class="px-5 py-3">Youth enrolled (Dallas, current/former foster care, ages 16–24)</td>
+              <td class="px-5 py-3 font-medium text-slate-800">24 (two cohorts of 12)</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Training completion</td>
+              <td class="px-5 py-3 font-medium text-slate-800">80%</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Texas Food Handler certificates earned</td>
+              <td class="px-5 py-3 font-medium text-slate-800">100% of completers</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Hired as Farm Associates or placed with a DFW food employer</td>
+              <td class="px-5 py-3 font-medium text-slate-800">70% of completers</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Still working at 90 days</td>
+              <td class="px-5 py-3 font-medium text-slate-800">75% of those hired</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Active DFW restaurant or wholesale accounts</td>
+              <td class="px-5 py-3 font-medium text-slate-800">8 standing buyers</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-3">Sales proceeds returned to the program</td>
+              <td class="px-5 py-3 font-medium text-slate-800">100%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-16 rounded-3xl bg-[#0F2C59] text-white px-6 py-10 md:px-12">
+      <div class="max-w-3xl">
+        <div class="text-xs font-bold tracking-[2px] uppercase text-emerald-200">Who it is for</div>
+        <h2 class="heading-serif text-3xl font-semibold mt-2 tracking-tight">Texas foster youth who need paid vocational training</h2>
+        <p class="mt-4 text-sky-50/95 text-sm md:text-base leading-relaxed">
+          Current and former foster youth ages 16–24 who can get to Dallas for shifts. Curiosity beats experience. We help with bus passes and shift times because transportation is often the reason a first job falls apart.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="get-involved.html" class="inline-flex px-7 py-3.5 bg-white text-[#0F2C59] font-semibold rounded-2xl text-sm hover:bg-sky-50">Apply or refer a youth →</a>
+          <a href="foundation-program.html" class="inline-flex px-7 py-3.5 border border-white/40 text-white font-semibold rounded-2xl text-sm hover:bg-white/10">Back to The Foundation Program</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0F2C59] text-sky-100/80 mt-16">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-8 grid md:grid-cols-12 gap-y-8 text-sm">
+      <div class="md:col-span-5">
+        <div class="font-semibold text-white text-lg tracking-tighter mb-2">American Foster Futures</div>
+        <p class="text-xs max-w-xs">A national 501(c)(3) nonprofit (CA incorporated). Foundation Farms operates in Dallas, Texas.</p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="font-semibold text-white mb-3">Navigate</div>
+        <a href="index.html" class="footer-link block">Home</a>
+        <a href="foundation-program.html" class="footer-link block">Foundation Program</a>
+        <a href="foundation-microgreens.html" class="footer-link block">Foundation Farms</a>
+        <a href="get-involved.html" class="footer-link block">Get Involved</a>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-semibold text-white mb-3">Contact</div>
+        <div>Dallas program · North Hollywood office</div>
+        <a href="mailto:info@americanfosterfutures.org" class="block mt-1 hover:text-white">info@americanfosterfutures.org</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-xs text-center text-sky-100/60">© <span id="year"></span> American Foster Futures. All rights reserved.</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('mobile-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
