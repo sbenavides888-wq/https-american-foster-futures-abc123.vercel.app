@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/iphone",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/47b754c7-bd29-4d34-b1c1-b501c3b27ba4",
+      "permanent": false
+    },
+    {
+      "source": "/iphone/",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/47b754c7-bd29-4d34-b1c1-b501c3b27ba4",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     { "source": "/vehicle-access-demo", "destination": "/vehicle-access-demo/index.html" },
     { "source": "/vehicle-access-demo/", "destination": "/vehicle-access-demo/index.html" },
