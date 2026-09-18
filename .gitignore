@@ -4,3 +4,5 @@ Thumbs.db
 .idea/
 .vercel
 node_modules/
+!vehicle-access-demo/assets/
+!vehicle-access-demo/assets/**
