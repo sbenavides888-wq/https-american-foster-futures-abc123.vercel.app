@@ -1,5 +1,29 @@
 {
+  "rewrites": [
+    { "source": "/vehicle-access-demo", "destination": "/vehicle-access-demo/index.html" },
+    { "source": "/vehicle-access-demo/", "destination": "/vehicle-access-demo/index.html" },
+    { "source": "/vehicle-access-demo/onboarding", "destination": "/vehicle-access-demo/onboarding.html" },
+    { "source": "/vehicle-access-demo/shop", "destination": "/vehicle-access-demo/shop.html" },
+    { "source": "/vehicle-access-demo/desk", "destination": "/vehicle-access-demo/desk.html" },
+    { "source": "/vehicle-access-demo/todos", "destination": "/vehicle-access-demo/todos.html" },
+    { "source": "/vehicle-access-demo/me", "destination": "/vehicle-access-demo/me.html" },
+    { "source": "/vehicle-access-demo/account", "destination": "/vehicle-access-demo/account.html" },
+    { "source": "/vehicle-access-demo/vault", "destination": "/vehicle-access-demo/vault/index.html" },
+    { "source": "/vehicle-access-demo/shop/:id", "destination": "/vehicle-access-demo/shop/[id].html" }
+  ],
   "headers": [
+    {
+      "source": "/vehicle-access-demo/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://aff-futures-api.onrender.com; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
