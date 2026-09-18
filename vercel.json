@@ -1,15 +1,7 @@
 {
   "redirects": [
-    {
-      "source": "/iphone",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b777dcad-4553-4190-98fc-766d3e0042b2",
-      "permanent": false
-    },
-    {
-      "source": "/iphone/",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b777dcad-4553-4190-98fc-766d3e0042b2",
-      "permanent": false
-    }
+    { "source": "/iphone", "destination": "/iphone.html", "permanent": false },
+    { "source": "/iphone/", "destination": "/iphone.html", "permanent": false }
   ],
   "rewrites": [
     { "source": "/vehicle-access-demo", "destination": "/vehicle-access-demo/index.html" },
@@ -26,6 +18,13 @@
     { "source": "/vehicle-access-demo/shop/:id/proofs", "destination": "/vehicle-access-demo/shop/[id]/proofs.html" }
   ],
   "headers": [
+    {
+      "source": "/vehicle-access.plist",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" },
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    },
     {
       "source": "/vehicle-access-demo/(.*)",
       "headers": [
