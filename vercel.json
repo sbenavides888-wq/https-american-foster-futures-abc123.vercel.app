@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/iphone",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b5f9c4d8-1984-4961-9ee8-77d3277a4dcd",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/556251e9-cfef-43c1-b743-93421339b0a0",
       "permanent": false
     },
     {
       "source": "/iphone/",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b5f9c4d8-1984-4961-9ee8-77d3277a4dcd",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/556251e9-cfef-43c1-b743-93421339b0a0",
       "permanent": false
     }
   ],
@@ -20,6 +20,7 @@
     { "source": "/vehicle-access-demo/todos", "destination": "/vehicle-access-demo/todos.html" },
     { "source": "/vehicle-access-demo/me", "destination": "/vehicle-access-demo/me.html" },
     { "source": "/vehicle-access-demo/account", "destination": "/vehicle-access-demo/account.html" },
+    { "source": "/vehicle-access-demo/landing", "destination": "/vehicle-access-demo/landing.html" },
     { "source": "/vehicle-access-demo/vault", "destination": "/vehicle-access-demo/vault/index.html" },
     { "source": "/vehicle-access-demo/shop/:id", "destination": "/vehicle-access-demo/shop/[id].html" }
   ],
