@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/iphone",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/41638a48-d70e-4ad2-aac0-35cb0ff1fb37",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b5f9c4d8-1984-4961-9ee8-77d3277a4dcd",
       "permanent": false
     },
     {
       "source": "/iphone/",
-      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/41638a48-d70e-4ad2-aac0-35cb0ff1fb37",
+      "destination": "https://expo.dev/accounts/benavides1/projects/aff-futures-app/builds/b5f9c4d8-1984-4961-9ee8-77d3277a4dcd",
       "permanent": false
     }
   ],
