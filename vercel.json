@@ -15,7 +15,8 @@
     { "source": "/vehicle-access-demo/landing", "destination": "/vehicle-access-demo/landing.html" },
     { "source": "/vehicle-access-demo/vault", "destination": "/vehicle-access-demo/vault/index.html" },
     { "source": "/vehicle-access-demo/shop/:id", "destination": "/vehicle-access-demo/shop/[id].html" },
-    { "source": "/vehicle-access-demo/shop/:id/proofs", "destination": "/vehicle-access-demo/shop/[id]/proofs.html" }
+    { "source": "/vehicle-access-demo/shop/:id/proofs", "destination": "/vehicle-access-demo/shop/[id]/proofs.html" },
+    { "source": "/vehicle-access-demo/shop/:id/review", "destination": "/vehicle-access-demo/shop/[id]/review.html" }
   ],
   "headers": [
     {
@@ -46,7 +47,7 @@
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://d3js.org; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://aff-futures-api.onrender.com https://cdn.jsdelivr.net; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://d3js.org https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://aff-futures-api.onrender.com https://cdn.jsdelivr.net; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' mailto:"
         },
         { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
       ]
