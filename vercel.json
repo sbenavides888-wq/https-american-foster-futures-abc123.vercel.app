@@ -16,6 +16,7 @@
     { "source": "/vehicle-access-demo/vault", "destination": "/vehicle-access-demo/vault/index.html" },
     { "source": "/vehicle-access-demo/shop/:id", "destination": "/vehicle-access-demo/shop/[id].html" },
     { "source": "/vehicle-access-demo/shop/:id/proofs", "destination": "/vehicle-access-demo/shop/[id]/proofs.html" },
+    { "source": "/vehicle-access-demo/shop/:id/inspection", "destination": "/vehicle-access-demo/shop/[id]/inspection.html" },
     { "source": "/vehicle-access-demo/shop/:id/review", "destination": "/vehicle-access-demo/shop/[id]/review.html" }
   ],
   "headers": [
