@@ -6,77 +6,85 @@
 <title>Alternorm — Partners in Joy Design Option 3</title>
 <meta name="robots" content="noindex">
 <style>
-:root { --bg:#f6f1e6; --ink:#173028; --muted:#4e6158; --accent:#1e6b45; --deep:#12352c; --card:#fffdf8; --line:#e4d5bc; }
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap');
+:root { --ink:#141414; --muted:#5c5c5c; --paper:#f6f4f1; }
 * { box-sizing:border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font-family:"Segoe UI", Candara, sans-serif; line-height:1.5; }
-a { color:#145c3a; }
-img { max-width:100%; }
-.top { background:var(--deep); color:#f6f1e6; font-size:13px; }
-.top-inner, .wrap { width:min(1080px, calc(100% - 32px)); margin:0 auto; }
-.top-inner { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 0; }
-.top a { color:#f6f1e6; text-decoration:none; }
-.top a[aria-current="page"] { font-weight:700; text-decoration:underline; }
-.mast { background:var(--deep); color:#f6f1e6; }
-.mast .wrap { display:flex; gap:16px; align-items:center; padding:22px 0 26px; }
-.mast img.logo { width:68px; height:68px; object-fit:contain; background:#fff; border-radius:14px; padding:4px; }
-.mast h1 { font-family:Cambria, Georgia, serif; font-weight:500; font-size:clamp(30px,4vw,46px); margin:0; }
-.kicker { letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:#c9e6d4; margin:0 0 4px; }
-.wrap.main { padding-top:22px; }
-.hero img.scene { width:100%; height:min(460px, 62vw); object-fit:cover; border-radius:20px; display:block; }
-h2 { font-family:Cambria, Georgia, serif; font-weight:500; font-size:30px; margin:26px 0 8px; }
-h3 { margin:0 0 6px; }
-.shop { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.shop article, .card, .person, .prog { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
-.shop img { width:100%; height:140px; object-fit:cover; display:block; background:#fff; }
-.shop div, .pad { padding:12px 14px 14px; }
-.price { font-weight:700; color:var(--deep); }
-.grid3, .people { display:grid; gap:14px; }
-.grid3 { grid-template-columns:repeat(3,1fr); }
-.people { grid-template-columns:1fr 1fr; }
-.person img { width:100%; height:230px; object-fit:cover; object-position:center 15%; background:#efe6d4; display:block; }
-.person .pad p { margin:6px 0 0; }
-.role { color:var(--accent); font-size:14px; margin:0; }
-.prog { margin:12px 0; }
-.prog img { width:100%; height:280px; object-fit:cover; display:block; }
-.ways { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.ways .card { padding:14px 16px; }
-.muted, .foot { color:var(--muted); }
-.give { background:#fffdf8; border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
-form { display:grid; gap:10px; }
-input, textarea { font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:12px; }
-button { background:var(--accent); color:#fff; border:0; border-radius:999px; padding:10px 16px; }
-.foot { font-size:13px; padding:10px 0 42px; }
-ul.clean { margin:8px 0 0; padding-left:1.1em; }
-@media (max-width:800px) {
-  .grid3, .people, .ways { grid-template-columns:1fr; }
-  .shop { grid-template-columns:1fr 1fr; }
+body { margin:0; color:var(--ink); background:#fff; font-family:Barlow, "Segoe UI", sans-serif; line-height:1.5; }
+a { color:var(--ink); }
+img { max-width:100%; height:auto; display:block; }
+.wrap { width:min(1120px, calc(100% - 40px)); margin:0 auto; }
+.bar { background:#141414; color:#fff; font-size:12px; }
+.bar .wrap { display:flex; flex-wrap:wrap; gap:8px 16px; padding:8px 0; }
+.bar a { color:#fff; }
+.head { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+.mark { display:flex; align-items:center; gap:12px; text-decoration:none; font-family:"Barlow Condensed", sans-serif; font-size:28px; letter-spacing:.04em; text-transform:uppercase; }
+.mark img { width:46px; height:46px; object-fit:contain; }
+.nav { display:flex; gap:22px; font-size:13px; letter-spacing:.16em; text-transform:uppercase; }
+.nav a { text-decoration:none; }
+.nav a[aria-current="page"] { border-bottom:2px solid #141414; }
+.hero-photo { width:100%; height:auto; }
+.display { font-family:"Barlow Condensed", Impact, sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:-.02em; line-height:.9; font-size:clamp(64px, 11vw, 128px); margin:0; }
+.kicker { letter-spacing:.22em; text-transform:uppercase; font-size:12px; margin:0 0 8px; }
+.intro { padding:48px 0 10px; }
+.intro p { max-width:640px; font-size:18px; }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:28px 0 10px; }
+.steps h2 { font-family:"Barlow Condensed", sans-serif; font-size:42px; text-transform:uppercase; margin:6px 0; letter-spacing:.02em; }
+.band { background:var(--paper); padding:48px 0; margin-top:36px; }
+.split { display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:start; }
+.rail { display:flex; gap:12px; overflow:auto; padding-bottom:8px; }
+.rail img { height:280px; width:auto; max-width:none; background:#fff; }
+.list { display:grid; grid-template-columns:1fr 1fr; gap:0 40px; }
+.list article { border-top:1px solid #ddd; padding:16px 0; }
+.shop { display:flex; gap:16px; overflow:auto; }
+.shop article { flex:0 0 180px; }
+.shop img { height:140px; width:auto; background:#fff; }
+.person { display:grid; grid-template-columns:220px 1fr; gap:24px; padding:28px 0; border-top:1px solid #e4e0da; align-items:start; }
+.person img { width:220px; height:auto; background:var(--paper); }
+.role { letter-spacing:.08em; text-transform:uppercase; font-size:12px; color:var(--muted); }
+.prog { padding:36px 0; border-top:1px solid #e4e0da; display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:start; }
+.prog h2 { font-family:"Barlow Condensed", sans-serif; font-size:48px; text-transform:uppercase; margin:0; }
+form { display:grid; gap:10px; max-width:480px; }
+input, textarea { font:inherit; padding:12px; border:0; border-bottom:1px solid #141414; background:transparent; }
+button { font-family:"Barlow Condensed", sans-serif; letter-spacing:.12em; text-transform:uppercase; background:#141414; color:#fff; border:0; padding:12px 18px; justify-self:start; }
+.foot { font-size:13px; color:var(--muted); padding:20px 0 48px; }
+.btn { display:inline-block; margin-top:12px; border-bottom:2px solid #141414; text-decoration:none; letter-spacing:.14em; text-transform:uppercase; font-size:13px; }
+@media (max-width:860px) {
+  .steps, .split, .list, .person, .prog { grid-template-columns:1fr; }
+  .nav { display:none; }
+  .display { font-size:64px; }
 }
 </style>
 </head>
 <body>
-<div class="top"><div class="top-inner">
-      <strong>Partners in Joy Design Option 3</strong>
-      <a href="index.html">Homepage</a>
-      <a href="about.html">About</a>
-      <a href="alternorm.html" aria-current="page">Alternorm</a>
-      <a href="../../web-design-samples.html">All design samples</a>
-    </div></div>
-<div class="mast"><div class="wrap"><img class="logo" src="../../assets/design-samples/alt-logo.jpg" alt="Alternorm logo"><div><p class="kicker">Jos, Nigeria</p><h1>Creatively communicating the Gospel.</h1></div></div></div><div class="wrap main"><img class="scene" src="../../assets/design-samples/alt-hero.jpg" alt="A gathering from the Alternorm site">
-    <p>The arts and media do more than entertain. Music, film, books, television, radio, and the internet shape what people treat as normal. Alternorm’s answer is to use those same tools for the glory of God.</p>
-    <p><strong>Alternorm is committed to creatively communicating the Gospel using the arts and media, and altering norms through Christ.</strong></p>
-    <p>The ministry was formally begun in 1997 as Joi Ministries. Activities named on the site include WINGS, SKOOP, Neighborhood Kiddies Hangout, Tehilla Hour, the Ibaji Liberation Crusade Series, and Christovibes.</p>
-    <h2>What is on the site now</h2>
-    <article class="prog"><img src="../../assets/design-samples/wings.jpg" alt="WINGS"><div class="pad"><h3>WINGS</h3><p>The WINGS concert series uses music, dance, drama, stories, and illustration. The point is the Gospel of Christ, not entertainment alone.</p></div></article>
-<article class="prog"><img src="../../assets/design-samples/skoop.jpg" alt="SKOOP"><div class="pad"><h3>SKOOP</h3><p>Schools Outreach Project. Teams visit schools at no cost to the school, with music, theatre, dance, humor, and a short message.</p></div></article>
-<article class="prog"><img src="../../assets/design-samples/nkh.jpg" alt="Neighborhood Kiddies Hangout"><div class="pad"><h3>Neighborhood Kiddies Hangout</h3><p>The same teams also go into neighborhoods. The site says this is because Jesus loves the children there.</p></div></article>
-<article class="prog"><img src="../../assets/design-samples/ibaji.jpg" alt="Ibaji Liberation Crusades"><div class="pad"><h3>Ibaji Liberation Crusades</h3><p>A collaboration with Ibaji Liberation Outreach Mission in the Ibaji community of Kogi State, coordinated with CAN, PFN, and ministers of the area. The public site lists a March 2026 edition.</p></div></article>
-<article class="prog"><img src="../../assets/design-samples/tehilla.jpg" alt="Tehilla Hour"><div class="pad"><h3>Tehilla Hour</h3><p>Praise and worship, bimonthly or quarterly, on the last Sunday of the month, with the Beautiful Gate Zone of the Redeemed Christian Church of God, Plateau Province 4, Jos. Soundalive, Graciah, and Joe Ifah are regulars, with the Beautiful Gate Voices and other RCCG choirs.</p></div></article>
-    <h2>Christovibes</h2><p>An online radio station on the Alternorm site: Christian music from Africa and the rest of the world, 24 hours. The live station is at christovibes.com.</p>
-    <h2>A place in Jos</h2><img class="scene" src="../../assets/design-samples/alt-land.jpg" alt="Fenced land in Jos" style="border-radius:16px;margin:8px 0"><p>The Partners in Joy page for Alternorm shows this land. The fence and gate are done. The hope described there is offices, studios, storage, and an event center.</p>
-    <img class="scene" src="../../assets/design-samples/alt-team.jpg" alt="A musician, from the Partners in Joy Alternorm page" style="width:min(420px,100%);border-radius:16px">
-    <div class="give"><h2 style="margin-top:0">Support</h2><p>On the live Alternorm site, a gift in US dollars is received by Partners in Joy. A gift in naira stays on Alternorm. A check to Partners In Joy, Inc., PO Box 380631, Duncanville, Texas 75138, should say Alternorm. Ruth Carlson is the liaison.</p>
-    <p>Joi7 Premises, Hwolshe, Jos, Nigeria 930253.</p></div>
-    <p class="foot">Photographs and words are from partners-in-joy.org and alternorm.org, read October 20, 2026. This sample does not take gifts or send messages. Partners in Joy, Inc. is a 501(c)(3) incorporated in Texas in 2000. EIN 75-2827312. PO Box 380631, Duncanville, Texas 75138.</p>
+<div class="bar"><div class="wrap"><strong>Design Option 3</strong><span>Laid out like stonegate.church. Not the live Partners in Joy site. Does not take gifts.</span><a href="index.html">Homepage</a><a href="about.html">About</a><a href="alternorm.html" aria-current="page">Alternorm</a><a href="../../web-design-samples.html">All design samples</a></div></div>
+<div class="wrap head">
+  <a class="mark" href="index.html"><img src="../../assets/design-samples/pij-logo.png" alt="Partners in Joy logo">Partners in Joy</a>
+  <nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="alternorm.html" aria-current="page">Alternorm</a></nav>
+</div>
+
+<img class="hero-photo" src="../../assets/design-samples/alt-hero.jpg" alt="A gathering from the Alternorm site">
+<main class="wrap">
+  <section class="intro">
+    <img src="../../assets/design-samples/alt-logo.jpg" alt="Alternorm logo" style="width:72px;height:72px;object-fit:contain">
+    <p class="kicker">Jos, Nigeria</p>
+    <h1 class="display">Creatively communicating the Gospel.</h1>
+    <p>Alternorm is committed to creatively communicating the Gospel using the arts and media, and altering norms through Christ. Formally begun in 1997 as Joi Ministries.</p>
+  </section>
+  <article class="prog"><img src="../../assets/design-samples/wings.jpg" alt="WINGS"><div><h2>WINGS</h2><p>The WINGS concert series uses music, dance, drama, stories, and illustration. The point is the Gospel of Christ, not entertainment alone.</p></div></article><article class="prog"><img src="../../assets/design-samples/skoop.jpg" alt="SKOOP"><div><h2>SKOOP</h2><p>Schools Outreach Project. Teams visit schools at no cost to the school, with music, theatre, dance, humor, and a short message.</p></div></article><article class="prog"><img src="../../assets/design-samples/nkh.jpg" alt="Neighborhood Kiddies Hangout"><div><h2>Neighborhood Kiddies Hangout</h2><p>The same teams also go into neighborhoods. The site says this is because Jesus loves the children there.</p></div></article><article class="prog"><img src="../../assets/design-samples/ibaji.jpg" alt="Ibaji Liberation Crusades"><div><h2>Ibaji Liberation Crusades</h2><p>A collaboration with Ibaji Liberation Outreach Mission in the Ibaji community of Kogi State, coordinated with CAN, PFN, and ministers of the area. The public site lists a March 2026 edition.</p></div></article><article class="prog"><img src="../../assets/design-samples/tehilla.jpg" alt="Tehilla Hour"><div><h2>Tehilla Hour</h2><p>Praise and worship, bimonthly or quarterly, on the last Sunday of the month, with the Beautiful Gate Zone of the Redeemed Christian Church of God, Plateau Province 4, Jos. Soundalive, Graciah, and Joe Ifah are regulars, with the Beautiful Gate Voices and other RCCG choirs.</p></div></article>
+  <article class="prog">
+    <img src="../../assets/design-samples/alt-land.jpg" alt="Fenced land in Jos">
+    <div>
+      <h2>A place in Jos</h2>
+      <p>The fence and gate are done. The hope described on the Partners in Joy page is offices, studios, storage, and an event center.</p>
+      <img src="../../assets/design-samples/alt-team.jpg" alt="A musician, from the Partners in Joy Alternorm page" style="max-width:320px;margin-top:12px">
+      <p>Christovibes, on the Alternorm site, plays Christian music from Africa and the rest of the world, 24 hours, at christovibes.com.</p>
     </div>
-</body>
-</html>
+  </article>
+  <section id="give" style="padding-bottom:12px">
+    <h2 class="display" style="font-size:72px">Support</h2>
+    <p>A gift in US dollars on the live Alternorm site is received by Partners in Joy. A gift in naira stays on Alternorm. A check to Partners In Joy, Inc., PO Box 380631, Duncanville, Texas 75138, should say Alternorm. Ruth Carlson is the liaison. Joi7 Premises, Hwolshe, Jos, Nigeria 930253. This preview does not accept the gift.</p>
+  </section>
+</main>
+
+<p class="wrap foot">Photographs and words are from partners-in-joy.org and alternorm.org, read October 20, 2026. This sample does not take gifts or send messages. Partners in Joy, Inc. is a 501(c)(3) incorporated in Texas in 2000. EIN 75-2827312. PO Box 380631, Duncanville, Texas 75138.</p>
+</body></html>
