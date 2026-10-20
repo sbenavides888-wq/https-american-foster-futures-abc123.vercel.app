@@ -5,103 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About — Partners in Joy Design Option 1</title>
 <meta name="robots" content="noindex">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root { --bg:#f4f0e8; --ink:#1c2430; --muted:#5c675f; --accent:#0f6e62; --card:#fffdf8; --line:#e3d9c8; }
-* { box-sizing:border-box; }
-body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia, "Palatino Linotype", Palatino, serif; line-height:1.55; }
-a { color:var(--accent); }
-img { max-width:100%; }
-.top { background:#1c2430; color:#f4f0e8; font-family:"Segoe UI", sans-serif; font-size:13px; }
-.top-inner, .wrap { width:min(1080px, calc(100% - 32px)); margin:0 auto; }
-.top-inner { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:10px 0; }
-.top a { color:#f4f0e8; text-decoration:none; }
-.top a[aria-current="page"] { font-weight:700; text-decoration:underline; }
-.brand { display:flex; align-items:center; gap:14px; padding:22px 0 8px; }
-.brand img { width:72px; height:72px; object-fit:contain; }
-.brand h1 { font-weight:500; font-size:clamp(28px,4vw,44px); margin:0; line-height:1.05; }
-.kicker { font-family:"Segoe UI", sans-serif; letter-spacing:.14em; text-transform:uppercase; font-size:12px; color:var(--accent); margin:0 0 4px; }
-.hero { position:relative; margin:12px 0 28px; }
-.hero img.scene { width:100%; height:min(520px, 70vw); object-fit:cover; border-radius:18px; display:block; }
-.panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin-top:-64px; position:relative; }
-.panel blockquote { margin:0; font-size:clamp(22px,3vw,32px); line-height:1.3; }
-.cite { color:var(--accent); font-style:italic; margin:8px 0 0; }
-h2 { font-weight:500; font-size:28px; margin:28px 0 8px; }
-h3 { margin:0 0 6px; font-size:22px; }
-.grid3, .grid2, .people, .progs { display:grid; gap:16px; }
-.grid3 { grid-template-columns:repeat(3,1fr); }
-.grid2 { grid-template-columns:1.2fr .8fr; align-items:start; }
-.card, .person, .prog { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
-.card { padding:16px 18px; }
-.person { display:grid; grid-template-columns:148px 1fr; gap:14px; padding:14px; }
-.person img, .portrait { width:148px; height:185px; object-fit:cover; object-position:center 15%; border-radius:12px; background:#efe8dc; }
-.role { font-family:"Segoe UI", sans-serif; color:var(--accent); font-size:14px; margin:0 0 6px; }
-.muted, .foot { color:var(--muted); }
-.prog img.scene, .shot { width:100%; height:220px; object-fit:cover; display:block; }
-.prog div, .pad { padding:14px 16px 18px; }
-ul.clean { margin:8px 0 0; padding-left:1.1em; }
-.give { background:#143f39; color:#f4f0e8; border-radius:16px; padding:20px 22px; margin:22px 0; }
-.give a { color:#d7fff6; }
-form { display:grid; gap:10px; }
-input, textarea { font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:10px; width:100%; background:#fff; }
-button { font-family:"Segoe UI", sans-serif; background:var(--accent); color:#fff; border:0; border-radius:999px; padding:10px 16px; }
-.foot { font-family:"Segoe UI", sans-serif; font-size:13px; padding:8px 0 40px; }
-.shop { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.shop article { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
-.shop img { width:100%; height:140px; object-fit:cover; display:block; background:#fff; }
-.shop div { padding:10px 12px 12px; }
-.price { font-family:"Segoe UI", sans-serif; font-weight:700; }
-@media (max-width:800px) {
-  .grid3, .grid2, .person, .shop { grid-template-columns:1fr; }
-  .shop { grid-template-columns:1fr 1fr; }
-  .person img { width:100%; height:240px; }
-  .panel { margin-top:12px; }
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+body { font-family: Inter, system-ui, sans-serif; }
+.heading-serif { font-family: "Playfair Display", Georgia, serif; }
+.hero-bg { background: linear-gradient(135deg, #0F2C59 0%, #1a3a6e 100%); }
+img.full { width: 100%; height: auto; display: block; }
 </style>
 </head>
-<body>
-<div class="top"><div class="top-inner">
-      <strong>Partners in Joy Design Option 1</strong>
-      <a href="index.html">Homepage</a>
-      <a href="about.html" aria-current="page">About</a>
-      <a href="alternorm.html">Alternorm</a>
-      <a href="../../web-design-samples.html">All design samples</a>
-    </div></div>
-<div class="wrap"><div class="brand"><img src="../../assets/design-samples/pij-logo.png" alt="Partners in Joy logo"><div><p class="kicker">About us</p><h1>Partners in Joy</h1></div></div>
-    <p>Stuart and Ruth Carlson were both raised overseas as third-generation missionary kids — Stuart in Peru and Ruth in Nigeria. In the late 1990s they started partnering with Joi Ministries in Nigeria, later renamed Alternorm. In 2000 they created Partners in Joy, Inc. The organization grew to partner with ministries in Nigeria, South America, and the United States.</p>
-    <p>Our vision is to share the grace of the Lord Jesus Christ, the love of the Father, and the unity of the Holy Spirit with as many people as possible. (2 Corinthians 13:14)</p>
-    <p>We partner by receiving and disbursing funding and materials, providing ideas and expertise as we can, praying, and networking.</p>
-    <h2>Board and liaisons</h2>
-    <div class=""><article class="person"><img src="../../assets/design-samples/stuart.jpg" alt="Stuart Carlson"><div><h3>Stuart Carlson</h3><p class="role">Director and President</p><p>Stuart was raised in Peru as a third-generation missionary kid. In the late 1990s he and Ruth began partnering with Joi Ministries in Nigeria, later renamed Alternorm Ministries. In 2000 they formed Partners in Joy, Inc., in Duncanville, Texas, so they could communicate with partner ministries and receive and send support.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/ruth.jpg" alt="Ruth Carlson"><div><h3>Ruth Carlson</h3><p class="role">Historian. Liaison for Alternorm and Ministry of Mercy.</p><p>Ruth was raised in Nigeria as a third-generation missionary kid. She and Stuart founded Partners in Joy in 2000. She serves as the organization’s historian and as liaison for Alternorm Ministries and Ministry of Mercy.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/esther.jpg" alt="Esther Nordman"><div><h3>Esther Nordman</h3><p class="role">Secretary and Treasurer. Liaison for the Igala Language Project.</p><p>Esther keeps the books of Partners in Joy and is the liaison for the Igala Language Project. Booklet orders are sent to the Partners in Joy address with the booklet title on the memo line. A 2014 field note thanks Esther and Ruth for planning a visit among the Igala people.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/judy.jpg" alt="Judy Reed"><div><h3>Judy Reed</h3><p class="role">Board member. Liaison for the Reed ministry and the Porras Ministry.</p><p>Judy grew up in Peru and served as a linguist and Bible translator. She and Robert met in college, served 14 years in Colombia, where their two daughters were born, and then more than 30 years in Dallas. Robert was a founding faculty member at Dallas International University and taught for 26 years at Dallas Baptist University. They joined Partners in Joy in 2016 and served with ProMETA in Costa Rica. Robert finished his earthly race in April 2026. Judy continues that encouragement, the preparation of his courses, and her relationships in Churingaveni, Peru.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/sonnie.jpg" alt="Sonnie Ebikwo"><div><h3>Sonnie Ebikwo</h3><p class="role">Board member</p><p>Sonnie Ebikwo serves on the board of Partners in Joy. The current public page lists that role.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/pauline.jpg" alt="Pauline Rappold"><div><h3>Pauline Rappold</h3><p class="role">Board member. Liaison for the Jesus Film.</p><p>Pauline Rappold serves on the board and is the liaison for the Jesus Film.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/joseph.jpg" alt="Joseph Ogijoh"><div><h3>Joseph Ogijoh</h3><p class="role">Board member. Liaison for the Moses and Alexis Abraham ministry.</p><p>Joseph Ogijoh serves on the board and is the liaison for Planting Brighter Futures, the ministry of Moses and Alexis Abraham. That ministry mentors Nigerian young men ages 14 to 24, with a vision centered on Kogi State.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/cristy.jpg" alt="Cristy Millington"><div><h3>Cristy Millington</h3><p class="role">Liaison for Dr. Isaac Ogohi and Trinity Bible College.</p><p>Cristy Millington is a liaison for Dr. Isaac Ogohi and CMML Trinity Bible College in central Nigeria.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/william.webp" alt="William Millington"><div><h3>William Millington</h3><p class="role">Liaison for Dr. Isaac Ogohi and Trinity Bible College.</p><p>William Millington is a liaison for Dr. Isaac Ogohi and CMML Trinity Bible College in central Nigeria.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/raphael-crystal.jpg" alt="Raphael and Crystal John"><div><h3>Raphael and Crystal John</h3><p class="role">Liaisons for Decapolis.</p><p>Raphael and Crystal John are the liaisons for Decapolis Community Development Center, which trains small-scale farmers in regenerative agriculture in rural Nigeria.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/martha.jpg" alt="Martha Rettberg"><div><h3>Martha Rettberg</h3><p class="role">Liaison for The Connected Vine.</p><p>Martha Rettberg is the liaison for The Connected Vine.</p></div></article>
-<article class="person"><img src="../../assets/design-samples/pat.jpg" alt="Pat Davis"><div><h3>Pat Davis</h3><p class="role">Liaison for Jeiser Maynas and ARIAP.</p><p>Pat Davis is the liaison for Jeiser Maynas and ARIAP. The current public page gives the name and the giving instructions.</p></div></article></div>
-    <h2>In memoriam</h2>
-    <article class="person">
-      <img src="../../assets/design-samples/robert.jpg" alt="Dr. Robert Reed">
-      <div class="pad"><h3>Dr. Robert Reed</h3>
-      <p class="role">In memoriam. June 22, 1954 – April 18, 2026.</p>
-      <p>Robert grew up in Colombia as a second-generation missionary. He and Judy joined Partners in Joy in 2016. He was a founding faculty member at Dallas International University, taught for 26 years at Dallas Baptist University, and served with ProMETA.</p>
-      <p>Ruth Carlson wrote, on the current contact page: “Thank you, Dr. Robert Reed, for serving so faithfully on the board of Partners in Joy. Your insight and advice were invaluable. Well done, good and faithful servant.” Matthew 25:21.</p>
-      </div>
-    </article>
-    <h2>Write to us</h2>
-    <p class="muted">“How beautiful on the mountains are the feet of those who bring good news.” Isaiah 52:7. The current contact page asks for a name, an email, and a comment. This sample does not send the note.</p>
-    <form>
-      <label>Name<br><input type="text" name="name"></label>
-      <label>Email<br><input type="email" name="email"></label>
-      <label>Comment<br><textarea name="comment" rows="4"></textarea></label>
-      <button type="button">Sample only</button>
-    </form>
-    <p>Partners in Joy, Inc.<br>PO Box 380631<br>Duncanville, Texas 75138</p>
-    <p class="foot">Photographs and words are from partners-in-joy.org and alternorm.org, read October 20, 2026. This sample does not take gifts or send messages. Partners in Joy, Inc. is a 501(c)(3) incorporated in Texas in 2000. EIN 75-2827312. PO Box 380631, Duncanville, Texas 75138.</p>
+<body class="bg-slate-50 text-slate-800">
+<div class="bg-slate-100 text-slate-600 text-xs border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex flex-wrap gap-x-4 gap-y-1 items-center">
+    <span class="font-semibold text-[#0F2C59]">Design Option 1</span>
+    <span>Laid out like the AFF site. Not the live Partners in Joy site. Does not take gifts.</span>
+    <a class="font-semibold text-sky-700" href="index.html">Homepage</a>
+    <a class="font-semibold text-sky-700" href="about.html">About</a>
+    <a class="font-semibold text-sky-700" href="alternorm.html">Alternorm</a>
+    <a class="font-semibold text-sky-700" href="../../web-design-samples.html">All design samples</a>
+  </div>
+</div>
+<nav class="bg-white border-b sticky top-0 z-20">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-3 min-w-0">
+      <img src="../../assets/design-samples/pij-logo.png" alt="Partners in Joy logo" class="h-11 w-11 object-contain">
+      <span class="leading-tight">
+        <span class="block font-semibold text-[#0F2C59]">Partners in Joy</span>
+        <span class="block text-[10px] tracking-wide text-slate-500">DUNCANVILLE, TEXAS</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="index.html" class="nav-link text-slate-700 hover:text-[#1E88E5]">Home</a>
+      <a href="about.html" class="nav-link text-[#0F2C59] hover:text-[#1E88E5]">About</a>
+      <a href="alternorm.html" class="nav-link text-slate-700 hover:text-[#1E88E5]">Alternorm</a>
     </div>
+    <a href="#give" class="px-4 py-2 bg-[#0F2C59] text-white text-sm font-semibold rounded-xl">How to give</a>
+  </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 py-12">
+  <p class="uppercase text-xs font-semibold tracking-[2px] text-sky-600">About us</p>
+  <h1 class="heading-serif text-5xl text-[#0F2C59] mt-2">The people who carry the partnership.</h1>
+  <p class="mt-4 max-w-3xl text-slate-600">Stuart and Ruth Carlson were both raised overseas as third-generation missionary kids — Stuart in Peru and Ruth in Nigeria. In the late 1990s they started partnering with Joi Ministries in Nigeria, later renamed Alternorm. In 2000 they created Partners in Joy, Inc. The organization grew to partner with ministries in Nigeria, South America, and the United States.</p>
+  <div class="mt-8 grid gap-4">
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/stuart.jpg" alt="Stuart Carlson" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Stuart Carlson</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Director and President</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Stuart was raised in Peru as a third-generation missionary kid. In the late 1990s he and Ruth began partnering with Joi Ministries in Nigeria, later renamed Alternorm Ministries. In 2000 they formed Partners in Joy, Inc., in Duncanville, Texas, so they could communicate with partner ministries and receive and send support.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/ruth.jpg" alt="Ruth Carlson" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Ruth Carlson</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Historian. Liaison for Alternorm and Ministry of Mercy.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Ruth was raised in Nigeria as a third-generation missionary kid. She and Stuart founded Partners in Joy in 2000. She serves as the organization’s historian and as liaison for Alternorm Ministries and Ministry of Mercy.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/esther.jpg" alt="Esther Nordman" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Esther Nordman</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Secretary and Treasurer. Liaison for the Igala Language Project.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Esther keeps the books of Partners in Joy and is the liaison for the Igala Language Project. Booklet orders are sent to the Partners in Joy address with the booklet title on the memo line. A 2014 field note thanks Esther and Ruth for planning a visit among the Igala people.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/judy.jpg" alt="Judy Reed" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Judy Reed</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Board member. Liaison for the Reed ministry and the Porras Ministry.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Judy grew up in Peru and served as a linguist and Bible translator. She and Robert met in college, served 14 years in Colombia, where their two daughters were born, and then more than 30 years in Dallas. Robert was a founding faculty member at Dallas International University and taught for 26 years at Dallas Baptist University. They joined Partners in Joy in 2016 and served with ProMETA in Costa Rica. Robert finished his earthly race in April 2026. Judy continues that encouragement, the preparation of his courses, and her relationships in Churingaveni, Peru.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/sonnie.jpg" alt="Sonnie Ebikwo" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Sonnie Ebikwo</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Board member</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Sonnie Ebikwo serves on the board of Partners in Joy. The current public page lists that role.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/pauline.jpg" alt="Pauline Rappold" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Pauline Rappold</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Board member. Liaison for the Jesus Film.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Pauline Rappold serves on the board and is the liaison for the Jesus Film.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/joseph.jpg" alt="Joseph Ogijoh" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Joseph Ogijoh</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Board member. Liaison for the Moses and Alexis Abraham ministry.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Joseph Ogijoh serves on the board and is the liaison for Planting Brighter Futures, the ministry of Moses and Alexis Abraham. That ministry mentors Nigerian young men ages 14 to 24, with a vision centered on Kogi State.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/cristy.jpg" alt="Cristy Millington" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Cristy Millington</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Liaison for Dr. Isaac Ogohi and Trinity Bible College.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Cristy Millington is a liaison for Dr. Isaac Ogohi and CMML Trinity Bible College in central Nigeria.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/william.webp" alt="William Millington" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">William Millington</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Liaison for Dr. Isaac Ogohi and Trinity Bible College.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">William Millington is a liaison for Dr. Isaac Ogohi and CMML Trinity Bible College in central Nigeria.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/raphael-crystal.jpg" alt="Raphael and Crystal John" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Raphael and Crystal John</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Liaisons for Decapolis.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Raphael and Crystal John are the liaisons for Decapolis Community Development Center, which trains small-scale farmers in regenerative agriculture in rural Nigeria.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/martha.jpg" alt="Martha Rettberg" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Martha Rettberg</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Liaison for The Connected Vine.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Martha Rettberg is the liaison for The Connected Vine.</p>
+  </div>
+</article>
+<article class="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+  <img src="../../assets/design-samples/pat.jpg" alt="Pat Davis" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+  <div>
+    <h3 class="text-xl font-semibold text-[#0F2C59]">Pat Davis</h3>
+    <p class="text-sm font-medium text-sky-700 mt-1">Liaison for Jeiser Maynas and ARIAP.</p>
+    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Pat Davis is the liaison for Jeiser Maynas and ARIAP. The current public page gives the name and the giving instructions.</p>
+  </div>
+</article></div>
+  <article class="mt-8 bg-white border border-slate-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-5 items-start">
+    <img src="../../assets/design-samples/robert.jpg" alt="Dr. Robert Reed" class="w-44 max-w-full h-auto rounded-2xl bg-slate-100">
+    <div>
+      <p class="text-xs font-semibold tracking-[2px] uppercase text-sky-700">In memoriam</p>
+      <h2 class="text-2xl font-semibold text-[#0F2C59] mt-1">Dr. Robert Reed</h2>
+      <p class="text-sm text-sky-700 mt-1">June 22, 1954 – April 18, 2026</p>
+      <p class="mt-2 text-sm text-slate-600">Robert grew up in Colombia as a second-generation missionary. He and Judy joined Partners in Joy in 2016. He was a founding faculty member at Dallas International University, taught for 26 years at Dallas Baptist University, and served with ProMETA.</p>
+      <p class="mt-2 text-sm text-slate-600">Ruth Carlson wrote, on the current contact page: “Thank you, Dr. Robert Reed, for serving so faithfully on the board of Partners in Joy. Your insight and advice were invaluable. Well done, good and faithful servant.” Matthew 25:21.</p>
+    </div>
+  </article>
+  <section class="mt-12 max-w-xl">
+    <h2 class="heading-serif text-3xl text-[#0F2C59]">Write to us</h2>
+    <p class="mt-2 text-sm text-slate-600">“How beautiful on the mountains are the feet of those who bring good news.” Isaiah 52:7. The current contact page asks for a name, an email, and a comment. This sample does not send the note.</p>
+    <form class="mt-4 grid gap-3">
+      <label class="text-sm">Name<br><input class="mt-1 w-full border border-slate-300 rounded-xl px-3 py-2" type="text"></label>
+      <label class="text-sm">Email<br><input class="mt-1 w-full border border-slate-300 rounded-xl px-3 py-2" type="email"></label>
+      <label class="text-sm">Comment<br><textarea class="mt-1 w-full border border-slate-300 rounded-xl px-3 py-2" rows="4"></textarea></label>
+      <button type="button" class="justify-self-start bg-[#0F2C59] text-white rounded-xl px-5 py-2 text-sm font-semibold">Sample only</button>
+    </form>
+    <p class="mt-4 text-sm text-slate-600">Partners in Joy, Inc.<br>PO Box 380631<br>Duncanville, Texas 75138</p>
+  </section>
+</main>
+
+<footer class="bg-[#0F2C59] text-sky-100/80 mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-8 text-sm">
+    <div class="font-semibold text-white">Partners in Joy, Inc.</div>
+    <p class="mt-2 max-w-3xl text-xs leading-relaxed">Photographs and words are from partners-in-joy.org and alternorm.org, read October 20, 2026. This sample does not take gifts or send messages. Partners in Joy, Inc. is a 501(c)(3) incorporated in Texas in 2000. EIN 75-2827312. PO Box 380631, Duncanville, Texas 75138.</p>
+  </div>
+</footer>
 </body>
 </html>
